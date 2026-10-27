@@ -1,0 +1,94 @@
+<style>
+    .nh-routes-section { padding: 60px 5%; background-color: #ffffff; text-align: center; }
+    .nh-routes-section, .nh-routes-section * { font-family: 'Poppins', sans-serif !important; box-sizing: border-box; }
+    .nh-routes-title { margin: 0 0 40px; font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 700; color: var(--nh-azul, #2b2a6e); }
+    .nh-routes-carousel-container { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 50px; }
+    .nh-routes-slides-wrapper { position: relative; width: 100%; border-radius: 28px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); }
+    .nh-route-card {
+        position: relative; width: 100%; min-height: 420px;
+        background-size: cover; background-position: center; display: none; align-items: center; justify-content: flex-end; padding: 40px 60px;
+    }
+    .nh-route-card.active { display: flex; }
+    .nh-route-overlay-box {
+        background: rgba(30, 27, 89, 0.85); backdrop-filter: blur(8px);
+        border-radius: 20px; padding: 35px 40px; max-width: 460px; width: 100%; text-align: left; color: #ffffff;
+    }
+    .nh-route-subtitle { font-size: 1.2rem; font-weight: 300; margin: 0 0 4px 0; color: #e2e8f0; }
+    .nh-route-role { font-size: clamp(1.5rem, 2.4vw, 2.2rem); font-weight: 800; line-height: 1.15; margin: 0 0 25px 0; color: #ffffff; }
+    .nh-route-btn {
+        display: inline-block; background-color: #f26a0d; color: #ffffff !important;
+        font-weight: 700; font-size: 0.85rem; padding: 12px 24px; border-radius: 8px; text-decoration: none; text-transform: uppercase;
+    }
+    .nh-routes-arrow {
+        position: absolute; top: 50%; transform: translateY(-50%); width: 38px; height: 38px;
+        border-radius: 50%; background: #2b2a6e; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 5;
+    }
+    .nh-routes-arrow svg { width: 20px; height: 20px; fill: #ffffff; }
+    .nh-routes-prev { left: 0; } .nh-routes-next { right: 0; }
+    .nh-routes-dots { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 25px; }
+    .nh-route-dot { height: 6px; border-radius: 10px; background-color: #b0b7cb; cursor: pointer; transition: 0.3s; }
+    .nh-route-dot.active { width: 45px; background-color: #2b2a6e; }
+    .nh-route-dot:not(.active) { width: 10px; }
+    @media (max-width: 900px) { .nh-route-card { justify-content: center; padding: 30px 20px; } .nh-route-overlay-box { max-width: 100%; text-align: center; } .nh-routes-arrow { display: none; } }
+</style>
+
+<div class="nh-routes-section" id="nhRoutesSection">
+    <h2 class="nh-routes-title">Rutas Profesionales</h2>
+    <div class="nh-routes-carousel-container">
+        <button class="nh-routes-arrow nh-routes-prev" id="nhRoutePrev" type="button" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+        <div class="nh-routes-slides-wrapper">
+            <div class="nh-route-card active" style="background-image: url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/RUTAS/RUTA1.png');">
+                <div class="nh-route-overlay-box">
+                    <p class="nh-route-subtitle">Quiero ser</p>
+                    <h3 class="nh-route-role">Cybersecurity<br>Analyst</h3>
+                    <a class="nh-route-btn" href="#">Ver ruta de carrera</a>
+                </div>
+            </div>
+            <div class="nh-route-card" style="background-image: url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/RUTAS/RUTA2.png');">
+                <div class="nh-route-overlay-box">
+                    <p class="nh-route-subtitle">Quiero ser</p>
+                    <h3 class="nh-route-role">Project Manager</h3>
+                    <a class="nh-route-btn" href="#">Ver ruta de carrera</a>
+                </div>
+            </div>
+            <div class="nh-route-card" style="background-image: url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/RUTAS/RUTA3.png');">
+                <div class="nh-route-overlay-box">
+                    <p class="nh-route-subtitle">Quiero ser</p>
+                    <h3 class="nh-route-role">Data Analyst</h3>
+                    <a class="nh-route-btn" href="#">Ver ruta de carrera</a>
+                </div>
+            </div>
+        </div>
+        <button class="nh-routes-arrow nh-routes-next" id="nhRouteNext" type="button" aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg></button>
+    </div>
+    <div class="nh-routes-dots" id="nhRouteDots">
+        <span class="nh-route-dot active" data-slide="0"></span>
+        <span class="nh-route-dot" data-slide="1"></span>
+        <span class="nh-route-dot" data-slide="2"></span>
+    </div>
+</div>
+
+<script>
+(function() {
+    var section = document.getElementById('nhRoutesSection');
+    if (!section) return;
+    var slides = section.querySelectorAll('.nh-route-card');
+    var dots = section.querySelectorAll('.nh-route-dot');
+    var btnPrev = section.querySelector('#nhRoutePrev');
+    var btnNext = section.querySelector('#nhRouteNext');
+    var currentIndex = 0;
+
+    function showSlide(index) {
+        currentIndex = (index >= slides.length) ? 0 : (index < 0) ? slides.length - 1 : index;
+        slides.forEach(function(slide, i) { slide.classList.toggle('active', i === currentIndex); });
+        dots.forEach(function(dot, i) { dot.classList.toggle('active', i === currentIndex); });
+    }
+    if (btnNext && btnPrev) {
+        btnNext.addEventListener('click', function() { showSlide(currentIndex + 1); });
+        btnPrev.addEventListener('click', function() { showSlide(currentIndex - 1); });
+    }
+    dots.forEach(function(dot) {
+        dot.addEventListener('click', function() { showSlide(parseInt(this.getAttribute('data-slide'))); });
+    });
+})();
+</script>

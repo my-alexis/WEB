@@ -1,0 +1,73 @@
+<style>
+    .nh-about-section, .nh-about-section * {
+        font-family: 'Poppins', sans-serif !important;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    .nh-about-section {
+        width: 100%;
+        background-color: #ffffff;
+        padding: 50px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nh-about-container {
+        max-width: 880px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        align-items: center;
+    }
+    @media (min-width: 768px) {
+        .nh-about-container { grid-template-columns: 0.9fr 1.1fr; gap: 48px; }
+    }
+    .nh-about-left { display: flex; flex-direction: column; justify-content: center; }
+    .nh-about-tagline {
+        color: var(--nh-azul, #2b2a6e);
+        font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+        line-height: 1.25;
+    }
+    .nh-about-tagline-regular { display: block; font-weight: 400; margin-bottom: 4px; }
+    .nh-about-tagline-bold { display: block; font-weight: 800; font-style: italic; }
+    .nh-about-right { display: flex; flex-direction: column; justify-content: center; }
+    .nh-about-title {
+        color: var(--nh-azul, #2b2a6e);
+        font-size: clamp(1.45rem, 2.2vw, 1.85rem);
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+    .nh-about-paragraph {
+        color: var(--nh-azul, #2b2a6e);
+        font-size: clamp(0.9rem, 1.2vw, 0.98rem);
+        line-height: 1.6;
+        margin-bottom: 14px;
+    }
+    .nh-about-paragraph strong { font-weight: 700; }
+    .nh-about-footer-text {
+        color: var(--nh-azul, #2b2a6e);
+        font-size: clamp(0.9rem, 1.2vw, 0.98rem);
+        font-style: italic;
+        margin-top: 6px;
+    }
+</style>
+
+<section class="nh-about-section">
+    <div class="nh-about-container">
+        <div class="nh-about-left">
+            <h2 class="nh-about-tagline">
+                <span class="nh-about-tagline-regular">Tecnología que aprendes.</span>
+                <span class="nh-about-tagline-bold">Conocimiento que aplicas.</span>
+            </h2>
+        </div>
+        <div class="nh-about-right">
+            <h3 class="nh-about-title">Talento que evoluciona.</h3>
+            <p class="nh-about-paragraph">En New Horizons Perú preparamos a profesionales y organizaciones para los desafíos de un entorno que cambia constantemente.</p>
+            <p class="nh-about-paragraph">Desarrolla competencias en <strong>IA, Cloud, Ciberseguridad, Data, Gestión TI y Productividad</strong>, con formación práctica, instructores especializados y el respaldo de certificaciones internacionales.</p>
+            <p class="nh-about-footer-text">Tu próximo nivel profesional empieza aquí.</p>
+        </div>
+    </div>
+</section>

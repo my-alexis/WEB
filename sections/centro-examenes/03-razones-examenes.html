@@ -1,0 +1,113 @@
+<style>
+    .nh-reasons-section {
+        padding: 70px 20px;
+        background-color: #f8fafc;
+        text-align: center;
+        font-family: 'Poppins', sans-serif !important;
+    }
+    .nh-reasons-section * {
+        font-family: 'Poppins', sans-serif !important;
+        box-sizing: border-box;
+    }
+    .nh-reasons-title {
+        font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+        font-weight: 800;
+        color: #1e1b4b;
+        margin: 0 0 16px 0;
+    }
+    .nh-reasons-subtitle {
+        font-size: 1.05rem;
+        color: #475569;
+        max-width: 750px;
+        margin: 0 auto 50px auto;
+        line-height: 1.6;
+    }
+    .nh-reasons-card {
+        background: #ffffff;
+        max-width: 780px;
+        margin: 0 auto;
+        border-radius: 24px;
+        padding: 45px 50px;
+        box-shadow: 0 15px 35px rgba(30, 27, 75, 0.08);
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .nh-reason-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 22px;
+    }
+    .nh-reason-icon-box {
+        min-width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        background: rgba(44, 42, 107, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #2c2a6b;
+    }
+    .nh-reason-icon-box svg {
+        width: 24px;
+        height: 24px;
+        stroke: #2c2a6b;
+        stroke-width: 2;
+        fill: none;
+    }
+    .nh-reason-text p {
+        margin: 0;
+        font-size: 0.98rem;
+        color: #334155;
+        line-height: 1.55;
+        font-weight: 400;
+    }
+    .nh-reason-text strong {
+        font-weight: 700;
+        color: #1e1b4b;
+    }
+
+    @media (max-width: 768px) {
+        .nh-reasons-card { padding: 30px 20px; }
+        .nh-reason-item { gap: 15px; }
+    }
+</style>
+
+<div class="nh-reasons-section">
+    <h2 class="nh-reasons-title">¿Por qué elegir nuestro centro de exámenes?</h2>
+    <p class="nh-reasons-subtitle">Comprometidos por garantizar que cada evaluación se realice en un entorno seguro, cómodo y profesional, brindando a nuestros clientes una experiencia óptima y confiable.</p>
+    
+    <div class="nh-reasons-card">
+        <!-- Ítem 1 -->
+        <div class="nh-reason-item">
+            <div class="nh-reason-icon-box">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </div>
+            <div class="nh-reason-text">
+                <p>Somos el único <strong>Centro autorizado en Perú</strong> para entregar los exámenes GMAT.</p>
+            </div>
+        </div>
+
+        <!-- Ítem 2 -->
+        <div class="nh-reason-item">
+            <div class="nh-reason-icon-box">
+                <svg viewBox="0 0 24 24"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="nh-reason-text">
+                <p>Somos un <strong>Centro autorizado en Lima</strong>, para todos los<br>exámenes PTE.</p>
+            </div>
+        </div>
+
+        <!-- Ítem 3 -->
+        <div class="nh-reason-item">
+            <div class="nh-reason-icon-box">
+                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="nh-reason-text">
+                <p>Nos posicionamos como un referente en la administración de exámenes de certificación, ocupando un lugar preferencial para la evaluación de certificaciones como <strong>PMP, GMAT, PTE, Microsoft, (ISC)2, AWS, Executive Assessment, Cisco, IIA, Google Cloud, GARP, TOGAF, Broadcom</strong>, entre otros.</p>
+            </div>
+        </div>
+    </div>
+</div>

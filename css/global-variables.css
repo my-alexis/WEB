@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --nh-azul: #2b2a6e;
+    --nh-azul-oscuro: #1d1b54;
+    --nh-naranja: #f26a0d;
+    --nh-celeste: #1ec0da;
+    --nh-white: #ffffff;
+}
+
+/* Reset y tipografía heredada para todo el sitio */
+body {
+    font-family: 'Poppins', sans-serif !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: var(--nh-azul);
+}

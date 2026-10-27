@@ -1,0 +1,204 @@
+<style>
+    .nh-hero-block {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        aspect-ratio: 5 / 2;
+        min-height: 420px;
+        max-height: 640px;
+        box-sizing: border-box;
+        color: var(--nh-white, #ffffff);
+        background: var(--nh-azul, #2b2a6e);
+        font-family: 'Poppins', sans-serif !important;
+    }
+    .nh-hero-block, .nh-hero-block * { font-family: 'Poppins', sans-serif !important; }
+    .nh-hero-slide {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        padding: 0 8% 0 9%;
+        box-sizing: border-box;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: translateY(100%);
+        transition: transform 0.9s cubic-bezier(0.77, 0, 0.18, 1);
+    }
+    .nh-hero-slide:first-child { transform: translateY(0); }
+    .nh-hero-slide-content { position: relative; z-index: 1; max-width: 620px; }
+    .nh-hero-slide-content--wide { max-width: none; width: 100%; }
+    .nh-hero-eyebrow, .nh-hero-tag {
+        display: block;
+        margin: 0;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: var(--nh-naranja, #f26a0d);
+    }
+    .nh-hero-eyebrow { margin-bottom: 8px; }
+    .nh-hero-tag { margin: 0 0 22px; }
+    .nh-hero-title {
+        margin: 0 0 28px;
+        font-size: clamp(2rem, 4.2vw, 3rem);
+        line-height: 1.1;
+        font-weight: 400;
+        color: var(--nh-white, #ffffff);
+    }
+    .nh-hero-title strong { display: block; font-weight: 400; }
+    .nh-hero-title em { display: block; font-weight: 700; font-style: italic; }
+    .nh-hero-title--bold {
+        margin-bottom: 8px;
+        font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+        line-height: 1.15;
+        font-weight: 700;
+    }
+    .nh-hero-subtitle {
+        margin: 0 0 16px;
+        font-size: clamp(1rem, 1.6vw, 1.2rem);
+        font-style: italic;
+        color: var(--nh-white, #ffffff);
+    }
+    .nh-hero-buttons { display: flex; flex-wrap: wrap; align-items: stretch; gap: 16px; }
+    .nh-hero-buttons--row { flex-wrap: nowrap; }
+    .nh-hero-buttons--row .nh-hero-btn { flex: 1 1 0; min-width: 0; }
+    .nh-hero-block .nh-hero-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        max-width: 230px;
+        padding: 14px 22px;
+        border-radius: 10px;
+        background: var(--nh-naranja, #f26a0d);
+        color: var(--nh-white, #ffffff);
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .nh-hero-block .nh-hero-btn:hover { background-color: #d85c09; transform: translateY(-2px); }
+    .nh-hero-dots {
+        position: absolute;
+        left: clamp(12px, 3vw, 40px);
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    .nh-hero-dot {
+        width: 6px;
+        height: 6px;
+        padding: 0;
+        border: 0;
+        border-radius: 3px;
+        background: rgba(255, 255, 255, 0.55);
+        cursor: pointer;
+        transition: height 0.3s ease;
+    }
+    .nh-hero-dot.is-active { height: 22px; background: var(--nh-white, #ffffff); }
+    @media (max-width: 768px) {
+        .nh-hero-block { aspect-ratio: auto; min-height: 560px; }
+        .nh-hero-slide { padding: 40px 6% 40px 11%; background-position: right center; }
+        .nh-hero-buttons--row { flex-direction: column; }
+        .nh-hero-block .nh-hero-btn { max-width: 100%; width: 100%; }
+    }
+</style>
+
+<div class="nh-hero-block" id="nhHero">
+    <!-- SLIDE 1 -->
+    <div class="nh-hero-slide" style="background-image:url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/BANNERS/CABECERA%20INICIO.png?ver=MHnOsdABZNkUooh-D1Vr3Q%3d%3d');">
+        <div class="nh-hero-slide-content nh-hero-slide-content--wide">
+            <h1 class="nh-hero-title">30 años <strong>transformando</strong> <em>con tecnología</em></h1>
+            <div class="nh-hero-buttons nh-hero-buttons--row">
+                <a class="nh-hero-btn" href="#">Quiero certificarme</a>
+                <a class="nh-hero-btn" href="#">Quiero capacitar a mi empresa</a>
+                <a class="nh-hero-btn" href="#">Quiero iniciar una carrera en tecnología</a>
+            </div>
+        </div>
+    </div>
+    <!-- SLIDE 2 -->
+    <div aria-hidden="true" class="nh-hero-slide" inert style="background-image:url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/BANNERS/IA%20GENERATIVA%20Y%20AUTOMATIZACION_BANNER%20HOME%202.png?ver=hUp73_iCH7-eJISspaclOw%3d%3d');">
+        <div class="nh-hero-slide-content">
+            <span class="nh-hero-eyebrow">Especialización en</span>
+            <h2 class="nh-hero-title nh-hero-title--bold">IA Generativa &amp; Automatización Aplicada</h2>
+            <p class="nh-hero-subtitle">De cero a flujos inteligentes.</p>
+            <span class="nh-hero-tag">Ruta I · Básico</span>
+            <div class="nh-hero-buttons"><a class="nh-hero-btn" href="#">Conoce el curso</a> <a class="nh-hero-btn" href="#">Descargar brochure</a></div>
+        </div>
+    </div>
+    <!-- SLIDE 3 -->
+    <div aria-hidden="true" class="nh-hero-slide" inert style="background-image:url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/BANNERS/CLAUDE%20AI_BANNER%20HOME.png?ver=J__RAV3PnYYhC1vAPQcgDw%3d%3d');">
+        <div class="nh-hero-slide-content">
+            <span class="nh-hero-eyebrow">Especialización en</span>
+            <h2 class="nh-hero-title nh-hero-title--bold">Claude AI: Workflows,<br>Agentes y Productividad</h2>
+            <p class="nh-hero-subtitle">De conversar con IA a crear workflows inteligentes.</p>
+            <span class="nh-hero-tag">Ruta I · Intermedio</span>
+            <div class="nh-hero-buttons"><a class="nh-hero-btn" href="#">Conoce el curso</a> <a class="nh-hero-btn" href="#">Descargar brochure</a></div>
+        </div>
+    </div>
+    <!-- SLIDE 4 -->
+    <div aria-hidden="true" class="nh-hero-slide" inert style="background-image:url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/BANNERS/DESARROLLO%20DE%20AGENTES_BANNER%20HOME%204.png?ver=Yl70DdYnZlfp13HJzM8bVQ%3d%3d');">
+        <div class="nh-hero-slide-content">
+            <span class="nh-hero-eyebrow">Especialización en</span>
+            <h2 class="nh-hero-title nh-hero-title--bold">Desarrollo de Agentes Autónomos con Claude Code</h2>
+            <p class="nh-hero-subtitle">De usar IA a construir agentes que ejecutan.</p>
+            <span class="nh-hero-tag">Ruta II · Avanzado</span>
+            <div class="nh-hero-buttons"><a class="nh-hero-btn" href="#">Conoce el curso</a> <a class="nh-hero-btn" href="#">Descargar brochure</a></div>
+        </div>
+    </div>
+    <!-- PUNTOS -->
+    <div aria-label="Slides del hero" class="nh-hero-dots">
+        <button class="nh-hero-dot is-active" aria-label="Slide 1"></button>
+        <button class="nh-hero-dot" aria-label="Slide 2"></button>
+        <button class="nh-hero-dot" aria-label="Slide 3"></button>
+        <button class="nh-hero-dot" aria-label="Slide 4"></button>
+    </div>
+</div>
+
+<script>
+(function () {
+    var hero = document.getElementById('nhHero');
+    if (!hero) return;
+    var slides = hero.querySelectorAll('.nh-hero-slide');
+    var dots = hero.querySelectorAll('.nh-hero-dot');
+    var INTERVAL = 5000, DURATION = 900, current = 0, busy = false, timer = null;
+    if (slides.length < 2) return;
+
+    function goTo(next, dir) {
+        if (next === current || busy) return;
+        busy = true;
+        var out = slides[current], inn = slides[next];
+        inn.style.transition = 'none';
+        inn.style.transform = 'translateY(' + (dir * 100) + '%)';
+        void inn.offsetHeight;
+        inn.style.transition = '';
+        inn.style.transform = 'translateY(0)';
+        out.style.transform = 'translateY(' + (-dir * 100) + '%)';
+        out.setAttribute('aria-hidden', 'true');
+        out.setAttribute('inert', '');
+        inn.removeAttribute('aria-hidden');
+        inn.removeAttribute('inert');
+        dots[current].classList.remove('is-active');
+        dots[next].classList.add('is-active');
+        current = next;
+        setTimeout(function () { busy = false; }, DURATION);
+    }
+    function next() { goTo((current + 1) % slides.length, 1); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function start() { stop(); timer = setInterval(next, INTERVAL); }
+
+    dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { goTo(i, i > current ? 1 : -1); start(); });
+    });
+    hero.addEventListener('mouseenter', stop);
+    hero.addEventListener('mouseleave', start);
+    start();
+})();
+</script>

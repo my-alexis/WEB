@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Previa - Centro de Exámenes</title>
+    <link rel="stylesheet" href="css/global-variables.css">
+</head>
+
+<body>
+    <div id="sec-01"></div>
+    <div id="sec-02"></div>
+    <div id="sec-03"></div>
+    <div id="sec-10"></div> <!-- Footer reutilizado -->
+
+    <script>
+        async function loadSection(id, file) {
+            try {
+                let res = await fetch(file, { cache: 'no-store' });
+                if (res.ok) {
+                    document.getElementById(id).innerHTML = await res.text();
+                }
+            } catch (e) {
+                console.error("Error cargando " + file, e);
+            }
+        }
+
+        async function initExamPage() {
+            // Salimos de 'centro de examenes' y entramos a 'home'
+            await loadSection('sec-01', '../home/01-header.html');
+
+            // Como están en la misma carpeta o subcarpetas hermanas:
+            await loadSection('sec-02', '02-banner-estatico.html');
+            await loadSection('sec-03', '03-razones-examenes.html');
+
+            // Salimos de 'centro de examenes' y entramos a 'home' para el footer
+            await loadSection('sec-10', '../home/10-footer.html');
+
+            initHeaderMenu();
+        }
+
+        function initHeaderMenu() {
+            var openBtn = document.getElementById('nhOffcanvasOpen');
+            var closeBtn = document.getElementById('nhOffcanvasClose');
+            var overlay = document.getElementById('nhOffcanvasOverlay');
+            var menu = document.getElementById('nhOffcanvasMenu');
+
+            function openMenu() {
+                if (menu) menu.classList.add('active');
+                if (overlay) overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeMenu() {
+                if (menu) menu.classList.remove('active');
+                if (overlay) overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (openBtn) openBtn.addEventListener('click', openMenu);
+            if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+            if (overlay) overlay.addEventListener('click', closeMenu);
+        }
+
+        document.addEventListener('DOMContentLoaded', initExamPage);
+    </script>
+</body>
+
+</html>

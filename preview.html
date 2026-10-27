@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Previa - Home New Horizons</title>
+    <link rel="stylesheet" href="css/global-variables.css">
+</head>
+
+<body>
+    <div id="sec-01"></div>
+    <div id="sec-02"></div>
+    <div id="sec-03"></div>
+    <div id="sec-04"></div>
+    <div id="sec-05"></div>
+    <div id="sec-06"></div>
+    <div id="sec-07"></div>
+    <div id="sec-08"></div>
+    <div id="sec-09"></div>
+    <div id="sec-10"></div>
+
+    <script>
+        async function loadSection(id, file) {
+            try {
+                let res = await fetch(file, { cache: 'no-store' });
+                if (res.ok) {
+                    document.getElementById(id).innerHTML = await res.text();
+                }
+            } catch (e) {
+                console.error("Error cargando " + file, e);
+            }
+        }
+        async function initAllSections() {
+            // Carga de bloques en orden secuencial
+            await loadSection('sec-01', 'sections/home/01-header.html');
+            await loadSection('sec-02', 'sections/home/02-banner-inicio.html');
+            await loadSection('sec-03', 'sections/home/03-texto-about.html');
+            await loadSection('sec-04', 'sections/home/04-cursos-destacados.html');
+            await loadSection('sec-05', 'sections/home/05-explora-area.html');
+            await loadSection('sec-06', 'sections/home/06-rutas-profesionales.html');
+            await loadSection('sec-07', 'sections/home/07-formulario.html');
+            await loadSection('sec-08', 'sections/home/08-empresas.html');
+            await loadSection('sec-09', 'sections/home/09-proximos-inicios.html');
+            await loadSection('sec-10', 'sections/home/10-footer.html');
+
+            // --- INICIALIZAR TODOS LOS SCRIPTS UNA VEZ QUE YA EXISTEN EN EL DOM ---
+            initencabezado();
+            initHeroCarousel();
+            initCoursesCarousel();
+            initRoutesCarousel();
+            initTalentForm();
+            initPartnersCarousel();
+        }
+
+        // --- SCRIPT 1: Carrusel del Banner Principal (Hero) ---
+        function initHeroCarousel() {
+            var hero = document.getElementById('nhHero');
+            if (!hero) return;
+            var slides = hero.querySelectorAll('.nh-hero-slide');
+            var dots = hero.querySelectorAll('.nh-hero-dot');
+            var INTERVAL = 5000, DURATION = 900, current = 0, busy = false, timer = null;
+            if (slides.length < 2) return;
+
+            function goTo(next, dir) {
+                if (next === current || busy) return;
+                busy = true;
+                var out = slides[current], inn = slides[next];
+                inn.style.transition = 'none';
+                inn.style.transform = 'translateY(' + (dir * 100) + '%)';
+                void inn.offsetHeight;
+                inn.style.transition = '';
+                inn.style.transform = 'translateY(0)';
+                out.style.transform = 'translateY(' + (-dir * 100) + '%)';
+                out.setAttribute('aria-hidden', 'true');
+                out.setAttribute('inert', '');
+                inn.removeAttribute('aria-hidden');
+                inn.removeAttribute('inert');
+                dots[current].classList.remove('is-active');
+                dots[next].classList.add('is-active');
+                current = next;
+                setTimeout(function () { busy = false; }, DURATION);
+            }
+            function nextSlide() { goTo((current + 1) % slides.length, 1); }
+            function stop() { if (timer) { clearInterval(timer); timer = null; } }
+            function start() { stop(); timer = setInterval(nextSlide, INTERVAL); }
+
+            dots.forEach(function (dot, i) {
+                dot.addEventListener('click', function () {
+                    goTo(i, i > current ? 1 : -1);
+                    start();
+                });
+            });
+            hero.addEventListener('mouseenter', stop);
+            hero.addEventListener('mouseleave', start);
+            start();
+        }
+
+        // --- SCRIPT 2: Carrusel de Cursos Destacados ---
+        function initCoursesCarousel() {
+            var root = document.getElementById('nhCoursesCarousel');
+            if (!root) return;
+            var track = root.querySelector('.nh-cc-track');
+            var cards = root.querySelectorAll('.nh-course-card');
+            var prevBtn = root.querySelector('.nh-cc-prev');
+            var nextBtn = root.querySelector('.nh-cc-next');
+            var dotsBox = root.querySelector('.nh-cc-dots');
+            var AUTOPLAY = true, INTERVAL = 6000, page = 0, pages = 1, perView = 3, timer = null, dots = [];
+
+            function readPerView() {
+                var v = parseInt(getComputedStyle(root).getPropertyValue('--nh-per'), 10);
+                return v > 0 ? v : 3;
+            }
+            function buildDots() {
+                dotsBox.innerHTML = '';
+                dots = [];
+                for (var i = 0; i < pages; i++) {
+                    (function (idx) {
+                        var d = document.createElement('button');
+                        d.type = 'button'; d.className = 'nh-cc-dot';
+                        d.addEventListener('click', function () { goTo(idx); restart(); });
+                        dotsBox.appendChild(d); dots.push(d);
+                    })(i);
+                }
+            }
+            function update() {
+                var step = cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : 0;
+                var offset = Math.max(0, Math.min(page * perView, cards.length - perView));
+                track.style.transform = 'translateX(' + (-offset * step) + 'px)';
+                dots.forEach(function (d, i) { d.classList.toggle('is-active', i === page); });
+            }
+            function goTo(n) { page = (n + pages) % pages; update(); }
+            function build() {
+                perView = readPerView();
+                pages = Math.ceil(cards.length / perView);
+                if (page >= pages) page = pages - 1;
+                buildDots(); update();
+            }
+            function stop() { if (timer) { clearInterval(timer); timer = null; } }
+            function start() { if (AUTOPLAY) { stop(); timer = setInterval(function () { goTo(page + 1); }, INTERVAL); } }
+            function restart() { start(); }
+
+            prevBtn.addEventListener('click', function () { goTo(page - 1); restart(); });
+            nextBtn.addEventListener('click', function () { goTo(page + 1); restart(); });
+            build(); start();
+        }
+
+        // --- SCRIPT 3: Carrusel de Rutas Profesionales ---
+        function initRoutesCarousel() {
+            var section = document.getElementById('nhRoutesSection');
+            if (!section) return;
+            var slides = section.querySelectorAll('.nh-route-card');
+            var dots = section.querySelectorAll('.nh-route-dot');
+            var btnPrev = section.querySelector('#nhRoutePrev');
+            var btnNext = section.querySelector('#nhRouteNext');
+            var currentIndex = 0;
+
+            function showSlide(index) {
+                currentIndex = (index >= slides.length) ? 0 : (index < 0) ? slides.length - 1 : index;
+                slides.forEach(function (slide, i) { slide.classList.toggle('active', i === currentIndex); });
+                dots.forEach(function (dot, i) { dot.classList.toggle('active', i === currentIndex); });
+            }
+            if (btnNext && btnPrev) {
+                btnNext.addEventListener('click', function () { showSlide(currentIndex + 1); });
+                btnPrev.addEventListener('click', function () { showSlide(currentIndex - 1); });
+            }
+            dots.forEach(function (dot) {
+                dot.addEventListener('click', function () { showSlide(parseInt(this.getAttribute('data-slide'))); });
+            });
+        }
+
+        // --- SCRIPT 4: Acordeón del Formulario ---
+        function initTalentForm() {
+            var talentSection = document.getElementById('nhTalentSection');
+            var talentHeader = document.getElementById('nhTalentHeader');
+            var submitBtn = document.getElementById('nhTalentSubmit');
+            if (talentHeader && talentSection) {
+                talentHeader.addEventListener('click', function () { talentSection.classList.toggle('open'); });
+            }
+            if (submitBtn) {
+                submitBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    alert('Gracias, hemos recibido tu mensaje.');
+                });
+            }
+        }
+
+        // --- SCRIPT 5: Carrusel de Partners (Blindado para Fetch) ---
+        function initPartnersCarousel() {
+            var carousel = document.getElementById('nhPartnersCarousel');
+            if (!carousel) return;
+
+            var track = carousel.querySelector('.nh-partners-track');
+            var items = carousel.querySelectorAll('.nh-partner-item');
+            var prevBtn = carousel.querySelector('.nh-partner-prev');
+            var nextBtn = carousel.querySelector('.nh-partner-next');
+            var index = 0;
+
+            function getItemsPerPage() {
+                var w = window.innerWidth;
+                if (w <= 768) return 2;
+                if (w <= 992) return 3;
+                return 4;
+            }
+
+            function getMaxIndex() {
+                return Math.max(0, items.length - getItemsPerPage());
+            }
+
+            function updateCarousel() {
+                var perPage = getItemsPerPage();
+                var maxIndex = getMaxIndex();
+                if (index > maxIndex) index = maxIndex;
+                if (index < 0) index = 0;
+                if (track) {
+                    track.style.transform = 'translateX(' + (-index * (100 / perPage)) + '%)';
+                }
+            }
+
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', function () {
+                    var perPage = getItemsPerPage();
+                    index = index <= 0 ? getMaxIndex() : Math.max(0, index - perPage);
+                    updateCarousel();
+                });
+
+                nextBtn.addEventListener('click', function () {
+                    var perPage = getItemsPerPage();
+                    var maxIndex = getMaxIndex();
+                    index = index >= maxIndex ? 0 : Math.min(maxIndex, index + perPage);
+                    updateCarousel();
+                });
+            }
+
+            window.addEventListener('resize', updateCarousel);
+            setTimeout(updateCarousel, 100);
+        }
+
+        // --- SCRIPT 0: Carrusel de Partners (Blindado para Fetch) --- 
+        function initencabezado() {
+            var openBtn = document.getElementById('nhOffcanvasOpen');
+            var closeBtn = document.getElementById('nhOffcanvasClose');
+            var overlay = document.getElementById('nhOffcanvasOverlay');
+            var menu = document.getElementById('nhOffcanvasMenu');
+
+            function openMenu() {
+                if (menu) menu.classList.add('active');
+                if (overlay) overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                if (menu) menu.classList.remove('active');
+                if (overlay) overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (openBtn) openBtn.addEventListener('click', openMenu);
+            if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+            if (overlay) overlay.addEventListener('click', closeMenu);
+        }
+
+        // Ejecutar al cargar la página
+        document.addEventListener('DOMContentLoaded', initAllSections);
+    </script>
+</body>
+
+</html>

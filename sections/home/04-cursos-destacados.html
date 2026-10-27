@@ -1,0 +1,160 @@
+<style>
+    .nh-courses-section { padding: 55px 8%; background: #FFFFFF; text-align: center; }
+    .nh-courses-section, .nh-courses-section * { font-family: 'Poppins', sans-serif !important; box-sizing: border-box; }
+    .nh-courses-title {
+        margin: 0 0 48px;
+        font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+        font-weight: 700;
+        color: var(--nh-azul, #2b2a6e);
+    }
+    .nh-cc { --nh-per: 3; --nh-gap: 32px; position: relative; padding: 0 56px; }
+    .nh-cc-viewport { overflow: hidden; }
+    .nh-cc-track { display: flex; gap: var(--nh-gap); transition: transform 0.6s ease; }
+    .nh-course-card {
+        position: relative;
+        flex: 0 0 calc((100% - (var(--nh-per) - 1) * var(--nh-gap)) / var(--nh-per));
+        aspect-ratio: 1 / 1.03;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding: 28px;
+        border-radius: 36px;
+        overflow: hidden;
+        background: var(--nh-azul, #2b2a6e);
+        text-align: left;
+        color: #FFFFFF;
+    }
+    .nh-course-img {
+        position: absolute; inset: 0; width: 100%; height: 100%;
+        object-fit: cover; object-position: center top; transition: transform 0.6s ease;
+    }
+    .nh-course-card::after {
+        content: ""; position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(43, 42, 110, 0) 25%, rgba(43, 42, 110, 0.85) 60%, #2b2a6e 78%);
+        pointer-events: none;
+    }
+    .nh-course-card:hover .nh-course-img { transform: scale(1.06); }
+    .nh-course-name, .nh-course-btn { position: relative; z-index: 1; }
+    .nh-course-name { margin: 0 0 16px; font-size: clamp(1rem, 1.5vw, 1.15rem); font-weight: 400; color: #FFFFFF; }
+    .nh-course-btn {
+        display: inline-block; padding: 9px 16px; border-radius: 6px;
+        background: var(--nh-naranja, #f26a0d); color: #FFFFFF; font-size: 0.7rem;
+        font-weight: 700; text-transform: uppercase; text-decoration: none; transition: background-color 0.3s ease;
+    }
+    .nh-course-btn:hover { background-color: #d85c09; }
+    .nh-cc-arrow {
+        position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+        width: 32px; height: 32px; border: 0; border-radius: 50%;
+        background: var(--nh-azul, #2b2a6e); cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .nh-cc-arrow svg { width: 20px; height: 20px; fill: #FFFFFF; }
+    .nh-cc-prev { left: 4px; } .nh-cc-next { right: 4px; }
+    .nh-cc-dots { display: flex; justify-content: center; gap: 10px; margin-top: 28px; }
+    .nh-cc-dot { width: 10px; height: 10px; border: 0; border-radius: 50%; background: #C9C8DD; cursor: pointer; }
+    .nh-cc-dot.is-active { background: var(--nh-azul, #2b2a6e); transform: scale(1.25); }
+    .nh-search-container { max-width: 900px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 20px; }
+    .nh-search-box { position: relative; width: 100%; }
+    .nh-search-input {
+        width: 100%; padding: 14px 50px 14px 24px; border: 1.5px solid #2b2a6e;
+        border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: #2b2a6e; outline: none; background: #FFFFFF;
+    }
+    .nh-search-input::placeholder { color: #2b2a6e; text-transform: uppercase; opacity: 0.8; }
+    .nh-search-btn { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; }
+    .nh-search-btn svg { width: 22px; height: 22px; stroke: #2b2a6e; stroke-width: 2.2; fill: none; }
+    .nh-action-buttons { display: flex; justify-content: flex-end; gap: 16px; }
+    .nh-action-btn {
+        padding: 12px 24px; border-radius: 8px; background: #2b2a6e; color: #FFFFFF;
+        font-size: 0.75rem; font-weight: 700; text-transform: uppercase; text-decoration: none;
+    }
+    @media (max-width: 992px) { .nh-cc { --nh-per: 2; } }
+    @media (max-width: 576px) { .nh-cc { --nh-per: 1; padding: 0 40px; } .nh-action-buttons { flex-direction: column; } }
+</style>
+
+<div class="nh-courses-section">
+    <h2 class="nh-courses-title">Cursos destacados</h2>
+    <div class="nh-cc" id="nhCoursesCarousel">
+        <button class="nh-cc-arrow nh-cc-prev" type="button" aria-label="Anterior">
+            <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <div class="nh-cc-viewport">
+            <div class="nh-cc-track">
+                <article class="nh-course-card"><img alt="" class="nh-course-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/CURSOS%20DESTACADOS/CURSO1.png?ver=KoOxKN21l09q2vsu7eA6Zg%3d%3d"><h3 class="nh-course-name">AI Generativa &amp; Automatización Aplicada: De Cero a Flujos Inteligentes</h3><a class="nh-course-btn" href="#">Ver curso</a></article>
+                <article class="nh-course-card"><img alt="" class="nh-course-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/CURSOS%20DESTACADOS/CURSO2.png?ver=KoOxKN21l09q2vsu7eA6Zg%3d%3d"><h3 class="nh-course-name">Prompt Engineering y Creación de Agentes de IA Generativa</h3><a class="nh-course-btn" href="#">Ver curso</a></article>
+                <article class="nh-course-card"><img alt="" class="nh-course-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/CURSOS%20DESTACADOS/CURSO3.png?ver=KoOxKN21l09q2vsu7eA6Zg%3d%3d"><h3 class="nh-course-name">Automatización de Procesos con n8n</h3><a class="nh-course-btn" href="#">Ver curso</a></article>
+                <article class="nh-course-card"><img alt="" class="nh-course-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/CURSOS%20DESTACADOS/CURSO4.png?ver=KoOxKN21l09q2vsu7eA6Zg%3d%3d"><h3 class="nh-course-name">EC-Council Certified Incident Handler v13</h3><a class="nh-course-btn" href="#">Ver curso</a></article>
+                <article class="nh-course-card"><img alt="" class="nh-course-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/CURSOS%20DESTACADOS/CURSO5.png?ver=KoOxKN21l09q2vsu7eA6Zg%3d%3d"><h3 class="nh-course-name">ComptIA Security+</h3><a class="nh-course-btn" href="#">Ver curso</a></article>
+                <article class="nh-course-card"><img alt="" class="nh-course-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/CURSOS%20DESTACADOS/CURSO6.png?ver=KoOxKN21l09q2vsu7eA6Zg%3d%3d"><h3 class="nh-course-name">Certified Ethical Hacker V13 con AI (CEH)</h3><a class="nh-course-btn" href="#">Ver curso</a></article>
+                <article class="nh-course-card"><img alt="" class="nh-course-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/CURSOS%20DESTACADOS/CURSO7.png?ver=KoOxKN21l09q2vsu7eA6Zg%3d%3d"><h3 class="nh-course-name">ITIL&reg; 5 Fundamentos</h3><a class="nh-course-btn" href="#">Ver curso</a></article>
+                <article class="nh-course-card"><img alt="" class="nh-course-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/CURSOS%20DESTACADOS/CURSO8.png?ver=KoOxKN21l09q2vsu7eA6Zg%3d%3d"><h3 class="nh-course-name">AZ-802: Administrar Windows Server</h3><a class="nh-course-btn" href="#">Ver curso</a></article>
+                <article class="nh-course-card"><img alt="" class="nh-course-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/CURSOS%20DESTACADOS/CURSO9.png?ver=KoOxKN21l09q2vsu7eA6Zg%3d%3d"><h3 class="nh-course-name">AZ-305 Designing Microsoft Azure Infrastructure Solutions</h3><a class="nh-course-btn" href="#">Ver curso</a></article>
+            </div>
+        </div>
+        <button class="nh-cc-arrow nh-cc-next" type="button" aria-label="Siguiente">
+            <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+        </button>
+        <div class="nh-cc-dots"></div>
+    </div>
+    <div class="nh-search-container">
+        <div class="nh-search-box">
+            <input aria-label="Buscador de cursos" class="nh-search-input" placeholder="BUSCADOR DE CURSOS" type="text">
+            <button class="nh-search-btn" type="button" aria-label="Buscar">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            </button>
+        </div>
+        <div class="nh-action-buttons">
+            <a class="nh-action-btn" href="#">VER PROGRAMACIÓN</a>
+            <a class="nh-action-btn" href="#">SOLICITAR ASESORÍA</a>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    var root = document.getElementById('nhCoursesCarousel');
+    if (!root) return;
+    var track = root.querySelector('.nh-cc-track');
+    var cards = root.querySelectorAll('.nh-course-card');
+    var prevBtn = root.querySelector('.nh-cc-prev');
+    var nextBtn = root.querySelector('.nh-cc-next');
+    var dotsBox = root.querySelector('.nh-cc-dots');
+    var AUTOPLAY = true, INTERVAL = 6000, page = 0, pages = 1, perView = 3, timer = null, dots = [];
+
+    function readPerView() {
+        var v = parseInt(getComputedStyle(root).getPropertyValue('--nh-per'), 10);
+        return v > 0 ? v : 3;
+    }
+    function buildDots() {
+        dotsBox.innerHTML = '';
+        dots = [];
+        for (var i = 0; i < pages; i++) {
+            (function (idx) {
+                var d = document.createElement('button');
+                d.type = 'button'; d.className = 'nh-cc-dot';
+                d.addEventListener('click', function () { goTo(idx); restart(); });
+                dotsBox.appendChild(d); dots.push(d);
+            })(i);
+        }
+    }
+    function update() {
+        var step = cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : 0;
+        var offset = Math.max(0, Math.min(page * perView, cards.length - perView));
+        track.style.transform = 'translateX(' + (-offset * step) + 'px)';
+        dots.forEach(function (d, i) { d.classList.toggle('is-active', i === page); });
+    }
+    function goTo(n) { page = (n + pages) % pages; update(); }
+    function build() {
+        perView = readPerView();
+        pages = Math.ceil(cards.length / perView);
+        if (page >= pages) page = pages - 1;
+        buildDots(); update();
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function start() { if (AUTOPLAY) { stop(); timer = setInterval(function () { goTo(page + 1); }, INTERVAL); } }
+    function restart() { start(); }
+
+    prevBtn.addEventListener('click', function () { goTo(page - 1); restart(); });
+    nextBtn.addEventListener('click', function () { goTo(page + 1); restart(); });
+    build(); start();
+})();
+</script>

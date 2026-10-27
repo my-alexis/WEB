@@ -1,0 +1,112 @@
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.nh-explore-section {
+    padding: 60px 8%;
+    background: #f4f6fa;
+    text-align: center;
+}
+.nh-explore-section, .nh-explore-section * {
+    font-family: 'Poppins', sans-serif !important;
+    box-sizing: border-box;
+}
+.nh-explore-title {
+    margin: 0 0 40px;
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    font-weight: 700;
+    color: var(--nh-azul, #2b2a6e);
+}
+.nh-areas-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+.nh-area-card {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background: #FFFFFF !important;
+    padding: 22px 28px !important;
+    border-radius: 18px !important;
+    text-decoration: none !important;
+    box-shadow: 0 10px 25px rgba(43, 42, 110, 0.07) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 80px;
+}
+.nh-area-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 14px 30px rgba(43, 42, 110, 0.12) !important;
+}
+.nh-area-card span {
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem) !important;
+    font-weight: 700 !important;
+    color: var(--nh-azul, #2b2a6e) !important;
+    text-align: left !important;
+    line-height: 1.25 !important;
+}
+.nh-area-icon {
+    width: 32px; height: 32px; min-width: 32px;
+    border-radius: 50%; border: 2px solid #f26a0d;
+    display: flex; align-items: center; justify-content: center; margin-left: 12px;
+}
+.nh-area-icon svg { width: 16px; height: 16px; fill: #f26a0d; }
+
+.nh-partners-wrapper { margin-top: 30px; }
+.nh-partners-subtitle { font-size: 1.1rem; font-weight: 600; color: #2b2a6e; margin-bottom: 25px; }
+.nh-partners-carousel { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 45px; overflow: hidden; }
+.nh-partners-viewport { overflow: hidden; width: 100%; }
+.nh-partners-track { display: flex; align-items: center; transition: transform 0.5s ease; will-change: transform; }
+.nh-partner-item { flex: 0 0 25%; display: flex; align-items: center; justify-content: center; padding: 0 20px; min-height: 100px; box-sizing: border-box; }
+.nh-partner-item:not(:last-child) { border-right: 1px solid #d0d4e4; }
+.nh-partner-img { max-width: 100%; max-height: 90px; object-fit: contain; filter: grayscale(100%); opacity: 0.85; transition: filter 0.3s ease, opacity 0.3s ease; }
+.nh-partner-img:hover { filter: grayscale(0%); opacity: 1; }
+.nh-partner-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 50%; background: #2b2a6e; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2; }
+.nh-partner-arrow svg { width: 18px; height: 18px; fill: #FFFFFF; }
+.nh-partner-prev { left: 4px; } .nh-partner-next { right: 4px; }
+.nh-explore-divider { max-width: 900px; margin: 45px auto 0; border: 0; border-top: 1px solid #e1e5f0; }
+
+@media (max-width: 992px) { .nh-partner-item { flex: 0 0 33.333%; } }
+@media (max-width: 768px) {
+    .nh-areas-grid { grid-template-columns: 1fr !important; gap: 16px; }
+    .nh-partner-item { flex: 0 0 50%; }
+}
+</style>
+
+<div class="nh-explore-section">
+    <h2 class="nh-explore-title">Explora por Área</h2>
+    
+    <!-- Las 6 Áreas Completas -->
+    <div class="nh-areas-grid" id="nhAreasGrid">
+        <a class="nh-area-card" href="#"><span>Ciberseguridad</span><span class="nh-area-icon"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg></span></a>
+        <a class="nh-area-card" href="#"><span>Data &amp; Analytics</span><span class="nh-area-icon"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg></span></a>
+        <a class="nh-area-card" href="#"><span>IA, Automatización &amp;<br />Productividad</span><span class="nh-area-icon"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg></span></a>
+        <a class="nh-area-card" href="#"><span>Cloud, Redes &amp;<br />Infraestructura</span><span class="nh-area-icon"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg></span></a>
+        <a class="nh-area-card" href="#"><span>Agile, Scrum &amp; DevOps</span><span class="nh-area-icon"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg></span></a>
+        <a class="nh-area-card" href="#"><span>Project &amp; IT<br />Management</span><span class="nh-area-icon"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg></span></a>
+    </div>
+
+    <!-- Sección Partners -->
+    <div class="nh-partners-wrapper">
+        <h3 class="nh-partners-subtitle">Nuestros partners</h3>
+        <div class="nh-partners-carousel" id="nhPartnersCarousel">
+            <button class="nh-partner-arrow nh-partner-prev" type="button" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+            <div class="nh-partners-viewport">
+                <div class="nh-partners-track">
+                    <div class="nh-partner-item"><img alt="Microsoft" class="nh-partner-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/LOGOS%20PARTNERS/MICROSOFT.png?ver=ZQM9HayoPu3aOP5AYonLUA%3d%3d" /></div>
+                    <div class="nh-partner-item"><img alt="EC-Council" class="nh-partner-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/LOGOS%20PARTNERS/EC%20COUNCIL.png?ver=bvNgykX0AXOezFNM3G49DA%3d%3d" /></div>
+                    <div class="nh-partner-item"><img alt="ISTQB" class="nh-partner-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/LOGOS%20PARTNERS/ISQB.png?ver=DXPxjYqPG3AqbI1Ai7C09g%3d%3d" /></div>
+                    <div class="nh-partner-item"><img alt="PMI" class="nh-partner-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/LOGOS%20PARTNERS/PMI.png?ver=OcwJoftVFi233OHLlaTH8w%3d%3d" /></div>
+                    <div class="nh-partner-item"><img alt="PECB" class="nh-partner-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/LOGOS%20PARTNERS/PECB.png?ver=3fplC2zGIpGzvoTHYPcWfA%3d%3d" /></div>
+                    <div class="nh-partner-item"><img alt="CISCO" class="nh-partner-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/LOGOS%20PARTNERS/CISCO.png?ver=L1oITy7zi2z-u1iJoSLheQ%3d%3d" /></div>
+                    <div class="nh-partner-item"><img alt="SCRUMstudy" class="nh-partner-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/LOGOS%20PARTNERS/SCRUMSTUDY.png?ver=nle7t9alOiEPx05-6D3S0Q%3d%3d" /></div>
+                    <div class="nh-partner-item"><img alt="ITIL" class="nh-partner-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/LOGOS%20PARTNERS/ITIL.png?ver=9fcQpND9xujiJGOxZpSHUw%3d%3d" /></div>
+                    <div class="nh-partner-item"><img alt="certiprof" class="nh-partner-img" src="https://www.newhorizons.edu.pe/portals/6/PORTAL%202027/LOGOS%20PARTNERS/CERTIPROF.png?ver=xHig1QfoBPhKyKk9q7LhGg%3d%3d" /></div>
+                </div>
+            </div>
+            <button class="nh-partner-arrow nh-partner-next" type="button" aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg></button>
+        </div>
+        <hr class="nh-explore-divider" />
+    </div>
+</div>
