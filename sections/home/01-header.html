@@ -38,12 +38,24 @@
         border-radius: 8px;
     }
 
-    .nh-brand-logo a {
-        color: var(--nh-white);
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 18px;
+    .nh-brand-logo {
+        display: flex;
+        align-items: center;
     }
+
+    .nh-brand-logo a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .nh-logo-img {
+        height: 50px !important; /* Forzamos la altura fija en lugar de max-height */
+        width: auto !important;
+        object-fit: contain;
+        display: block;
+    }
+
 
     /* MENÚ PRINCIPAL FIJO EN LA BARRA */
     .nh-menu-navigation {
@@ -263,7 +275,13 @@
 <div class="nh-wrapper-container">
     <!-- BARRA SUPERIOR -->
     <div class="nh-top-bar">
-        <div class="nh-brand-logo"><a href="#">New Horizons</a></div>
+
+        <div class="nh-brand-logo">
+            <a href="/preview.html">
+                <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/LOGO-NH/LOGOS_PNG-BLANCO.png?ver=SyuX43lcp5J-0WgLyQetsw%3d%3d"
+                    alt="New Horizons Perú" class="nh-logo-img">
+            </a>
+        </div>
 
         <!-- 4 ÍTEMS FIJOS EN EL MENÚ -->
         <ul class="nh-menu-navigation">
@@ -279,7 +297,6 @@
                     <li><a href="#">Project &amp; IT Management</a></li>
                 </ul>
             </li>
-            <li><a href="#">Certificaciones</a></li>
             <li><a href="#">Blog</a></li>
         </ul>
 

@@ -1,0 +1,69 @@
+<style>
+    .nh-exam-section {
+        position: relative;
+        width: 100%;
+        min-height: 440px;
+        /* Imagen original intacta, sin ningún tinte ni filtro encima */
+        background-image: url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Centro-Examenes/Centro%20de%20examenes%20autorizzado.png?ver=Yxyy4dlSPJq9Dz865NcYyw%3d%3d');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        padding: 60px 8%;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif !important;
+    }
+    
+    .nh-exam-section * {
+        font-family: 'Poppins', sans-serif !important;
+        box-sizing: border-box;
+    }
+
+    /* Contenedor del texto sin recuadros, flotando directamente sobre la imagen */
+    .nh-exam-content {
+        position: relative;
+        z-index: 2;
+        max-width: 580px;
+        color: #ffffff;
+        text-align: left;
+    }
+
+    .nh-exam-title {
+        font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+        font-weight: 800;
+        line-height: 1.15;
+        margin: 0 0 20px 0;
+        color: #ffffff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Sombra sutil para asegurar legibilidad sobre cualquier parte de la foto */
+    }
+
+    .nh-exam-description {
+        font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+        font-weight: 400;
+        line-height: 1.6;
+        color: #f3f4f6;
+        margin: 0;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 768px) {
+        .nh-exam-section {
+            padding: 40px 24px;
+            justify-content: center;
+            text-align: center;
+        }
+        .nh-exam-content {
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+</style>
+
+<section class="nh-exam-section">
+    <div class="nh-exam-content">
+        <h2 class="nh-exam-title">Centro de Exámenes<br>Autorizado New Horizons Perú</h2>
+        <p class="nh-exam-description">
+            Somos un centro autorizado para la administración de exámenes de certificación internacional de los principales proveedores, incluyendo Pearson VUE, PSI y Kryterion.
+        </p>
+    </div>
+</section>
