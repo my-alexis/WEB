@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario de Exámenes</title>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+        }
+
+        .schedule-section {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Línea superior */
+        .top-divider {
+            width: 100%;
+            height: 1px;
+            background-color: #e0e0e0;
+            /* Color gris suave de la línea */
+            border: none;
+            margin-bottom: 40px;
+        }
+
+        /* Contenedor del Banner con bordes redondeados y fondo de imagen */
+        .schedule-banner {
+            position: relative;
+            width: 100%;
+            min-height: 360px;
+            border-radius: 24px;
+            /* Esquinas redondeadas grandes como en la imagen */
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 40px 20px;
+
+            /* AQUÍ COLOCAS EL ENLACE DE LA IMAGEN DE FONDO */
+            background-image:
+                url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Centro-Examenes/Fondo%20horario.png?ver=-BZV6ULZ1douj0s81KOqCw%3d%3d');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Título principal */
+        .schedule-title {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        /* Subtítulo de horario */
+        .schedule-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            letter-spacing: 0.3px;
+        }
+
+        /* Bloque de contacto */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .contact-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .contact-row img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        /* Responsivo para celulares */
+        @media (max-width: 768px) {
+            .schedule-banner {
+                min-height: 320px;
+                padding: 30px 15px;
+                border-radius: 16px;
+            }
+
+            .schedule-title {
+                font-size: 24px;
+            }
+
+            .schedule-subtitle {
+                font-size: 14px;
+            }
+
+            .contact-name,
+            .contact-row {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="schedule-section">
+
+        <!-- 1. Línea superior que solicitaste -->
+        <hr class="top-divider">
+
+        <!-- 2. Contenedor principal del banner -->
+        <div class="schedule-banner">
+
+            <h2 class="schedule-title">Nuestro horario de exámenes</h2>
+            <p class="schedule-subtitle">Lunes a viernes desde las 08:00 a.m. hasta las 04:30 p.m.</p>
+
+            <div class="contact-info">
+                <p class="contact-name">Contactar con Rossana Olguin</p>
+
+                <!-- Teléfono / WhatsApp -->
+                <a href="https://wa.me/51951849730" class="contact-row">
+                    <!-- Reemplaza el src con tu enlace o icono de WhatsApp -->
+                    <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Centro-Examenes/logo%20whatsapp.png?ver=g3IIdTqBS0nncCxEdnOpVQ%3d%3d" alt="WhatsApp">
+                    <span>(+51) 951 849 730</span>
+                </a>
+
+                <!-- Correo Electrónico -->
+                <a href="mailto:rossana.olguin@newhorizons.edu.pe" class="contact-row">
+                    <!-- Reemplaza el src con tu enlace o icono de Correo -->
+                    <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Centro-Examenes/logo%20gmail.png?ver=K9GaMriebwYyrVnbi6cmnA%3d%3d" alt="Correo">
+                    <span>rossana.olguin@newhorizons.edu.pe</span>
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

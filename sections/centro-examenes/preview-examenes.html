@@ -13,6 +13,9 @@
     <div id="sec-02"></div>
     <div id="sec-03"></div>
     <div id="sec-04"></div>
+    <div id="sec-05"></div>
+    <div id="sec-06"></div>
+    <div id="sec-07"></div>
     <div id="sec-10"></div> <!-- Footer reutilizado -->
 
     <script>
@@ -34,6 +37,11 @@
             // Como están en la misma carpeta o subcarpetas hermanas:
             await loadSection('sec-02', '02-banner-estatico.html');
             await loadSection('sec-03', '03-razones-examenes.html');
+            await loadSection('sec-04', '04-banner-autorizado.html'); 
+            await loadSection('sec-05', '05-logos-examenes.html'); 
+            await loadSection('sec-06', '06-preguntas-examenes.html');
+            await loadSection('sec-07', '07-horario-examenes.html');
+
 
             // Salimos de 'centro de examenes' y entramos a 'home' para el footer
             await loadSection('sec-10', '../home/10-footer.html');
