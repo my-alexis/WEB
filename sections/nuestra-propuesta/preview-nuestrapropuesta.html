@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Previa - Nuestra Propuesta</title>
+    <link rel="stylesheet" href="css/global-variables.css">
+</head>
+
+<body>
+    <div id="sec-01"></div>
+    <div id="sec-02"></div>
+    <div id="sec-03"></div>
+    <div id="sec-04"></div>
+    <div id="sec-05"></div>
+    <div id="sec-06"></div>
+    <div id="sec-07"></div>
+    <div id="sec-10"></div> <!-- Footer reutilizado -->
+
+    <script>
+        async function loadSection(id, file) {
+            try {
+                let res = await fetch(file, { cache: 'no-store' });
+                if (res.ok) {
+                    document.getElementById(id).innerHTML = await res.text();
+                }
+            } catch (e) {
+                console.error("Error cargando " + file, e);
+            }
+        }
+
+        async function initExamPage() {
+            // Salimos de 'centro de examenes' y entramos a 'home'
+            await loadSection('sec-01', '../home/01-header.html');
+
+            // Como están en la misma carpeta o subcarpetas hermanas:
+            await loadSection('sec-02', '02-banner-propuesta.html');
+            await loadSection('sec-03', '03-somos-newhorizons.html');
+            await loadSection('sec-04', '04-propuesta-academica.html');
+            await loadSection('sec-05', '05-instruccion-certificada.html')
+            // Salimos de 'centro de examenes' y entramos a 'home' para el footer
+            await loadSection('sec-10', '../home/10-footer.html');
+
+            initHeaderMenu();
+        }
+
+        // --- Header: menú off-canvas + acordeón ---
+        function initHeaderMenu() {
+            var openBtn = document.getElementById('nhOffcanvasOpen');
+            var closeBtn = document.getElementById('nhOffcanvasClose');
+            var overlay = document.getElementById('nhOffcanvasOverlay');
+            var menu = document.getElementById('nhOffcanvasMenu');
+
+            function openMenu() {
+                if (menu) menu.classList.add('active');
+                if (overlay) overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeMenu() {
+                if (menu) menu.classList.remove('active');
+                if (overlay) overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (openBtn && !openBtn.dataset.bound) { openBtn.dataset.bound = "true"; openBtn.addEventListener('click', openMenu); }
+            if (closeBtn && !closeBtn.dataset.bound) { closeBtn.dataset.bound = "true"; closeBtn.addEventListener('click', closeMenu); }
+            if (overlay && !overlay.dataset.bound) { overlay.dataset.bound = "true"; overlay.addEventListener('click', closeMenu); }
+
+            if (!window.nhDropdownBound) {
+                window.nhDropdownBound = true;
+                document.addEventListener('click', function (e) {
+                    var toggle = e.target.closest('.nh-offcanvas-dropdown-toggle');
+                    if (!toggle) return;
+                    e.preventDefault();
+                    var item = toggle.closest('.nh-offcanvas-item');
+                    if (item) item.classList.toggle('open');
+                });
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', initExamPage);
+    </script>
+</body>
+
+</html>

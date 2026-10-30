@@ -31,19 +31,21 @@
         }
 
         async function initExamPage() {
-            // Salimos de 'centro de examenes' y entramos a 'home'
             await loadSection('sec-01', '../home/01-header.html');
-
-            // Como están en la misma carpeta o subcarpetas hermanas:
             await loadSection('sec-02', '02-banner-contactate.html');
             await loadSection('sec-03', '03-seccion-ayuda.html');
             await loadSection('sec-04', '04-ubicacion.html');
-            // Salimos de 'centro de examenes' y entramos a 'home' para el footer
+            await loadSection('sec-05', '05-mapa-contactate.html');
+            await loadSection('sec-06', '06-frame-seccion.html');
+            await loadSection('sec-07', '07-formulario-contactate.html');
             await loadSection('sec-10', '../home/10-footer.html');
 
+            // Inicializar todo cuando ya existe en el DOM
             initHeaderMenu();
+            window.initNhTalentForm();
         }
 
+        // --- Header: menú off-canvas + acordeón ---
         function initHeaderMenu() {
             var openBtn = document.getElementById('nhOffcanvasOpen');
             var closeBtn = document.getElementById('nhOffcanvasClose');
@@ -61,13 +63,46 @@
                 document.body.style.overflow = '';
             }
 
-            if (openBtn) openBtn.addEventListener('click', openMenu);
-            if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-            if (overlay) overlay.addEventListener('click', closeMenu);
+            if (openBtn && !openBtn.dataset.bound) { openBtn.dataset.bound = "true"; openBtn.addEventListener('click', openMenu); }
+            if (closeBtn && !closeBtn.dataset.bound) { closeBtn.dataset.bound = "true"; closeBtn.addEventListener('click', closeMenu); }
+            if (overlay && !overlay.dataset.bound) { overlay.dataset.bound = "true"; overlay.addEventListener('click', closeMenu); }
+
+            if (!window.nhDropdownBound) {
+                window.nhDropdownBound = true;
+                document.addEventListener('click', function (e) {
+                    var toggle = e.target.closest('.nh-offcanvas-dropdown-toggle');
+                    if (!toggle) return;
+                    e.preventDefault();
+                    var item = toggle.closest('.nh-offcanvas-item');
+                    if (item) item.classList.toggle('open');
+                });
+            }
         }
+
+        // --- Formulario "Impulsa el talento" (acordeón) ---
+        window.initNhTalentForm = function () {
+            var talentSection = document.getElementById('nhTalentSection');
+            var talentHeader = document.getElementById('nhTalentHeader');
+            var submitBtn = document.getElementById('nhTalentSubmit');
+
+            if (talentHeader && talentSection && !talentHeader.dataset.bound) {
+                talentHeader.dataset.bound = "true";
+                talentHeader.addEventListener('click', function () {
+                    talentSection.classList.toggle('open');
+                });
+            }
+            if (submitBtn && !submitBtn.dataset.bound) {
+                submitBtn.dataset.bound = "true";
+                submitBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    alert('Gracias, hemos recibido tu mensaje.');
+                });
+            }
+        };
 
         document.addEventListener('DOMContentLoaded', initExamPage);
     </script>
+
 </body>
 
 </html>

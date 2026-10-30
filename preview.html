@@ -26,13 +26,18 @@
                 let res = await fetch(file, { cache: 'no-store' });
                 if (res.ok) {
                     document.getElementById(id).innerHTML = await res.text();
+                    
+                    // Si acabamos de cargar el header (sec-01), inicializamos su script de inmediato
+                    if (id === 'sec-01' && typeof window.initencabezado === 'function') {
+                        window.initencabezado();
+                    }
                 }
             } catch (e) {
                 console.error("Error cargando " + file, e);
             }
         }
         async function initAllSections() {
-            // Carga de bloques en orden secuencial
+            // Carga de bloques en orden secuencial (Asegúrate de usar el nombre correcto del archivo del header)
             await loadSection('sec-01', 'sections/home/01-header.html');
             await loadSection('sec-02', 'sections/home/02-banner-inicio.html');
             await loadSection('sec-03', 'sections/home/03-texto-about.html');
@@ -236,29 +241,52 @@
             setTimeout(updateCarousel, 100);
         }
 
-        // --- SCRIPT 0: Carrusel de Partners (Blindado para Fetch) --- 
-        function initencabezado() {
-            var openBtn = document.getElementById('nhOffcanvasOpen');
-            var closeBtn = document.getElementById('nhOffcanvasClose');
-            var overlay = document.getElementById('nhOffcanvasOverlay');
-            var menu = document.getElementById('nhOffcanvasMenu');
+        // --- SCRIPT 0: Menú Off-Canvas y Acordeón del Header --- 
+        // --- SCRIPT 0: Menú Off-Canvas y Acordeón del Header ---
+function initencabezado() {
+    var openBtn = document.getElementById('nhOffcanvasOpen');
+    var closeBtn = document.getElementById('nhOffcanvasClose');
+    var overlay = document.getElementById('nhOffcanvasOverlay');
+    var menu = document.getElementById('nhOffcanvasMenu');
 
-            function openMenu() {
-                if (menu) menu.classList.add('active');
-                if (overlay) overlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
+    function openMenu() {
+        if (menu) menu.classList.add('active');
+        if (overlay) overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 
-            function closeMenu() {
-                if (menu) menu.classList.remove('active');
-                if (overlay) overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
+    function closeMenu() {
+        if (menu) menu.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 
-            if (openBtn) openBtn.addEventListener('click', openMenu);
-            if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-            if (overlay) overlay.addEventListener('click', closeMenu);
-        }
+    if (openBtn && !openBtn.dataset.bound) {
+        openBtn.dataset.bound = "true";
+        openBtn.addEventListener('click', openMenu);
+    }
+    if (closeBtn && !closeBtn.dataset.bound) {
+        closeBtn.dataset.bound = "true";
+        closeBtn.addEventListener('click', closeMenu);
+    }
+    if (overlay && !overlay.dataset.bound) {
+        overlay.dataset.bound = "true";
+        overlay.addEventListener('click', closeMenu);
+    }
+
+    // Acordeón "Acerca de Nosotros" (delegación, se registra una sola vez)
+    if (!window.nhDropdownBound) {
+        window.nhDropdownBound = true;
+        document.addEventListener('click', function (e) {
+            var toggle = e.target.closest('.nh-offcanvas-dropdown-toggle');
+            if (!toggle) return;
+            e.preventDefault();
+            var item = toggle.closest('.nh-offcanvas-item');
+            if (item) item.classList.toggle('open');
+        });
+    }
+}
+
 
         // Ejecutar al cargar la página
         document.addEventListener('DOMContentLoaded', initAllSections);

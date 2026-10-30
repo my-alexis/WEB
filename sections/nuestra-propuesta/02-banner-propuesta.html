@@ -1,0 +1,93 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=swap');
+
+    .nh-propuesta-banner {
+        position: relative;
+        width: 100%;
+        min-height: 620px;
+        background-image: url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Nuestra-Propuesta/banner%20nuestra%20propuesta.png?ver=U-Xh71Bp-o9NyO4KlucNwg%3d%3d');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        padding: 60px 8%;
+        box-sizing: border-box;
+    }
+
+    .nh-propuesta-banner,
+    .nh-propuesta-banner * {
+        font-family: 'Poppins', sans-serif !important;
+        box-sizing: border-box;
+    }
+
+    .nh-propuesta-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        color: #ffffff;
+        text-align: left;
+        margin-top: 165px;
+    }
+
+    .nh-propuesta-title {
+        font-size: clamp(1.6rem, 3.1vw, 2.6rem);
+        font-weight: 700;
+        line-height: 1.15;
+        margin: 0 0 16px 0;
+        color: #ffffff;
+    }
+
+    /* Estilo cursivo para la segunda línea del título tal como se ve en la imagen */
+    .nh-propuesta-title span {
+        font-style: italic;
+        font-weight: 600;
+    }
+
+    .nh-propuesta-desc {
+        font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+        font-weight: 400;
+        line-height: 1.5;
+        margin: 0 0 30px 0;
+        color: #f1f5f9;
+        max-width: 650px;
+    }
+
+    .nh-propuesta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background-color: #22c55e;
+        color: #ffffff !important;
+        font-weight: 700;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+        padding: 14px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .nh-propuesta-btn:hover {
+        background-color: #16a34a;
+        transform: translateY(-2px);
+    }
+
+    .nh-propuesta-btn svg {
+        width: 22px;
+        height: 22px;
+        fill: #ffffff;
+    }
+</style>
+
+<div class="nh-propuesta-banner">
+    <div class="nh-propuesta-content">
+        <h1 class="nh-propuesta-title">
+            <span>Somos la empresa de formación<br>
+            en TI más grande del mundo</span>
+        </h1>
+        <p class="nh-propuesta-desc">
+            Impulsamos el crecimiento profesional con capacitación tecnológica de<br>alcance internacional
+        </p>
+    </div>
+</div>

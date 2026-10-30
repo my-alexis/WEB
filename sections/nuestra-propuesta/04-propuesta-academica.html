@@ -1,0 +1,224 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    /* SECCIÓN GENERAL: Ocupa el 100% de la pantalla y tiene el degradado solo en la parte superior */
+.nh-propuesta-academica-wrapper {
+        width: 100%;
+        margin: 0;
+        padding: 40px 20px;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif !important;
+        
+        /* El degradado ahora termina mucho más arriba (en el 30%) */
+        background: linear-gradient(to bottom, #e8f0fe 0%, #f4f7fc 15%, #ffffff 20%);
+        background-color: #ffffff; 
+    }
+
+    /* CONTENEDOR INTERNO: Centra el contenido y limita el ancho máximo a 900px */
+    .nh-pa-container {
+        max-width: 900px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    /* TÍTULO Y DESCRIPCIÓN GENERAL */
+    .nh-pa-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .nh-pa-title {
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        font-weight: 800;
+        color: #2c2a6b;
+        margin: 0 0 15px 0;
+        letter-spacing: -0.5px;
+    }
+
+    .nh-pa-subtitle {
+        font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+        font-weight: 400;
+        line-height: 1.6;
+        color: #2c2a6b;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    /* ESTILO DE LAS TARJETAS FLOTANTES */
+    .nh-pa-card {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
+        padding: 40px;
+        margin-bottom: 40px;
+        box-sizing: border-box;
+    }
+
+    .nh-pa-card-title {
+        font-size: clamp(1.2rem, 2vw, 1.5rem);
+        font-weight: 700;
+        color: #2c2a6b;
+        margin: 0 0 25px 0;
+    }
+
+    /* LISTAS DE ELEMENTOS (ITEMS) */
+    .nh-pa-list {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .nh-pa-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .nh-pa-icon {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    .nh-pa-item-content h4 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #2c2a6b;
+        margin: 0 0 4px 0;
+    }
+
+    .nh-pa-item-content p {
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: #475569;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    /* LÍNEA DIVISORIA FINAL */
+    .nh-section-divider {
+        width: 100%;
+        height: 2px;
+        background-color: #e2e8f0;
+        margin-top: 50px;
+        border: none;
+    }
+
+    /* RESPONSIVO MÓVIL */
+    @media (max-width: 768px) {
+        .nh-pa-card {
+            padding: 25px 20px;
+        }
+        .nh-pa-item {
+            gap: 15px;
+        }
+    }
+</style>
+
+<div class="nh-propuesta-academica-wrapper">
+    <div class="nh-pa-container">
+
+        <!-- CABECERA -->
+        <div class="nh-pa-header">
+            <h2 class="nh-pa-title">Nuestra propuesta académica</h2>
+            <p class="nh-pa-subtitle">
+                New Horizons ofrece una amplia selección de clases de capacitación autorizadas por proveedores para los principales proveedores de tecnología como Adobe, Cisco, Citrix, Microsoft y VMware.
+            </p>
+        </div>
+
+        <!-- SECCIÓN 1: CATEGORÍAS -->
+        <div class="nh-pa-card">
+            <h3 class="nh-pa-card-title">Encuentra la formación que deseas en estas categorías:</h3>
+            
+            <div class="nh-pa-list">
+                <!-- Item 1 -->
+                <div class="nh-pa-item">
+                    <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Nuestra-Propuesta/check.png?ver=ZPJ0rqgoG3Es5qu5VWNRpA%3d%3d" alt="Icono" class="nh-pa-icon">
+                    <div class="nh-pa-item-content">
+                        <h4>Cursos de Aplicación</h4>
+                        <p>Habilidades de principiante a avanzado en las principales aplicaciones comerciales.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="nh-pa-item">
+                    <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Nuestra-Propuesta/check.png?ver=ZPJ0rqgoG3Es5qu5VWNRpA%3d%3d" alt="Icono" class="nh-pa-icon">
+                    <div class="nh-pa-item-content">
+                        <h4>Cursos de Habilidades Técnicas</h4> 
+                        <p>Diseñado para mejorar sus habilidades de TI.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="nh-pa-item">
+                    <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Nuestra-Propuesta/check.png?ver=ZPJ0rqgoG3Es5qu5VWNRpA%3d%3d" alt="Icono" class="nh-pa-icon">
+                    <div class="nh-pa-item-content">
+                        <h4>Cursos de Certificación</h4>
+                        <p>Clases que le ayudarán a prepararse para la certificación.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="nh-pa-item">
+                    <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Nuestra-Propuesta/check.png?ver=ZPJ0rqgoG3Es5qu5VWNRpA%3d%3d" alt="Icono" class="nh-pa-icon">
+                    <div class="nh-pa-item-content">
+                        <h4>Habilidades Comerciales and Desarrollo Profesional</h4>
+                        <p>Mejore las habilidades comerciales de sus colaboradores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: MÉTODOS DE APRENDIZAJE -->
+        <div class="nh-pa-card" style="margin-bottom: 0;">
+            <h3 class="nh-pa-card-title">Métodos de aprendizaje innovadores y flexibles</h3>
+            <p style="font-size: 0.95rem; color: #475569; line-height: 1.6; margin: 0 0 30px 0;">
+                Entendemos que no todas las necesidades de aprendizaje ni los métodos preferidos son los mismos. Por lo tanto, nuestro enfoque de capacitación flexible nos brinda la capacidad de personalizar clases dedicadas para satisfacer necesidades específicas.
+            </p>
+
+            <div class="nh-pa-list">
+                <!-- Método 1 -->
+                <div class="nh-pa-item">
+                    <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Nuestra-Propuesta/icono%201.png?ver=u5p-6BeKeyMP_FKtwww-ag%3d%3d" alt="Icono" class="nh-pa-icon" style="width: 45px; height: 45px;">
+                    <div class="nh-pa-item-content">
+                        <h4>Online LIVE</h4>
+                        <p>Clases en línea con la interacción en vivo de un instructor y compañeros de estudios.</p>
+                    </div>
+                </div>
+
+                <!-- Método 2 -->
+                <div class="nh-pa-item">
+                    <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Nuestra-Propuesta/icono%202.png?ver=4NZezdQ3x1XH7aTLZfp4KA%3d%3d" alt="Icono" class="nh-pa-icon" style="width: 45px; height: 45px;">
+                    <div class="nh-pa-item-content">
+                        <h4>Capacitación dirigida por un instructor</h4>
+                        <p>Proporciona una experiencia de aula interactiva y atractiva.</p>
+                    </div>
+                </div>
+
+                <!-- Método 3 -->
+                <div class="nh-pa-item">
+                    <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Nuestra-Propuesta/icono%203.png?ver=VyKBaVHk89wnGb8JKlWYRg%3d%3d" alt="Icono" class="nh-pa-icon" style="width: 45px; height: 45px;">
+                    <div class="nh-pa-item-content">
+                        <h4>Capacitación in situ</h4>
+                        <p>Te acercamos el aula.</p>
+                    </div>
+                </div>
+
+                <!-- Método 4 -->
+                <div class="nh-pa-item">
+                    <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Nuestra-Propuesta/icono%204.png?ver=pZOpwlbgMlUAYKINTmmAFA%3d%3d" alt="Icono" class="nh-pa-icon" style="width: 45px; height: 45px;">
+                    <div class="nh-pa-item-content">
+                        <h4>Clases Privadas</h4>
+                        <p>Forme a grandes grupos de empleados con soluciones personalizadas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <!-- LÍNEA DIVISORIA FINAL -->
+        <hr class="nh-section-divider">
+
+    </div>
+</div>

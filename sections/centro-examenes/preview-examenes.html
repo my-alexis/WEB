@@ -49,6 +49,7 @@
             initHeaderMenu();
         }
 
+// --- Header: menú off-canvas + acordeón ---
         function initHeaderMenu() {
             var openBtn = document.getElementById('nhOffcanvasOpen');
             var closeBtn = document.getElementById('nhOffcanvasClose');
@@ -66,10 +67,22 @@
                 document.body.style.overflow = '';
             }
 
-            if (openBtn) openBtn.addEventListener('click', openMenu);
-            if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-            if (overlay) overlay.addEventListener('click', closeMenu);
+            if (openBtn && !openBtn.dataset.bound) { openBtn.dataset.bound = "true"; openBtn.addEventListener('click', openMenu); }
+            if (closeBtn && !closeBtn.dataset.bound) { closeBtn.dataset.bound = "true"; closeBtn.addEventListener('click', closeMenu); }
+            if (overlay && !overlay.dataset.bound) { overlay.dataset.bound = "true"; overlay.addEventListener('click', closeMenu); }
+
+            if (!window.nhDropdownBound) {
+                window.nhDropdownBound = true;
+                document.addEventListener('click', function (e) {
+                    var toggle = e.target.closest('.nh-offcanvas-dropdown-toggle');
+                    if (!toggle) return;
+                    e.preventDefault();
+                    var item = toggle.closest('.nh-offcanvas-item');
+                    if (item) item.classList.toggle('open');
+                });
+            }
         }
+
 
         document.addEventListener('DOMContentLoaded', initExamPage);
     </script>

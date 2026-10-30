@@ -1,0 +1,82 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+    .nh-somos-section {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 20px; /* Reduje ligeramente el padding superior del contenedor */
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif !important;
+        background-color: #ffffff;
+    }
+
+    .nh-somos-title {
+        text-align: center;
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        font-weight: 800;
+        color: #2c2a6b;
+        margin: 0 0 15px 0; /* REDUCIDO: Antes estaba en 30px, ahora el título está más cerca del contenido */
+        letter-spacing: -0.5px;
+    }
+
+    .nh-somos-grid {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* CAMBIADO: Centra los elementos para juntarlos mejor */
+        gap: 20px; /* REDUCIDO: Antes estaba en 50px, ahora hay menos separación entre texto e imagen */
+    }
+
+    .nh-somos-text {
+        flex: 0 1 55%; /* Ligeramente ajustado para mantener equilibrio */
+        font-size: clamp(0.95rem, 1.2vw, 1.2rem); /* Corregido el mínimo a 0.95rem para evitar que se ponga ilegible en móviles */
+        font-weight: 600;
+        line-height: 1.55;
+        color: #2c2a6b;
+        text-align: left;
+        margin: 0;
+    }
+
+    .nh-somos-logo-container {
+        flex: 0 1 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nh-somos-logo {
+        width: 100%;
+        max-width: 260px; /* Ajustado ligeramente para un aspecto más compacto */
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Adaptación responsiva para pantallas pequeñas (móviles) */
+    @media (max-width: 768px) {
+        .nh-somos-grid {
+            flex-direction: column-reverse;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .nh-somos-text {
+            text-align: center;
+        }
+    }
+</style>
+
+<section class="nh-somos-section">
+    <!-- Título principal -->
+    <h2 class="nh-somos-title">Somos New Horizons</h2>
+
+    <!-- Contenido en 2 columnas -->
+    <div class="nh-somos-grid">
+        <p class="nh-somos-text">
+            En un mundo tecnológico en constante evolución, New Horizons impulsa el crecimiento profesional a través de capacitación especializada en tecnología. Nuestros programas combinan conocimientos actualizados y aprendizaje práctico para desarrollar habilidades que permitan a los profesionales afrontar nuevos desafíos y destacar en un mercado cada vez más competitivo.
+        </p>
+
+        <div class="nh-somos-logo-container">
+            <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Nuestra-Propuesta/Logo%20NH.png?ver=cpGoHvBJXAwCTs-BXgD0XA%3d%3d" alt="New Horizons Centro de Capacitación" class="nh-somos-logo">
+        </div>
+    </div>
+</section>

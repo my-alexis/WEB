@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Llamada a la Acción</title>
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+    }
+
+    /* Banner con fondo azul oscuro */
+    .cta-section {
+      width: 100%;
+      background-color: #2c2a6b; /* Color azul corporativo de NH */
+      padding: 40px 20px;
+    }
+
+    .cta-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* Título de la sección */
+    .cta-title {
+      color: #ffffff;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    /* Botón de llamada */
+    .cta-button {
+      background-color: #ff6b00; /* Naranja corporativo */
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 12px;
+      display: inline-block;
+      white-space: nowrap;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(255, 107, 0, 0.25);
+    }
+
+    .cta-button:hover {
+      background-color: #e05e00;
+      transform: translateY(-2px);
+    }
+
+    /* Responsivo para celulares y tablets */
+    @media (max-width: 768px) {
+      .cta-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+      }
+
+      .cta-title {
+        font-size: 26px;
+      }
+
+      .cta-button {
+        width: 100%;
+        max-width: 320px;
+        padding: 14px 20px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="cta-section">
+    <div class="cta-container">
+      
+      <!-- Texto principal -->
+      <h2 class="cta-title">¿Cómo podemos<br>ayudarle hoy?</h2>
+
+      <!-- Botón de acción (Puedes colocar un enlace 'tel:' o de WhatsApp) -->
+      <a href="tel:+51951849730" class="cta-button">
+        HAGA CLICK AQUÍ PARA LLAMAR
+      </a>
+
+    </div>
+  </section>
+
+</body>
+</html>

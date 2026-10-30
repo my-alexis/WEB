@@ -1,0 +1,241 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    /* SECCIÓN GENERAL: Ocupa el 100% de la pantalla */
+    .nh-socios-wrapper {
+        width: 100%;
+        margin: 0;
+        padding: 60px 20px;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif !important;
+        background-color: #ffffff; 
+    }
+
+    /* CONTENEDOR INTERNO: Centra y limita el ancho máximo a 900px */
+    .nh-socios-container {
+        max-width: 900px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    /* CABECERA (TEXTO DESCRIPTIVO SUPERIOR) */
+    .nh-socios-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .nh-socios-subtitle {
+        font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+        font-weight: 500;
+        line-height: 1.6;
+        color: #2c2a6b;
+        max-width: 820px;
+        margin: 0 auto;
+    }
+
+    /* TARJETA FLOTANTE */
+    .nh-socios-card {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        box-sizing: border-box;
+    }
+
+    /* CONTENEDOR DEL LOGO (IZQUIERDA) */
+    .nh-socios-logo-container {
+        flex: 0 1 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nh-socios-logo {
+        width: 100%;
+        max-width: 160px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* CONTENEDOR DE LA INFORMACIÓN (DERECHA) */
+    .nh-socios-info {
+        flex: 1 1 70%;
+    }
+
+    .nh-socios-card-title {
+        font-size: clamp(1.2rem, 2vw, 1.4rem);
+        font-weight: 700;
+        color: #2c2a6b;
+        margin: 0 0 12px 0;
+    }
+
+    .nh-socios-card-desc {
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: #475569;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* LÍNEA DIVISORIA FINAL */
+    .nh-section-divider {
+        width: 100%;
+        height: 2px;
+        background-color: #e2e8f0;
+        margin-top: 50px;
+        border: none;
+    }
+
+    /* RESPONSIVO MÓVIL */
+    @media (max-width: 768px) {
+        .nh-socios-card {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+            gap: 20px;
+        }
+
+        .nh-socios-info {
+            text-align: center;
+        }
+    }
+</style>
+
+<div class="nh-socios-wrapper">
+    <div class="nh-socios-container">
+
+        <!-- CABECERA -->
+        <div class="nh-socios-header">
+            <p class="nh-socios-subtitle">
+                Somos socios de capacitación autorizado para muchas empresas y organizaciones de certificación y software reconocidas en la industria. Estas asociaciones permiten a New Horizons ofrecer el plan de estudios más actualizado con estándares específicos establecidos en consonancia con estos principales proveedores.
+            </p>
+        </div>
+
+        <!-- TARJETA DEL SOCIO (PECB) -->
+        <div class="nh-socios-card">
+            <!-- Logo del socio (reemplaza el src con tu enlace de imagen) -->
+            <div class="nh-socios-logo-container">
+                <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Formacion-Academica/PECB%20logo.png?ver=P9pqOnxUvXzsjJ1d_56GEg%3d%3d" alt="PECB Training Partner" class="nh-socios-logo">
+            </div>
+
+            <!-- Información del socio -->
+            <div class="nh-socios-info">
+                <h3 class="nh-socios-card-title">PECB Training Partner</h3>
+                <p class="nh-socios-card-desc">
+                    New Horizons es un PECB Training Partner, reconocido a nivel mundial por su excelencia en formación y certificación en normas y estándares internacionales. Como socio de formación autorizado, te preparamos para dominar áreas clave como seguridad de la información, ciberseguridad, gestión de riesgos y continuidad del negocio, ayudándote a obtener certificaciones oficiales de PECB y a impulsar tu carrera profesional en cumplimiento y gestión normativa.
+                </p>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <!-- TARJETA DEL SOCIO (Microsoft Learning Partner) -->
+        <div class="nh-socios-card">
+            <!-- Logo del socio (reemplaza el src con tu enlace de imagen) -->
+            <div class="nh-socios-logo-container">
+                <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Formacion-Academica/PECB%20logo.png?ver=P9pqOnxUvXzsjJ1d_56GEg%3d%3d" alt="PECB Training Partner" class="nh-socios-logo">
+            </div>
+
+            <!-- Información del socio -->
+            <div class="nh-socios-info">
+                <h3 class="nh-socios-card-title">Microsoft Learning Partner</h3>
+                <p class="nh-socios-card-desc">
+                    Cada curso de Microsoft en New Horizons sigue el plan de estudios oficial de Microsoft Official Curriculum (MOC) y es impartido por instructores certificados por Microsoft, garantizando una formación de alta calidad en sus productos y tecnologías.
+New Horizons provides Microsoft Technical and Microsoft Office training and certification.    
+                </p>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <!-- TARJETA DEL SOCIO (ISTQB Training Partner) -->
+        <div class="nh-socios-card">
+            <!-- Logo del socio (reemplaza el src con tu enlace de imagen) -->
+            <div class="nh-socios-logo-container">
+                <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Formacion-Academica/PECB%20logo.png?ver=P9pqOnxUvXzsjJ1d_56GEg%3d%3d" alt="PECB Training Partner" class="nh-socios-logo">
+            </div>
+
+            <!-- Información del socio -->
+            <div class="nh-socios-info">
+                <h3 class="nh-socios-card-title">ISTQB Training Partner</h3>
+                <p class="nh-socios-card-desc">
+                New Horizons es un ISTQB Training Partner, reconocido a nivel global por su excelencia en la formación y certificación en pruebas de software. Como socio de formación autorizado, te brindamos la preparación necesaria para dominar las mejores prácticas en testing, mejorar la calidad del software y obtener certificaciones oficiales de ISTQB, impulsando tu carrera en el ámbito de aseguramiento de la calidad y pruebas de software.</p>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <!-- TARJETA DEL SOCIO (Project Management Institute (PMI)) -->
+        <div class="nh-socios-card">
+            <!-- Logo del socio (reemplaza el src con tu enlace de imagen) -->
+            <div class="nh-socios-logo-container">
+                <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Formacion-Academica/PECB%20logo.png?ver=P9pqOnxUvXzsjJ1d_56GEg%3d%3d" alt="PECB Training Partner" class="nh-socios-logo">
+            </div>
+
+            <!-- Información del socio -->
+            <div class="nh-socios-info">
+                <h3 class="nh-socios-card-title">Project Management Institute (PMI)</h3>
+                <p class="nh-socios-card-desc">
+                    Optimice la ejecución de sus proyectos con la formación certificada por PMI. New Horizons, ahora parte de Project Management Academy, un socio de capacitación autorizado de Project Management Institute (PMI), ofrece una gama actualizada de cursos de gestión de proyectos, alineados con las mejores prácticas y estándares globales. Potencie la eficiencia, reduzca riesgos y garantice resultados estratégicos con nuestra capacitación líder en la industria.
+                </div>
+        </div>
+
+        <br><br><br>
+
+        <!-- TARJETA DEL SOCIO (Scrum Study Partner) -->
+        <div class="nh-socios-card">
+            <!-- Logo del socio (reemplaza el src con tu enlace de imagen) -->
+            <div class="nh-socios-logo-container">
+                <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Formacion-Academica/PECB%20logo.png?ver=P9pqOnxUvXzsjJ1d_56GEg%3d%3d" alt="PECB Training Partner" class="nh-socios-logo">
+            </div>
+
+            <!-- Información del socio -->
+            <div class="nh-socios-info">
+                <h3 class="nh-socios-card-title">Scrum Study Partner</h3>
+                <p class="nh-socios-card-desc">
+                New Horizons es un socio de aprendizaje de ScrumStudy, líder global en certificaciones de Scrum y metodologías ágiles. Como socio de formación autorizado, te proporcionamos la preparación necesaria para dominar los principios y marcos ágiles, optimizar la gestión de proyectos y obtener certificaciones oficiales de ScrumStudy, impulsando tu crecimiento profesional en entornos ágiles.</div>
+        </div>
+
+                <br><br><br>
+
+        <!-- TARJETA DEL SOCIO (EC-Council Authorized Partner) -->
+        <div class="nh-socios-card">
+            <!-- Logo del socio (reemplaza el src con tu enlace de imagen) -->
+            <div class="nh-socios-logo-container">
+                <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Formacion-Academica/PECB%20logo.png?ver=P9pqOnxUvXzsjJ1d_56GEg%3d%3d" alt="PECB Training Partner" class="nh-socios-logo">
+            </div>
+
+            <!-- Información del socio -->
+            <div class="nh-socios-info">
+                <h3 class="nh-socios-card-title">EC-Council Authorized Partner</h3>
+                <p class="nh-socios-card-desc">
+       Como socio de aprendizaje autorizado de EC-Council (https://cert.eccouncil.org), organismo líder mundial en certificación de ciberseguridad, ofrecemos formación especializada en seguridad informática avanzada. Nuestros programas te preparan para pensar como un hacker, realizar análisis forense digital, ejecutar pruebas de penetración y desarrollar código seguro, siguiendo los estándares internacionales que exige la industria. </div>
+
+
+                <br><br><br>
+
+        <!-- TARJETA DEL SOCIO (ITIL Certified Training Partner) -->
+        <div class="nh-socios-card">
+            <!-- Logo del socio (reemplaza el src con tu enlace de imagen) -->
+            <div class="nh-socios-logo-container">
+                <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/HOME/HAMBURGUESA/Formacion-Academica/PECB%20logo.png?ver=P9pqOnxUvXzsjJ1d_56GEg%3d%3d" alt="PECB Training Partner" class="nh-socios-logo">
+            </div>
+
+            <!-- Información del socio -->
+            <div class="nh-socios-info">
+                <h3 class="nh-socios-card-title">ITIL Certified Training Partner</h3>
+                <p class="nh-socios-card-desc">
+        New Horizons es una organización de formación ITIL autorizada, lo que significa que proporcionamos el material aprobado más reciente. ITIL proporciona un conjunto de mejores prácticas en la gestión de servicios de TI.</div>
+
+
+
+
+        <!-- LÍNEA DIVISORIA FINAL -->
+        <hr class="nh-section-divider">
+
+    </div>
+</div>

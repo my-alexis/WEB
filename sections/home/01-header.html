@@ -50,12 +50,11 @@
     }
 
     .nh-logo-img {
-        height: 50px !important; /* Forzamos la altura fija en lugar de max-height */
+        height: 50px !important;
         width: auto !important;
         object-fit: contain;
         display: block;
     }
-
 
     /* MENÚ PRINCIPAL FIJO EN LA BARRA */
     .nh-menu-navigation {
@@ -122,26 +121,10 @@
         gap: 20px;
     }
 
-    .nh-wa-btn {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: var(--nh-white);
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 500;
-    }
-
     .nh-wa-btn svg {
         width: 24px;
         height: 24px;
         fill: var(--nh-white);
-    }
-
-    .nh-wa-details {
-        display: flex;
-        flex-direction: column;
-        line-height: 1.2;
     }
 
     .nh-wa-details span {
@@ -152,6 +135,44 @@
     .nh-wa-details strong {
         font-size: 14px;
         font-weight: 700;
+    }
+
+    .nh-wa-btn {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--nh-white);
+        text-decoration: none;
+    }
+
+    .nh-wa-btn svg.nh-wa-logo {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+    }
+
+    .nh-wa-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.15;
+    }
+
+    .nh-wa-label {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .nh-wa-number {
+        font-size: 12px;
+        font-weight: 550;
+        letter-spacing: 0.2px;
+    }
+
+    /* En celular se oculta el texto y queda solo el logo */
+    @media (max-width: 600px) {
+        .nh-wa-text {
+            display: none;
+        }
     }
 
     .nh-hamburger-btn {
@@ -173,7 +194,6 @@
     }
 
     /* MENÚ OFF-CANVAS (PANEL LATERAL HAMBURGUESA) */
-
     .nh-offcanvas-overlay {
         position: fixed !important;
         top: 0 !important;
@@ -211,7 +231,6 @@
 
     .nh-offcanvas-menu.active {
         right: 0 !important;
-        /* Esto lo trae exactamente a la vista */
     }
 
     .nh-offcanvas-header {
@@ -264,10 +283,55 @@
         color: var(--nh-celeste);
     }
 
+    /* ESTILOS PARA EL ACORDEÓN / SUBMENÚ MÓVIL EN "ACERCA DE NOSOTROS" */
+    .nh-offcanvas-dropdown-toggle {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .nh-offcanvas-dropdown-toggle::after {
+        content: "▾";
+        font-size: 14px;
+        transition: transform 0.3s ease;
+    }
+
+    .nh-offcanvas-item.open .nh-offcanvas-dropdown-toggle::after {
+        transform: rotate(180deg);
+    }
+
+    .nh-offcanvas-submenu {
+        list-style: none;
+        padding-left: 15px;
+        margin: 6px 0 0 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .nh-offcanvas-item.open .nh-offcanvas-submenu {
+        max-height: 200px;
+        /* Se expande de forma fluida */
+    }
+
+    .nh-offcanvas-submenu li {
+        margin-bottom: 6px;
+    }
+
+    .nh-offcanvas-submenu a {
+        font-size: 13.5px;
+        color: rgba(255, 255, 255, 0.85);
+        padding: 8px 10px;
+    }
+
+    .nh-offcanvas-submenu a:hover {
+        color: var(--nh-naranja);
+    }
+
     @media (max-width: 992px) {
         .nh-menu-navigation {
             display: none;
-            /* Oculta menú horizontal en móviles/tablets */
         }
     }
 </style>
@@ -301,18 +365,25 @@
         </ul>
 
         <div class="nh-top-right">
-            <a class="nh-wa-btn" href="https://wa.me/51913049349" target="_blank">
-                <svg viewBox="0 0 24 24">
-                    <path
-                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.754zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.842-1.001z">
-                    </path>
+
+            <a class="nh-wa-btn" href="https://wa.me/51913049349" target="_blank" aria-label="WhatsApp +51 913 049 349">
+                <svg class="nh-wa-logo" viewBox="0 0 48 48" aria-hidden="true">
+                    <defs>
+                        <mask id="nhWaMask">
+                            <rect width="48" height="48" fill="white" />
+                            <path fill="black" transform="translate(10.8 8.8) scale(1.1)"
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </mask>
+                    </defs>
+                    <path mask="url(#nhWaMask)" fill="#ffffff"
+                        d="M24 2C12.95 2 4 10.95 4 22c0 3.6.95 6.97 2.6 9.88L4 44l12.4-2.5A19.9 19.9 0 0 0 24 42c11.05 0 20-8.95 20-20S35.05 2 24 2z" />
                 </svg>
+                <span class="nh-wa-text">
+                    <span class="nh-wa-label">WhatsApp</span>
+                    <strong class="nh-wa-number">+51 913 049 349</strong>
+                </span>
             </a>
-            <div class="nh-wa-details">
-                <a class="nh-wa-btn" href="https://wa.me/51913049349" target="_blank">
-                    <span>WhatsApp</span> <strong>+51 913 049 349</strong>
-                </a>
-            </div>
+
             <button class="nh-hamburger-btn" id="nhOffcanvasOpen" type="button" aria-label="Abrir menú">
                 <svg viewBox="0 0 24 24">
                     <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />
@@ -321,7 +392,7 @@
         </div>
     </div>
 
-    <!-- MENÚ OFF-CANVAS (PANEL LATERAL HAMBURGUESA) -->
+    <!-- MENÚ OFF-CANVAS (PANEL LATERAL HAMBURGUESA) CON ACORDEÓN -->
     <div class="nh-offcanvas-overlay" id="nhOffcanvasOverlay"></div>
     <div class="nh-offcanvas-menu" id="nhOffcanvasMenu">
         <div class="nh-offcanvas-header">
@@ -332,14 +403,22 @@
         <ul class="nh-offcanvas-nav">
             <li><a href="/sections/centro-examenes/preview-examenes.html">Centro de exámenes</a></li>
             <li><a href="/sections/contactate-nosotros/preview-contactate.html">Contáctate con nosotros</a></li>
-            <li><a href="#">Acerca de Nosotros</a></li>
+
+            <!-- ACERCA DE NOSOTROS CON DESGLOSE -->
+            <li class="nh-offcanvas-item" id="nhAboutDropdown">
+                <a href="javascript:void(0);" class="nh-offcanvas-dropdown-toggle">Acerca de Nosotros</a>
+                <ul class="nh-offcanvas-submenu">
+                    <li><a href="/sections/nuestra-propuesta/preview-nuestrapropuesta.html">Nuestra propuesta</a></li>
+                    <li><a href="/sections/formacion-academica/preview-formacion.html">Formación académica</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 </div>
 
-<!-- SCRIPT PARA EL MENÚ HAMBURGUESA -->
+<!-- SCRIPT INDEPENDIENTE PARA EL HEADER -->
 <script>
-    (function () {
+    window.initencabezado = function () {
         var openBtn = document.getElementById('nhOffcanvasOpen');
         var closeBtn = document.getElementById('nhOffcanvasClose');
         var overlay = document.getElementById('nhOffcanvasOverlay');
@@ -357,8 +436,39 @@
             document.body.style.overflow = '';
         }
 
-        if (openBtn) openBtn.addEventListener('click', openMenu);
-        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-        if (overlay) overlay.addEventListener('click', closeMenu);
-    })();
+        if (openBtn && !openBtn.dataset.bound) {
+            openBtn.dataset.bound = "true";
+            openBtn.addEventListener('click', openMenu);
+        }
+        if (closeBtn && !closeBtn.dataset.bound) {
+            closeBtn.dataset.bound = "true";
+            closeBtn.addEventListener('click', closeMenu);
+        }
+        if (overlay && !overlay.dataset.bound) {
+            overlay.dataset.bound = "true";
+            overlay.addEventListener('click', closeMenu);
+        }
+    };
+
+    // Delegación global para el acordeón (funciona incluso cargado por fetch)
+    if (!window.nhDropdownBound) {
+        window.nhDropdownBound = true;
+        document.addEventListener('click', function (e) {
+            var toggle = e.target.closest('.nh-offcanvas-dropdown-toggle');
+            if (toggle) {
+                e.preventDefault();
+                var item = toggle.closest('.nh-offcanvas-item');
+                if (item) {
+                    item.classList.toggle('open');
+                }
+            }
+        });
+    }
+
+    // Auto-ejecución si se abre solo
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        window.initencabezado();
+    } else {
+        document.addEventListener('DOMContentLoaded', window.initencabezado);
+    }
 </script>

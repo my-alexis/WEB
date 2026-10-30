@@ -1,0 +1,172 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    /* SECCIÓN GENERAL: Ocupa el 100% de la pantalla */
+    .nh-instruccion-wrapper {
+        width: 100%;
+        margin: 0;
+        padding: 60px 20px;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif !important;
+        background-color: #ffffff; 
+    }
+
+    /* CONTENEDOR INTERNO: Centra y limita el ancho máximo a 900px */
+    .nh-inst-container {
+        max-width: 900px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    /* CABECERA */
+    .nh-inst-header {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .nh-inst-title {
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        font-weight: 800;
+        color: #2c2a6b;
+        margin: 0 0 15px 0;
+        letter-spacing: -0.5px;
+    }
+
+    .nh-inst-subtitle {
+        font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+        font-weight: 400;
+        line-height: 1.6;
+        color: #2c2a6b;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    /* BLOQUE INTERMEDIO (Posibilidades ilimitadas) */
+    .nh-inst-content-block {
+        margin-bottom: 30px;
+    }
+
+    .nh-inst-section-title {
+        font-size: clamp(1.2rem, 2vw, 1.4rem);
+        font-weight: 700;
+        color: #2c2a6b;
+        margin: 0 0 10px 0;
+    }
+
+    .nh-inst-desc {
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: #475569;
+        line-height: 1.6;
+        margin: 0 0 15px 0;
+    }
+
+    .nh-inst-stats-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #2c2a6b;
+        margin: 0 0 20px 0;
+    }
+
+    /* TARJETAS DE ESTADÍSTICAS */
+    .nh-inst-stats-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nh-inst-stat-card {
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        padding: 25px 35px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        box-sizing: border-box;
+    }
+
+    .nh-inst-stat-number {
+        font-size: clamp(2.2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: #ff7a00; /* Color naranja característico de los porcentajes */
+        line-height: 1;
+        flex-shrink: 0;
+        min-width: 130px;
+        text-align: left;
+    }
+
+    .nh-inst-stat-text {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #2c2a6b;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    /* LÍNEA DIVISORIA FINAL */
+    .nh-section-divider {
+        width: 100%;
+        height: 2px;
+        background-color: #e2e8f0;
+        margin-top: 50px;
+        border: none;
+    }
+
+    /* RESPONSIVO MÓVIL */
+    @media (max-width: 768px) {
+        .nh-inst-stat-card {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 20px;
+        }
+        .nh-inst-stat-number {
+            min-width: auto;
+        }
+    }
+</style>
+
+<div class="nh-instruccion-wrapper">
+    <div class="nh-inst-container">
+
+        <!-- CABECERA -->
+        <div class="nh-inst-header">
+            <h2 class="nh-inst-title">Instrucción certificada</h2>
+            <p class="nh-inst-subtitle">
+                Los cursos son impartidos por instructores experimentados y certificados por proveedores.
+            </p>
+        </div>
+
+        <!-- BLOQUE DE TEXTO Y DESCRIPCIÓN -->
+        <div class="nh-inst-content-block">
+            <h3 class="nh-inst-section-title">Posibilidades ilimitadas</h3>
+            <p class="nh-inst-desc">
+                Ya sea que esté buscando aumentar sus conocimientos técnicos o aprobar un examen de certificación profesional, New Horizons lo ayudará a lograrlo.
+            </p>
+            <h4 class="nh-inst-stats-title">Estadísticas de formación de New Horizons:</h4>
+        </div>
+
+        <!-- LISTA DE TARJETAS DE ESTADÍSTICAS -->
+        <div class="nh-inst-stats-list">
+            <!-- Estadística 1 -->
+            <div class="nh-inst-stat-card">
+                <div class="nh-inst-stat-number">70%</div>
+                <p class="nh-inst-stat-text">de las habilidades adquiridas en New Horizons se aplican en el trabajo dentro de las primeras 8 semanas.</p>
+            </div>
+
+            <!-- Estadística 2 -->
+            <div class="nh-inst-stat-card">
+                <div class="nh-inst-stat-number">59%</div>
+                <p class="nh-inst-stat-text">de los estudiantes de New Horizons dicen que la capacitación recibida fue fundamental para su desempeño laboral.</p>
+            </div>
+
+            <!-- Estadística 3 -->
+            <div class="nh-inst-stat-card">
+                <div class="nh-inst-stat-number">44%</div>
+                <p class="nh-inst-stat-text">del tiempo en el trabajo se dedica a aplicar nuevos conocimientos y habilidades adquiridos en New Horizons.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
