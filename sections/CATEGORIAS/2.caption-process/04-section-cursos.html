@@ -1,0 +1,256 @@
+<!-- Importación de Poppins (si no la tienes cargada previamente) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<section class="especializacion-section">
+  <div class="container">
+    <!-- Encabezado -->
+    <div class="section-header">
+      <h2 class="section-title">Encuentra tu próxima<br>especialización</h2>
+      <p class="section-description">
+        Explora nuestros cursos de Procesos & Gobierno y fortalece tus habilidades en ITIL, COBIT, TOGAF, automatización y gestión de riesgos.
+      </p>
+    </div>
+
+    <!-- Rejilla de Cursos -->
+    <div class="courses-grid">
+      
+      <!-- Card 1 -->
+      <div class="course-card">
+        <div class="card-content">
+          <h3 class="card-title">ITIL® 5 Fundamentos</h3>
+          <span class="card-tag">PEOPLECERT</span>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="course-card">
+        <div class="card-content">
+          <h3 class="card-title">ITIL® 5 Bridge</h3>
+          <span class="card-tag">PEOPLECERT</span>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="course-card">
+        <div class="card-content">
+          <h3 class="card-title">ITIL® 4 Specialist: Monitor, Support & Fulfil</h3>
+          <span class="card-tag">PEOPLECERT</span>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="course-card">
+        <div class="card-content">
+          <h3 class="card-title">ITIL® 4 Specialist: Create, Deliver and Support</h3>
+          <span class="card-tag">PEOPLECERT</span>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </div>
+
+      <!-- Card 5-->
+      <div class="course-card">
+        <div class="card-content">
+          <h3 class="card-title">ISO 31000 Risk Management</h3>
+          <span class="card-tag">PECB</span>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </div>
+
+      <!-- Card 6-->
+      <div class="course-card">
+        <div class="card-content">
+          <h3 class="card-title">ISO 22301 Lead Implementer</h3>
+          <span class="card-tag">PECB</span>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </div>
+
+      <!-- Card 7-->
+      <div class="course-card">
+        <div class="card-content">
+          <h3 class="card-title">ISO/IEC 27005 Lead Risk Manager</h3>
+          <span class="card-tag">PECB</span>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </div>
+
+      <!-- Card 8-->
+      <div class="course-card">
+        <div class="card-content">
+          <h3 class="card-title">Business Process Management (BPM) y RPA</h3>
+          <span class="card-tag">PEOPLECERT</span>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </div>
+
+      <!-- Card 9-->
+      <div class="course-card">
+        <div class="card-content">
+          <h3 class="card-title">COBIT 2019</h3>
+          <span class="card-tag">ISACA</span>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </div>
+
+      <!-- Card 10-->
+      <div class="course-card">
+        <div class="card-content">
+          <h3 class="card-title">TOGAF</h3>
+          <span class="card-tag">The Open Group</span>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<br><br><br>
+  <!-- Línea divisoria inferior -->
+        <hr class="bottom-divider">
+
+
+<style>
+  /* Variables de Color y Tipografía */
+  :root {
+    --color-primary: #211f53;      /* Azul oscuro principal */
+    --color-text-body: #323063;    /* Azul/Gris para párrafos */
+    --color-orange: #ff7300;       /* Naranja institucional para tags y botones */
+    --color-card-bg: #f5f5f7;      /* Gris claro fondo de cards */
+    --font-family: 'Poppins', sans-serif;
+  }
+
+          .bottom-divider {
+            width: 60%;
+            height: 1px;
+            background-color: #e0e0e0;
+            border: none;
+            margin: 0 auto;
+        }
+
+  .especializacion-section {
+    font-family: var(--font-family);
+    padding: 20px 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+  }
+
+  .especializacion-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Headings & Textos */
+  .section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+  }
+
+  .section-title {
+    color: var(--color-primary);
+    font-size: 2.25rem; /* ~36px */
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+  }
+
+  .section-description {
+    color: var(--color-text-body);
+    font-size: 1.05rem; /* ~17px */
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Grid Layout */
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  /* Cards */
+  .course-card {
+    background-color: var(--color-card-bg);
+    border-radius: 16px;
+    padding: 30px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    min-height: 280px;
+  }
+
+  .course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card-title {
+    color: var(--color-primary);
+    font-size: 0.85rem; /* ~13.5px */
+    font-weight: 700;
+    line-height: 1.4;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 0.2px;
+  }
+
+  .card-tag {
+    color: var(--color-orange);
+    font-size: 0.75rem; /* ~12px */
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Botón */
+  .btn-ver-curso {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: var(--color-orange);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease;
+    margin-top: 20px;
+  }
+
+  .btn-ver-curso:hover {
+    background-color: #e06500;
+  }
+
+  /* Responsividad */
+  @media (max-width: 1024px) {
+    .courses-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .section-title {
+      font-size: 1.75rem;
+    }
+    .courses-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

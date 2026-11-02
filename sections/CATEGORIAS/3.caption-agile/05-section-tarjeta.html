@@ -1,0 +1,91 @@
+<style>
+  .facilidades-pago-section {
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+  }
+
+  .facilidades-pago-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Título con estilo Poppins y color corporativo */
+  .facilidades-pago-section .section-title {
+    color: #211f53; /* Azul oscuro institucional */
+    font-size: 2.25rem; /* ~36px */
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 0 0 45px 0;
+  }
+
+  /* Grilla para alinear las dos imágenes */
+  .cards-images-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Espaciado entre las dos tarjetas */
+    flex-wrap: wrap;
+  }
+
+  .card-image-item {
+    flex: 1 1 420px;
+    max-width: 460px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  /* Adaptación Responsive */
+  @media (max-width: 768px) {
+    .facilidades-pago-section .section-title {
+      font-size: 1.65rem;
+      margin-bottom: 30px;
+    }
+
+    .cards-images-grid {
+      gap: 20px;
+    }
+
+    .card-image-item {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<!-- Importación de Poppins (si no está cargada previamente) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+
+<section class="facilidades-pago-section">
+  <div class="container">
+    <!-- Título Principal -->
+    <h2 class="section-title">
+      Invierte en tu desarrollo profesional<br>con facilidades de pago
+    </h2>
+
+    <!-- Contenedor de Imágenes/Tarjetas -->
+    <div class="cards-images-grid">
+      
+      <!-- Tarjeta Imagen 1 (Fraccionamiento) -->
+      <div class="card-image-item">
+        <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Fraccion-Pagos%20General/Fraccionamiento%20de%20cuotas.png?ver=dNn_wirtRiOwDazTnA3gDw%3d%3d" alt="Fraccionamiento de cuotas" class="card-img">
+      </div>
+
+      <!-- Tarjeta Imagen 2 (Cuotas sin intereses) -->
+      <div class="card-image-item">
+        <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Fraccion-Pagos%20General/Cuotas%20sin%20intereses.png?ver=Bx8_ho5ZjS37gBaLGfML3g%3d%3d" alt="Cuotas sin intereses BBVA BCP Diners Club" class="card-img">
+      </div>
+
+    </div>
+  </div>
+</section>
