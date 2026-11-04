@@ -1,0 +1,94 @@
+<style>
+  /* --- Estilos para la sección de herramientas de datos --- */
+  .herramientas-section {
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .herramientas-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .herramientas-section .section-title {
+    color: #2b2a6e; /* Azul oscuro institucional */
+    font-size: 2rem; /* ~32px */
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 40px 0;
+  }
+
+  .herramientas-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+
+  .herramienta-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .herramienta-img {
+    max-height: 120px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Adaptación Responsive Global */
+  @media (max-width: 768px) {
+    .herramientas-section .section-title,
+    .facilidades-pago-section .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+
+    .herramientas-grid {
+      gap: 30px;
+    }
+
+    .cards-images-grid {
+      gap: 20px;
+    }
+
+    .card-image-item {
+      max-width: 100%;
+    }
+  }
+</style>
+
+<!-- Importación de Poppins -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!-- 1. Sección: Herramientas que transforman los datos -->
+<section class="herramientas-section">
+  <div class="container">
+    <h2 class="section-title">
+      Domina las herramientas que transforman los datos
+    </h2>
+    <div class="herramientas-grid">
+      <div class="herramienta-item">
+        <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Data/Structure/logo%20power%20bi.png?ver=3SB77uHEACX0QmL6QXcwuw%3d%3d"
+        alt="Power BI" class="herramienta-img">
+      </div>
+      <div class="herramienta-item">
+        <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Data/Structure/logo%20python.png?ver=9xUhOewwSLIKMbmlYQzbLg%3d%3d"
+        alt="Python" class="herramienta-img">
+      </div>
+      <div class="herramienta-item">
+        <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Data/Structure/logo%20sql.png?ver=O5JhKqKoX0RevdyiabAAeg%3d%3d"
+        alt="Microsoft SQL Server" class="herramienta-img">
+      </div>
+    </div>
+  </div>
+</section>
+</section>
