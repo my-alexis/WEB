@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sección IA</title>
+  
+  <!-- Importación de la fuente Poppins desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Estilos principales de la sección */
+    .ia-features-section {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      padding: 60px 20px;
+      color: #2c2a6b; /* Color institucional */
+    }
+
+    .ia-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Encabezado */
+    .ia-header {
+      margin-bottom: 50px;
+    }
+
+    .ia-title {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #2c2a6b;
+      margin-bottom: 20px;
+    }
+
+    .ia-subtitle {
+      font-size: 18px;
+      font-weight: 500;
+      color: #2c2a6b;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* Grilla de ítems */
+    .ia-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .ia-card {
+      flex: 1;
+      min-width: 250px;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .ia-icon-wrapper {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .ia-icon-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .ia-card-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #2c2a6b;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .ia-card-text {
+      font-size: 14px;
+      font-weight: 400;
+      color: #2c2a6b;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* Adaptación responsive */
+    @media (max-width: 768px) {
+      .ia-title {
+        font-size: 28px;
+      }
+      
+      .ia-subtitle {
+        font-size: 15px;
+      }
+      
+      .ia-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="ia-features-section">
+    <div class="ia-container">
+      
+      <!-- Encabezado de la sección -->
+      <div class="ia-header">
+        <h2 class="ia-title">Transforma tu manera de<br>trabajar con IA</h2>
+        <p class="ia-subtitle">
+          Adquiere competencias para aprovechar la inteligencia artificial y<br>potenciar tu resultados.
+        </p>
+      </div>
+
+      <!-- Grilla de características -->
+      <div class="ia-grid">
+        
+        <!-- Ítem 1 -->
+        <div class="ia-card">
+          <div class="ia-icon-wrapper">
+            <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-IAProductividad/Structure/01_reloj%201.png?ver=tmA_5ITM9yIuqIZL8KJgBw%3d%3d" alt="Optimiza tu tiempo" class="ia-icon-img">
+          </div>
+          <h3 class="ia-card-title">Optimiza tu<br>tiempo</h3>
+          <p class="ia-card-text">Agiliza tareas y mejora tu eficiencia diaria.</p>
+        </div>
+
+        <!-- Ítem 2 -->
+        <div class="ia-card">
+          <div class="ia-icon-wrapper">
+            <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-IAProductividad/Structure/02_nodos_conectados%201.png?ver=KOOXcIq8fmfCaYavBcfgYA%3d%3d" alt="Automatiza procesos" class="ia-icon-img">
+          </div>
+          <h3 class="ia-card-title">Automatiza<br>procesos</h3>
+          <p class="ia-card-text">Simplifica actividades repetitivas con IA.</p>
+        </div>
+
+        <!-- Ítem 3 -->
+        <div class="ia-card">
+          <div class="ia-icon-wrapper">
+            <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-IAProductividad/Structure/03_cerebro_ia%201.png?ver=P7oav74KSmywX5EQTWxXSg%3d%3d" alt="Impulsa tus habilidades" class="ia-icon-img">
+          </div>
+          <h3 class="ia-card-title">Impulsa tus<br>habilidades</h3>
+          <p class="ia-card-text">Incorpora herramientas de IA a tu perfil profesional.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
