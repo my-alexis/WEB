@@ -31,27 +31,28 @@
             padding: 60px 20px;
         }
 
+        /* Título Principal */
+        .pmi-title {
+            color: #2c2a6b;
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
+
         /* Contenedor de 2 Columnas */
         .pmi-container {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
+            gap: 30px;
             align-items: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         /* Columna Izquierda (Texto) */
         .pmi-content {
             display: flex;
             flex-direction: column;
-        }
-
-        .pmi-title {
-            color: #2c2a6b;
-            font-size: 28px;
-            font-weight: 700;
-            line-height: 1.25;
-            margin-bottom: 20px;
         }
 
         .pmi-description {
@@ -78,13 +79,13 @@
             line-height: 1.5;
         }
 
-        /* Columna Derecha (Logos sin fondo ni sombra) */
+        /* Columna Derecha (Logos) */
         .pmi-logos {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 3px;
+            gap: 20px;
         }
 
         .logo-item {
@@ -96,7 +97,7 @@
 
         .logo-item img {
             width: 100%;
-            max-width: 260px; /* Tamaño incrementado para que se vean más grandes */
+            max-width: 260px;
             height: auto;
             object-fit: contain;
             transition: transform 0.2s ease;
@@ -117,13 +118,14 @@
 
         /* Adaptabilidad Móvil */
         @media (max-width: 768px) {
+            .pmi-title {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
             .pmi-container {
                 grid-template-columns: 1fr;
                 gap: 30px;
-            }
-
-            .pmi-title {
-                font-size: 24px;
             }
 
             .pmi-description, .pmi-list li {
@@ -144,12 +146,12 @@
 <body>
 
     <section class="pmi-section">
+        <!-- Título principal fuera del grid para que fluya de forma limpia -->
+        <h2 class="pmi-title">Formación en Project Management<br>con respaldo internacional</h2>
+        
         <div class="pmi-container">
-            
             <!-- Columna Izquierda: Textos y Listado -->
             <div class="pmi-content">
-                <h2 class="pmi-title">Formación en Project Management con respaldo internacional</h2>
-                <br>
                 <p class="pmi-description">
                     New Horizons Perú es Partner Oficial de PMI® y Microsoft. Desarrolla competencias en dirección, planificación y control de proyectos con capacitación especializada y herramientas tecnológicas.
                 </p>
@@ -161,10 +163,9 @@
                 </ul>
             </div>
 
-            <!-- Columna Derecha: Imágenes directas y de mayor tamaño -->
+            <!-- Columna Derecha: Imágenes alineadas -->
             <div class="pmi-logos">
                 <!-- Logo Microsoft -->
-                <br><br><br><br>
                 <div class="logo-item">
                     <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Project/Structure/MICROSOFT_projet.png?ver=pBozwQsptP9vOlLqQ2i47g%3d%3d" alt="Microsoft Partner">
                 </div>
@@ -181,5 +182,4 @@
     </section>
 
 </body>
-
 </html>

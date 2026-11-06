@@ -1,0 +1,227 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :where(.nhe-section) *, 
+  :where(.nhe-section) *::before, 
+  :where(.nhe-section) *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nhe-section {
+    --nhe-blue: #0B112C;
+    --nhe-dark-blue: #2c2a6b;
+    --nhe-text: #323063;
+    --nhe-bg-card: #f5f5f7;
+    
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px 15px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nhe-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .nhe-accordion {
+    background-color: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .nhe-header {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .nhe-header:hover {
+    background-color: rgba(11, 17, 44, 0.02);
+  }
+
+  .nhe-title {
+    color: var(--nhe-dark-blue);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .nhe-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+
+  .nhe-icon {
+    width: 20px;
+    height: 20px;
+    stroke: var(--nhe-dark-blue);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nhe-header[aria-expanded="true"] .nhe-icon {
+    transform: rotate(180deg);
+  }
+
+  .nhe-content-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nhe-header[aria-expanded="true"] + .nhe-content-wrapper {
+    grid-template-rows: 1fr;
+  }
+
+  .nhe-content {
+    overflow: hidden;
+  }
+
+  .nhe-body {
+    padding: 24px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nhe-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nhe-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .nhe-caption {
+    color: var(--nhe-text);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 1024px) {
+    .nhe-title {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .nhe-header {
+      padding: 16px;
+      gap: 12px;
+    }
+
+    .nhe-title {
+      font-size: 16px;
+    }
+
+    .nhe-caption {
+      font-size: 12px;
+    }
+
+    .nhe-body {
+      padding: 16px 8px;
+      gap: 16px;
+    }
+  }
+</style>
+
+<section class="nhe-section" id="nhe-acc-section">
+  <div class="nhe-wrapper">
+    <div class="nhe-accordion">
+      <button 
+        type="button" 
+        class="nhe-header" 
+        id="nhe-header-btn" 
+        aria-expanded="false" 
+        aria-controls="nhe-content-panel"
+      >
+        <span class="nhe-title">
+          ¿Te interesa el hacking ético?<br>Conoce la ruta EC-Council.
+        </span>
+        <span class="nhe-icon-wrapper">
+          <svg class="nhe-icon" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </span>
+      </button>
+
+      <div class="nhe-content-wrapper" id="nhe-content-panel" role="region" aria-labelledby="nhe-header-btn">
+        <div class="nhe-content">
+          <div class="nhe-body">
+            <div class="nhe-image-container">
+              <img 
+                src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Ciberseguridad/Structure/RUTA%20EC%20COUNCIL.png?ver=7opnoKCzYI6jE_0Nq7XpAQ%3d%3d" 
+                alt="Mapa de certificaciones EC-Council desde fundamentos hasta senior" 
+                class="nhe-img"
+              >
+            </div>
+            <p class="nhe-caption">
+              Mapa de certificaciones EC-Council: Fundamentos &rarr; Ethical Hacking &rarr; PenTest/Incident Handling &rarr; Senior.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    function initNheAccordion() {
+      // Evitamos registrar múltiples listeners si la función se llama varias veces
+      if (window.nheAccordionInitialized) return;
+      
+      // Usamos delegación de eventos en el documento para atrapar los clics en el botón del acordeón
+      document.addEventListener('click', function(e) {
+        const btn = e.target.closest('#nhe-header-btn');
+        if (!btn) return;
+
+        const section = btn.closest('#nhe-acc-section');
+        if (!section) return;
+
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !isExpanded);
+      });
+
+      window.nheAccordionInitialized = true;
+    }
+
+    // Exponer la función globalmente por si se llama externamente
+    window.initNheAccordion = initNheAccordion;
+
+    // Ejecución inicial por si se carga directamente de forma estática
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initNheAccordion);
+    } else {
+      initNheAccordion();
+    }
+  })();
+</script>

@@ -1,4 +1,4 @@
-<!-- Importación de Poppins (si no la tienes cargada previamente) -->
+<!-- Importación de Poppins -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
       <!-- Card 1 -->
       <div class="course-card">
         <div class="card-content">
-          <h3 class="card-title">ITIL® 5 Fundamentos</h3>
+          <h3 class="card-title">ITIL® 5 FUNDAMENTOS</h3>
           <span class="card-tag">PEOPLECERT</span>
         </div>
         <a href="#" class="btn-ver-curso">VER CURSO</a>
@@ -37,7 +37,7 @@
       <!-- Card 3 -->
       <div class="course-card">
         <div class="card-content">
-          <h3 class="card-title">ITIL® 4 Specialist: Monitor, Support & Fulfil</h3>
+          <h3 class="card-title">ITIL® 4 SPECIALIST: MONITOR, SUPPORT & FULFIL</h3>
           <span class="card-tag">PEOPLECERT</span>
         </div>
         <a href="#" class="btn-ver-curso">VER CURSO</a>
@@ -46,49 +46,51 @@
       <!-- Card 4 -->
       <div class="course-card">
         <div class="card-content">
-          <h3 class="card-title">ITIL® 4 Specialist: Create, Deliver and Support</h3>
+          <h3 class="card-title">ITIL® 4 SPECIALIST: CREATE, DELIVER AND SUPPORT</h3>
           <span class="card-tag">PEOPLECERT</span>
         </div>
         <a href="#" class="btn-ver-curso">VER CURSO</a>
       </div>
+    
 
-      <!-- Card 5-->
+          <!-- Card 5 -->
       <div class="course-card">
         <div class="card-content">
-          <h3 class="card-title">ISO 31000 Risk Management</h3>
+          <h3 class="card-title">ISO 31000 RISK MANAGEMENT</h3>
           <span class="card-tag">PECB</span>
         </div>
         <a href="#" class="btn-ver-curso">VER CURSO</a>
       </div>
+    
 
-      <!-- Card 6-->
+      <!-- Card 6 -->
       <div class="course-card">
         <div class="card-content">
-          <h3 class="card-title">ISO 22301 Lead Implementer</h3>
+          <h3 class="card-title">ISO 22301 LEAD IMPLEMENTED</h3>
           <span class="card-tag">PECB</span>
         </div>
         <a href="#" class="btn-ver-curso">VER CURSO</a>
       </div>
-
-      <!-- Card 7-->
+    
+      <!-- Card 7 -->
       <div class="course-card">
         <div class="card-content">
-          <h3 class="card-title">ISO/IEC 27005 Lead Risk Manager</h3>
+          <h3 class="card-title">ISO/IEC 27005 LEAD RISK MANAGER</h3>
           <span class="card-tag">PECB</span>
         </div>
         <a href="#" class="btn-ver-curso">VER CURSO</a>
       </div>
-
-      <!-- Card 8-->
+    
+      <!-- Card 8 -->
       <div class="course-card">
         <div class="card-content">
-          <h3 class="card-title">Business Process Management (BPM) y RPA</h3>
-          <span class="card-tag">PEOPLECERT</span>
+          <h3 class="card-title">BUSINESS PROCESS MANAGEMENT (BPM) Y RPA</h3>
+          <span class="card-tag"></span>
         </div>
         <a href="#" class="btn-ver-curso">VER CURSO</a>
       </div>
-
-      <!-- Card 9-->
+    
+      <!-- Card 9 -->
       <div class="course-card">
         <div class="card-content">
           <h3 class="card-title">COBIT 2019</h3>
@@ -96,24 +98,21 @@
         </div>
         <a href="#" class="btn-ver-curso">VER CURSO</a>
       </div>
-
-      <!-- Card 10-->
+    
+      <!-- Card 10 -->
       <div class="course-card">
         <div class="card-content">
           <h3 class="card-title">TOGAF</h3>
-          <span class="card-tag">The Open Group</span>
+          <span class="card-tag">THE OPEN GROUP</span>
         </div>
         <a href="#" class="btn-ver-curso">VER CURSO</a>
       </div>
-
     </div>
+
+    <!-- Línea divisoria inferior -->
+    <hr class="bottom-divider">
   </div>
-
 </section>
-<br><br><br>
-  <!-- Línea divisoria inferior -->
-        <hr class="bottom-divider">
-
 
 <style>
   /* Variables de Color y Tipografía */
@@ -125,23 +124,16 @@
     --font-family: 'Poppins', sans-serif;
   }
 
-          .bottom-divider {
-            width: 60%;
-            height: 1px;
-            background-color: #e0e0e0;
-            border: none;
-            margin: 0 auto;
-        }
-
   .especializacion-section {
     font-family: var(--font-family);
-    padding: 20px 20px;
+    padding: 10px 20px; /* Ancho y padding unificados con la sección anterior */
     background-color: #ffffff;
     box-sizing: border-box;
+    width: 100%;
   }
 
   .especializacion-section .container {
-    max-width: 900px;
+    max-width: 1000px; /* Ancho unificado a 1000px */
     margin: 0 auto;
   }
 
@@ -154,7 +146,7 @@
 
   .section-title {
     color: var(--color-primary);
-    font-size: 2.25rem; /* ~36px */
+    font-size: 40px;
     font-weight: 800;
     line-height: 1.2;
     margin: 0 0 20px 0;
@@ -168,11 +160,12 @@
     margin: 0;
   }
 
-  /* Grid Layout */
+  /* Grid Layout (Se adapta automáticamente para varias filas de 4 columnas) */
   .courses-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
+    margin-bottom: 60px; /* Espacio antes de la línea divisoria */
   }
 
   /* Cards */
@@ -238,6 +231,15 @@
     background-color: #e06500;
   }
 
+  /* Línea divisoria inferior */
+  .bottom-divider {
+    width: 60%;
+    height: 1px;
+    background-color: #e0e0e0;
+    border: none;
+    margin: 0 auto;
+  }
+
   /* Responsividad */
   @media (max-width: 1024px) {
     .courses-grid {
@@ -251,6 +253,9 @@
     }
     .courses-grid {
       grid-template-columns: 1fr;
+    }
+    .bottom-divider {
+      width: 80%;
     }
   }
 </style>

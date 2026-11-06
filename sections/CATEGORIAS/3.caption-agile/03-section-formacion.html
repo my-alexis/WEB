@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formación en Agile - New Horizons</title>
+    <title>Formación en Project Management - New Horizons</title>
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,27 +31,28 @@
             padding: 60px 20px;
         }
 
+        /* Título Principal */
+        .pmi-title {
+            color: #2c2a6b;
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
+
         /* Contenedor de 2 Columnas */
         .pmi-container {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
+            gap: 30px;
             align-items: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         /* Columna Izquierda (Texto) */
         .pmi-content {
             display: flex;
             flex-direction: column;
-        }
-
-        .pmi-title {
-            color: #2c2a6b;
-            font-size: 28px;
-            font-weight: 700;
-            line-height: 1.25;
-            margin-bottom: 20px;
         }
 
         .pmi-description {
@@ -78,13 +79,13 @@
             line-height: 1.5;
         }
 
-        /* Columna Derecha (Logos sin fondo ni sombra) */
+        /* Columna Derecha (Logos) */
         .pmi-logos {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 3px;
+            gap: 20px;
         }
 
         .logo-item {
@@ -96,7 +97,7 @@
 
         .logo-item img {
             width: 100%;
-            max-width: 260px; /* Tamaño incrementado para que se vean más grandes */
+            max-width: 260px;
             height: auto;
             object-fit: contain;
             transition: transform 0.2s ease;
@@ -117,13 +118,14 @@
 
         /* Adaptabilidad Móvil */
         @media (max-width: 768px) {
+            .pmi-title {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
             .pmi-container {
                 grid-template-columns: 1fr;
                 gap: 30px;
-            }
-
-            .pmi-title {
-                font-size: 24px;
             }
 
             .pmi-description, .pmi-list li {
@@ -144,14 +146,15 @@
 <body>
 
     <section class="pmi-section">
+        <!-- Título principal fuera del grid para que fluya de forma limpia -->
+        <h2 class="pmi-title">Formación Agile & Scrum con<br>certificación internacional</h2>
+        
         <div class="pmi-container">
-            
             <!-- Columna Izquierda: Textos y Listado -->
             <div class="pmi-content">
-                <h2 class="pmi-title">Formación Agile & Scrum con certificación internacional</h2>
-                <br>
                 <p class="pmi-description">
-                New Horizons Perú es Partner Oficial de SCRUMstudy y CertiProf. Especialízate en metodologías ágiles, Scrum e innovación con formación práctica y preparación para certificaciones internacionales.</p>
+                New Horizons Perú es Partner Oficial de SCRUMstudy y CertiProf. Especialízate en metodologías ágiles, Scrum e innovación con formación práctica y preparación para certificaciones internacionales.
+                </p>
 
                 <ul class="pmi-list">
                     <li>Clases online en vivo con instructores expertos.</li>
@@ -160,10 +163,9 @@
                 </ul>
             </div>
 
-            <!-- Columna Derecha: Imágenes directas y de mayor tamaño -->
+            <!-- Columna Derecha: Imágenes alineadas -->
             <div class="pmi-logos">
                 <!-- Logo SCRUMSTUDY -->
-                <br><br><br><br>
                 <div class="logo-item">
                     <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Agile/Structure/LOGO%20SCRUM.png?ver=P42IbjZqR9degqajJfgdBQ%3d%3d" alt="PECB">
                 </div>
@@ -180,5 +182,4 @@
     </section>
 
 </body>
-
 </html>

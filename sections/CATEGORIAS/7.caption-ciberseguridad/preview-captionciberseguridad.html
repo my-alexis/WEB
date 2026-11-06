@@ -16,6 +16,8 @@
     <div id="sec-05"></div>
     <div id="sec-06"></div>
     <div id="sec-07"></div>
+    <div id="sec-08"></div>
+    <div id="sec-09"></div>
     <div id="sec-10"></div> <!-- Footer reutilizado -->
 
     <script>
@@ -38,12 +40,19 @@
             await loadSection('sec-02', '02-banner-captionciberseguridad.html');
             await loadSection('sec-03', '03-section-formacion.html');
             await loadSection('sec-04', '04-section-cursos.html');
-            await loadSection('sec-05', '05-section-tarjeta.html');
+            await loadSection('sec-05', '05-section-ruta.html');
+            await loadSection('sec-06', '06-section-rutaec.html');
+            await loadSection('sec-07', '07-section-seguridad.html');
+            await loadSection('sec-08', '08-section-tarjeta.html');
             // Salimos de 'centro de examenes' y entramos a 'home' para el footer
             await loadSection('sec-10', '../../home/10-footer.html');
 
-
             initHeaderMenu();
+            
+            // Inicializamos el acordeón explícitamente tras la carga por fetch
+            if (typeof window.initNheAccordion === 'function') {
+                window.initNheAccordion();
+            }
         }
 
         // --- Header: menú off-canvas + acordeón ---
@@ -80,9 +89,7 @@
             }
         }
 
-
         document.addEventListener('DOMContentLoaded', initExamPage);
     </script>
 </body>
-
 </html>

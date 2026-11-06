@@ -1,0 +1,236 @@
+<!-- Fuente Poppins (si ya se carga en global-variables.css, puedes quitar esta línea) -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* Reset acotado SOLO a esta sección (especificidad 0 con :where) */
+  :where(.nhr-section) *,
+  :where(.nhr-section) *::before,
+  :where(.nhr-section) *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nhr-section {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    width: 100%;
+  }
+
+  .nhr-container {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nhr-title {
+    color: #2c2a6b;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .nhr-subtitle {
+    color: #2c2a6b;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  .nhr-link {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+
+  .nhr-card {
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .nhr-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .nhr-card--light {
+    background-color: #e9ecf5;
+    color: #2c2a6b;
+  }
+
+  .nhr-card--dark {
+    background-color: #2c2a6b;
+    color: #ffffff;
+  }
+
+  .nhr-icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nhr-icon img {
+      max-width: 200%;
+      max-height: 200%;
+      object-fit: contain;
+  }
+
+  .nhr-content {
+    flex-grow: 1;
+    padding-right: 70px;
+  }
+
+  .nhr-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .nhr-card-courses {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .nhr-card-desc {
+    font-size: 13px;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+
+  .nhr-badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .nhr-card--light .nhr-badge {
+    background-color: #d1d6e8;
+    color: #2c2a6b;
+  }
+
+  .nhr-card--dark .nhr-badge {
+    background-color: #43408a;
+    color: #ffffff;
+  }
+
+  .nhr-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 0;
+    text-decoration: none;
+  }
+
+  .nhr-arrow svg {
+    width: 20px;
+    height: 20px;
+    fill: #ff6b00;
+    transition: transform 0.2s ease;
+  }
+
+  .nhr-arrow:hover svg {
+    transform: translateY(3px);
+  }
+
+  .nhr-footer {
+    font-size: 11px;
+    color: #2c2a6b;
+    margin-top: 24px;
+    line-height: 1.4;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 600px) {
+    .nhr-title { font-size: 22px; }
+    .nhr-card { padding: 20px 16px; }
+    .nhr-icon { width: 44px; height: 44px; margin-right: 12px; }
+    .nhr-content { padding-right: 0; padding-top: 22px; }
+    .nhr-badge { top: 12px; right: 12px; }
+  }
+</style>
+
+<section class="nhr-section" id="ruta-aprendizaje">
+  <div class="nhr-container">
+
+    <h2 class="nhr-title">Tu ruta de aprendizaje en<br>Ciberseguridad</h2>
+    <p class="nhr-subtitle">Desarrolla tus competencias en ciberseguridad y elige la ruta que<br>mejor se adapte a tus objetivos profesionales.</p>
+
+    <!-- NIVEL 1 -->
+    <a href="#nivel-1" class="nhr-link">
+      <div class="nhr-card nhr-card--light">
+        <div class="nhr-icon">
+            <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Ciberseguridad/Structure/ICONO%20ESCUDO_CIBER.png?ver=vAqyoXuxyPe7Y8L4KNy0ZA%3d%3d" alt="Escudo">    
+        </div>
+        <div class="nhr-content">
+          <h3 class="nhr-card-title">Fundamentos</h3>
+          <div class="nhr-card-courses">CompTIA Security+ - Cybersecurity Fundamentals (CSX)</div>
+          <p class="nhr-card-desc">Construye tus conocimientos en seguridad digital.</p>
+        </div>
+        <span class="nhr-badge">Nivel 1</span>
+      </div>
+    </a>
+
+    <a href="#nivel-2" class="nhr-arrow" title="Ir al siguiente nivel">
+      <svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12l-6 6z"/></svg>
+    </a>
+
+    <!-- NIVEL 2 -->
+    <a href="#nivel-2" class="nhr-link">
+      <div class="nhr-card nhr-card--light">
+        <div class="nhr-icon">
+              <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Ciberseguridad/Structure/ICONO%20LUPA_CIBER.png?ver=WG0Swj5iYWulb9EPageamw%3d%3d" alt="Lupa">
+        </div>
+        <div class="nhr-content">
+          <h3 class="nhr-card-title">Especialización técnica</h3>
+          <div class="nhr-card-courses">CEH - E|CIH - CPENT</div>
+          <p class="nhr-card-desc">Profundiza en hacking ético, incidentes y pentesting.</p>
+        </div>
+        <span class="nhr-badge">Nivel 2</span>
+      </div>
+    </a>
+
+    <a href="#nivel-3" class="nhr-arrow" title="Ir al siguiente nivel">
+      <svg viewBox="0 0 24 24"><path d="M12 16l-6-6h12l-6 6z"/></svg>
+    </a>
+
+    <!-- NIVEL 3 -->
+    <a href="#nivel-3" class="nhr-link">
+      <div class="nhr-card nhr-card--dark">
+        <div class="nhr-icon">
+            <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Ciberseguridad/Structure/ICONO%20CERTIFICADO_CIBER.png?ver=z7L5eErT-lYIWLaFSGdu1w%3d%3d" alt="Microsoft">
+        </div>
+        <div class="nhr-content">
+          <h3 class="nhr-card-title">Gestión y liderazgo</h3>
+          <div class="nhr-card-courses">ISO 27001 - CISM - CISSP</div>
+          <p class="nhr-card-desc">Fortalece tu perfil en gestión y estrategia de seguridad.</p>
+        </div>
+        <span class="nhr-badge">Nivel 3</span>
+      </div>
+    </a>
+
+    <p class="nhr-footer">
+      Esta es una ruta orientativa, no una secuencia obligatoria de cursos. Las especializaciones técnicas de gestión pueden seguir caminos independientes según el perfil profesional.
+    </p>
+  </div>
+</section>

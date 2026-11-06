@@ -1,0 +1,213 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :where(.nhp-section) *,
+  :where(.nhp-section) *::before,
+  :where(.nhp-section) *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nhp-section {
+    --nhp-orange: #FF6B00;
+    --nhp-orange-hover: #e56000;
+    --nhp-white: #ffffff;
+    
+    width: 100%;
+    position: relative;
+    background-image: url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Ciberseguridad/Structure/FOTO%20FONDO%20AZUL.png?ver=xAPQ9ELFhB3CVl6nx0KxnQ%3d%3d');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nhp-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--nhp-white);
+  }
+
+  .nhp-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    color: var(--nhp-white);
+  }
+
+  .nhp-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 780px;
+    margin-bottom: 40px;
+    color: var(--nhp-white);
+  }
+
+  .nhp-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 720px;
+    margin-bottom: 44px;
+    text-align: left;
+  }
+
+  .nhp-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nhp-feature-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .nhp-feature-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nhp-feature-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--nhp-white);
+  }
+
+  .nhp-feature-desc {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--nhp-white);
+  }
+
+  .nhp-cta-btn {
+    display: inline-block;
+    background-color: var(--nhp-orange);
+    color: var(--nhp-white);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 30px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .nhp-cta-btn:hover {
+    background-color: var(--nhp-orange-hover);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 1024px) {
+    .nhp-title {
+      font-size: 28px;
+    }
+    .nhp-subtitle {
+      font-size: 15px;
+    }
+    .nhp-feature-title {
+      font-size: 17px;
+    }
+    .nhp-feature-desc {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .nhp-section {
+      padding: 40px 16px;
+    }
+    .nhp-title {
+      font-size: 22px;
+    }
+    .nhp-subtitle {
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+    .nhp-features-list {
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .nhp-feature-item {
+      gap: 14px;
+    }
+    .nhp-feature-icon {
+      width: 50px;
+      height: 50px;
+    }
+    .nhp-feature-title {
+      font-size: 15px;
+    }
+    .nhp-feature-desc {
+      font-size: 13px;
+    }
+    .nhp-cta-btn {
+      font-size: 14px;
+      padding: 14px 24px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
+
+<section class="nhp-section" id="nhp-propuesta-section">
+  <div class="nhp-container">
+    <h2 class="nhp-title">
+      La seguridad de tu organización<br>comienza con un equipo preparado
+    </h2>
+    <p class="nhp-subtitle">
+      Fortalece las competencias de tus colaboradores con programas de capacitación en ciberseguridad adaptados a los desafíos de tu organización.
+    </p>
+
+    <div class="nhp-features-list">
+      <div class="nhp-feature-item">
+        <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Ciberseguridad/Structure/ESCUDO_ICONO%20NARANJA.png?ver=zytuIt82uoaxlEDZRXX2bQ%3d%3d" alt="Prevención de amenazas" class="nhp-feature-icon">
+        <div class="nhp-feature-text">
+          <h3 class="nhp-feature-title">Prevención de amenazas</h3>
+          <p class="nhp-feature-desc">Fortalece las capacidades para identificar vulnerabilidades y riesgos.</p>
+        </div>
+      </div>
+
+      <div class="nhp-feature-item">
+        <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Ciberseguridad/Structure/LIBRETA_ICONO%20NARANJA.png?ver=W7xDx0rBxZN5YWqG_Ia9HQ%3d%3d" alt="Gestión y cumplimiento" class="nhp-feature-icon">
+        <div class="nhp-feature-text">
+          <h3 class="nhp-feature-title">Gestión y cumplimiento</h3>
+          <p class="nhp-feature-desc">Desarrolla competencias alineadas con estándares internacionales.</p>
+        </div>
+      </div>
+
+      <div class="nhp-feature-item">
+        <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Ciberseguridad/Structure/PERSONAS_ICONO%20NARANJA.png?ver=RFC3eDMPY1oiP5vgU8xqVQ%3d%3d" alt="Capacitación a medida" class="nhp-feature-icon">
+        <div class="nhp-feature-text">
+          <h3 class="nhp-feature-title">Capacitación a medida</h3>
+          <p class="nhp-feature-desc">Diseña programas según las necesidades y niveles de tu equipo.</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="#" class="nhp-cta-btn" id="nhp-btn-propuesta">
+      SOLICITA UNA PROPUESTA CORPORATIVA
+    </a>
+  </div>
+</section>

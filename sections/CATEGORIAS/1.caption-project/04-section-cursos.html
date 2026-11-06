@@ -1,4 +1,4 @@
-<!-- Importación de Poppins (si no la tienes cargada previamente) -->
+<!-- Importación de Poppins -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -51,15 +51,12 @@
         </div>
         <a href="#" class="btn-ver-curso">VER CURSO</a>
       </div>
-
     </div>
+
+    <!-- Línea divisoria inferior -->
+    <hr class="bottom-divider">
   </div>
-
 </section>
-<br><br><br>
-  <!-- Línea divisoria inferior -->
-        <hr class="bottom-divider">
-
 
 <style>
   /* Variables de Color y Tipografía */
@@ -71,23 +68,16 @@
     --font-family: 'Poppins', sans-serif;
   }
 
-          .bottom-divider {
-            width: 60%;
-            height: 1px;
-            background-color: #e0e0e0;
-            border: none;
-            margin: 0 auto;
-        }
-
   .especializacion-section {
     font-family: var(--font-family);
-    padding: 20px 20px;
+    padding: 10px 20px; /* Ancho y padding unificados con la sección anterior */
     background-color: #ffffff;
     box-sizing: border-box;
+    width: 100%;
   }
 
   .especializacion-section .container {
-    max-width: 900px;
+    max-width: 1000px; /* Ancho unificado a 1000px */
     margin: 0 auto;
   }
 
@@ -100,7 +90,7 @@
 
   .section-title {
     color: var(--color-primary);
-    font-size: 2.25rem; /* ~36px */
+    font-size: 40px;
     font-weight: 800;
     line-height: 1.2;
     margin: 0 0 20px 0;
@@ -114,11 +104,12 @@
     margin: 0;
   }
 
-  /* Grid Layout */
+  /* Grid Layout (Se adapta automáticamente para varias filas de 4 columnas) */
   .courses-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
+    margin-bottom: 60px; /* Espacio antes de la línea divisoria */
   }
 
   /* Cards */
@@ -184,6 +175,15 @@
     background-color: #e06500;
   }
 
+  /* Línea divisoria inferior */
+  .bottom-divider {
+    width: 60%;
+    height: 1px;
+    background-color: #e0e0e0;
+    border: none;
+    margin: 0 auto;
+  }
+
   /* Responsividad */
   @media (max-width: 1024px) {
     .courses-grid {
@@ -197,6 +197,9 @@
     }
     .courses-grid {
       grid-template-columns: 1fr;
+    }
+    .bottom-divider {
+      width: 80%;
     }
   }
 </style>
