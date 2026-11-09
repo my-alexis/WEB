@@ -1,0 +1,101 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :where(.nhci-section) *, :where(.nhci-section) *::before, :where(.nhci-section) *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Poppins', sans-serif; 
+  }
+
+  .nhci-section {
+    background-color: #ffffff;
+    padding: 20px 20px;
+    width: 100%;
+  }
+
+  .nhci-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .nhci-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(43, 42, 110, 0.08);
+    padding: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+  }
+
+  .nhci-header {
+    display: flex;
+    align-items: center;
+    border-left: 4px solid #FF6B00;
+    padding-left: 12px;
+    margin-bottom: 16px;
+  }
+
+  .nhci-title {
+    color: #2b2a6e;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .nhci-text {
+    color: #323063;
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+
+  .nhci-link {
+    color: #2b2a6e;
+    text-decoration: underline;
+    font-weight: 500;
+    word-break: break-all;
+  }
+
+  .nhci-link:hover {
+    color: #FF6B00;
+  }
+
+  @media (max-width: 1024px) {
+    .nhci-section {
+      padding: 40px 20px;
+    }
+    .nhci-card {
+      padding: 30px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .nhci-section {
+      padding: 24px 12px;
+    }
+    .nhci-card {
+      padding: 20px;
+      border-radius: 12px;
+    }
+    .nhci-header {
+      padding-left: 10px;
+      margin-bottom: 12px;
+    }
+    .nhci-title {
+      font-size: 17px;
+    }
+    .nhci-text {
+      font-size: 13.5px;
+    }
+  }
+</style>
+
+<section class="nhci-section" id="nhci-contact-info-section">
+  <div class="nhci-container">
+    <div class="nhci-card">
+      <div class="nhci-header">
+        <h3 class="nhci-title">Contact Information</h3>
+      </div>
+      <p class="nhci-text">
+        Questions regarding this Policy should be submitted to New Horizons by email to:<br><a href="mailto:info@newhorizons.edu.pe" class="nhci-link">info@newhorizons.edu.pe</a>
+      </p>
+    </div>
+  </div>
+</section>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formación en Agile - New Horizons</title>
+    <title>Formación en Project Management - New Horizons</title>
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,37 +24,38 @@
         }
 
         /* Sección Principal */
-        .pmi-section {
+        .data-section {
             width: 100%;
             max-width: 1000px;
             margin: 0 auto;
             padding: 60px 20px;
         }
 
+        /* Título Principal */
+        .data-title {
+            color: #2c2a6b;
+            font-size: 40px;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 15px;
+        }
+
         /* Contenedor de 2 Columnas */
-        .pmi-container {
+        .data-container {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
+            gap: 30px;
             align-items: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         /* Columna Izquierda (Texto) */
-        .pmi-content {
+        .data-content {
             display: flex;
             flex-direction: column;
         }
 
-        .pmi-title {
-            color: #2c2a6b;
-            font-size: 28px;
-            font-weight: 700;
-            line-height: 1.25;
-            margin-bottom: 20px;
-        }
-
-        .pmi-description {
+        .data-description {
             color: #2c2a6b;
             font-size: 15px;
             font-weight: 400;
@@ -63,7 +64,7 @@
         }
 
         /* Lista de Viñetas */
-        .pmi-list {
+        .data-list {
             list-style-type: disc;
             padding-left: 20px;
             display: flex;
@@ -71,20 +72,20 @@
             gap: 12px;
         }
 
-        .pmi-list li {
+        .data-list li {
             color: #2c2a6b;
             font-size: 14.5px;
             font-weight: 400;
             line-height: 1.5;
         }
 
-        /* Columna Derecha (Logos sin fondo ni sombra) */
-        .pmi-logos {
+        /* Columna Derecha (Logos) */
+        .data-logos {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 3px;
+            gap: 20px;
         }
 
         .logo-item {
@@ -96,7 +97,7 @@
 
         .logo-item img {
             width: 100%;
-            max-width: 260px; /* Tamaño incrementado para que se vean más grandes */
+            max-width: 260px;
             height: auto;
             object-fit: contain;
             transition: transform 0.2s ease;
@@ -117,16 +118,17 @@
 
         /* Adaptabilidad Móvil */
         @media (max-width: 768px) {
-            .pmi-container {
+            .data-title {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .data-container {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
 
-            .pmi-title {
-                font-size: 24px;
-            }
-
-            .pmi-description, .pmi-list li {
+            .data-description, .data-list li {
                 font-size: 14px;
             }
 
@@ -143,38 +145,35 @@
 
 <body>
 
-    <section class="pmi-section">
-        <div class="pmi-container">
-            
+    <section class="data-section">
+        <!-- Título principal fuera del grid para que fluya de forma limpia -->
+        <h2 class="data-title">Formación en Data & Analytics<br>con respaldo internacional</h2>
+        
+        <div class="data-container">
             <!-- Columna Izquierda: Textos y Listado -->
-            <div class="pmi-content">
-                <h2 class="pmi-title">Formación en Data & Analytics con respaldo oficial</h2>
-                <br>
-                <p class="pmi-description">
+            <div class="data-content">
+                <p class="data-description">
                 New Horizons Perú es Partner Oficial de Microsoft. Especialízate en tecnologías cloud y redes con capacitación práctica orientada a los desafíos del entorno empresarial.
                 </p>
 
-                <ul class="pmi-list">
+                <ul class="data-list">
                     <li>Clases online en vivo con instructores expertos.</li>
                     <li>Formación práctica en Cloud, redes e infraestructura.</li>
-                    <li>Preparación para certificaciones oficiales en programas seleccionados.</li>
+                    <li>Preparación para certificaciones oficiales en cursos seleccionados.</li>
                 </ul>
             </div>
 
-            <!-- Columna Derecha: Imágenes directas y de mayor tamaño -->
-            <div class="pmi-logos">
-                <!-- Logo Microsoft -->
-                <br><br><br><br>
+            <!-- Columna Derecha: Imágenes alineadas -->
+            <div class="data-logos">
+                <!-- Logo MICROSOFT -->
                 <div class="logo-item">
-                    <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Data/Structure/MICROSOFT_DATA.png?ver=NdV1HqTi8UHhz-LDE2RvSA%3d%3d" alt="Microsoft">
+                    <img src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Cloud/Structure/MICROSOFT_CLOUD.png?ver=k4KWY22lPNejcpYBp6Lbkg%3d%3d" alt="MICROSOFT">
                 </div>
             </div>
         </div>
-
         <!-- Línea divisoria inferior -->
         <hr class="bottom-divider">
     </section>
 
 </body>
-
 </html>
