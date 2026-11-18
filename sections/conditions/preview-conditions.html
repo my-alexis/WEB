@@ -16,7 +16,14 @@
     <div id="sec-05"></div>
     <div id="sec-06"></div>
     <div id="sec-07"></div>
-    <div id="sec-10"></div> <!-- Footer reutilizado -->
+    <div id="sec-08"></div>
+    <div id="sec-09"></div>
+    <div id="sec-10"></div>
+    <div id="sec-11"></div>
+    <div id="sec-12"></div>
+    <div id="sec-13"></div>
+    <div id="sec-14"></div>
+    <div id="sec-15"></div> <!-- Footer reutilizado -->
 
     <script>
         async function loadSection(id, file) {
@@ -37,11 +44,21 @@
             // Como están en la misma carpeta o subcarpetas hermanas:
             await loadSection('sec-02', '02-banner-conditions.html');
             await loadSection('sec-03', '03-section-text.html');
-            await loadSection('sec-04', '04-section-texttwo.html');
-            await loadSection('sec-05', '05-section-texthree.html');
+            await loadSection('sec-04', '04-section-textpart1.html');
+            await loadSection('sec-05', '05-section-textpart2.html');
+            await loadSection('sec-06', '06-section-textpart3.html');
+            await loadSection('sec-07', '07-section-textpart4.html');
+            await loadSection('sec-08', '08-section-textpart5.html');
+            await loadSection('sec-09', '09-section-textpart6.html');
+            await loadSection('sec-10', '10-section-textpart7.html');
+            await loadSection('sec-11', '11-section-textpart8.html');
+            await loadSection('sec-12', '12-section-textpart9.html');
+            await loadSection('sec-13', '13-section-textpart10.html');
+            await loadSection('sec-14', '14-section-textpart11.html');
+
 
             // Salimos de 'centro de examenes' y entramos a 'home' para el footer
-            await loadSection('sec-10', '../home/10-footer.html');
+            await loadSection('sec-15', '../home/10-footer.html');
 
             initHeaderMenu();
         }

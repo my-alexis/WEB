@@ -1,229 +1,305 @@
-<!-- Importación de Poppins (si no la tienes cargada previamente) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos de especialización</title>
 
-<section class="especializacion-section">
-  <div class="container">
-    <!-- Encabezado -->
-    <div class="section-header">
-      <h2 class="section-title">Encuentra tu próxima<br>especialización</h2>
-      <p class="section-description">
-      Explora nuestros cursos de Cloud y Redes y fortalece tus competencias en Microsoft Azure, Cisco, VMware y administración de infraestructura tecnológica.
-      </p>
-    </div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Rejilla de Cursos -->
-    <div class="courses-grid">
-      
-      <!-- Card 1 -->
-      <div class="course-card">
-        <div class="card-content">
-          <h3 class="card-title">AZ-900 MICROSOFT AZURE FUNDAMENTALS</h3>
-          <span class="card-tag">MICROSOFT AZURE</span>
-        </div>
-        <a href="#" class="btn-ver-curso">VER CURSO</a>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="course-card">
-        <div class="card-content">
-          <h3 class="card-title">AZ-104 AZURE ADMINISTRATOR</h3>
-          <span class="card-tag">MICROSOFT AZURE</span>
-        </div>
-        <a href="#" class="btn-ver-curso">VER CURSO</a>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="course-card">
-        <div class="card-content">
-          <h3 class="card-title">AZ-204 DEVELOPING SOLUTIONS FOR MICROSOFT AZURE</h3>
-          <span class="card-tag">MICROSOFT AZURE</span>
-        </div>
-        <a href="#" class="btn-ver-curso">VER CURSO</a>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="course-card">
-        <div class="card-content">
-          <h3 class="card-title">AZ-305 DESIGNING INFRAESTRUCTURE SOLUTIONS</h3>
-          <span class="card-tag">MICROSOFT AZURE</span>
-        </div>
-        <a href="#" class="btn-ver-curso">VER CURSO</a>
-      </div>
-
-            <!-- Card 5 -->
-      <div class="course-card">
-        <div class="card-content">
-          <h3 class="card-title">TALLER CCNA V7: SWITCHING, ROUTING & WIRELESS</h3>
-          <span class="card-tag">REDES E INFRAESTRUCTURA</span>
-        </div>
-        <a href="#" class="btn-ver-curso">VER CURSO</a>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="course-card">
-        <div class="card-content">
-          <h3 class="card-title">AZ-802T00-A: ADMINISTRAR WINDOWS SERVER</h3>
-          <span class="card-tag">REDES E INFRAESTRUCTURA</span>
-        </div>
-        <a href="#" class="btn-ver-curso">VER CURSO</a>
-      </div>
-
-      <!-- Card 7 -->
-      <div class="course-card">
-        <div class="card-content">
-          <h3 class="card-title">VMWARE VSPHERE: INSTALAR, CONFIGURAR Y ADMINISTRAR</h3>
-          <span class="card-tag">VIRTUALIZACIÓN</span>
-        </div>
-        <a href="#" class="btn-ver-curso">VER CURSO</a>
-      </div>
-
-    </div>
-  </div>
-
-</section>
-<br><br><br>
-  <!-- Línea divisoria inferior -->
-        <hr class="bottom-divider">
-
-
-<style>
-  /* Variables de Color y Tipografía */
-  :root {
-    --color-primary: #211f53;      /* Azul oscuro principal */
-    --color-text-body: #323063;    /* Azul/Gris para párrafos */
-    --color-orange: #ff7300;       /* Naranja institucional para tags y botones */
-    --color-card-bg: #f5f5f7;      /* Gris claro fondo de cards */
-    --font-family: 'Poppins', sans-serif;
-  }
-
-          .bottom-divider {
-            width: 60%;
-            height: 1px;
-            background-color: #e0e0e0;
-            border: none;
-            margin: 0 auto;
-        }
-
-  .especializacion-section {
-    font-family: var(--font-family);
-    padding: 20px 20px;
-    background-color: #ffffff;
-    box-sizing: border-box;
-  }
-
-  .especializacion-section .container {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  /* Headings & Textos */
-  .section-header {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 50px auto;
-  }
-
-  .section-title {
-    color: var(--color-primary);
-    font-size: 2.25rem; /* ~36px */
-    font-weight: 800;
-    line-height: 1.2;
-    margin: 0 0 20px 0;
-  }
-
-  .section-description {
-    color: var(--color-text-body);
-    font-size: 1.05rem; /* ~17px */
-    font-weight: 500;
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  /* Grid Layout */
-  .courses-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-  }
-
-  /* Cards */
-  .course-card {
-    background-color: var(--color-card-bg);
-    border-radius: 16px;
-    padding: 30px 24px 24px 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    min-height: 280px;
-  }
-
-  .course-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
-  }
-
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .card-title {
-    color: var(--color-primary);
-    font-size: 0.85rem; /* ~13.5px */
-    font-weight: 700;
-    line-height: 1.4;
-    text-transform: uppercase;
-    margin: 0;
-    letter-spacing: 0.2px;
-  }
-
-  .card-tag {
-    color: var(--color-orange);
-    font-size: 0.75rem; /* ~12px */
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  /* Botón */
-  .btn-ver-curso {
-    display: inline-block;
-    align-self: flex-start;
-    background-color: var(--color-orange);
-    color: #ffffff;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 8px 16px;
-    border-radius: 6px;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: background-color 0.2s ease;
-    margin-top: 20px;
-  }
-
-  .btn-ver-curso:hover {
-    background-color: #e06500;
-  }
-
-  /* Responsividad */
-  @media (max-width: 1024px) {
-    .courses-grid {
-      grid-template-columns: repeat(2, 1fr);
+  <style>
+    :root {
+      --color-primary: #2c2a6b;
+      --color-orange: #ff7300;
+      --font-family: 'Poppins', sans-serif;
     }
-  }
 
-  @media (max-width: 600px) {
+    * {
+      box-sizing: border-box;
+    }
+
+    .especializacion-section {
+      width: 100%;
+      padding: 12px 20px 24px;
+      background: #ffffff;
+      font-family: var(--font-family);
+    }
+
+    .especializacion-section .container {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      max-width: 800px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
     .section-title {
-      font-size: 1.75rem;
+      margin: 0;
+      color: var(--color-primary);
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.05;
     }
+
+    .section-description {
+      margin: 16px 0 0;
+      color: #323063;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    /* Rejilla: cuatro tarjetas por fila en escritorio */
     .courses-grid {
-      grid-template-columns: 1fr;
+      width: 100%;
+      max-width: 1050px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 32px 20px;
     }
-  }
-</style>
+
+    /* Tarjeta cuadrada con imagen de fondo */
+    .course-card {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      min-width: 0;
+      padding: 16px;
+      border-radius: 12px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      background-color: #29266f;
+      background-image: var(--card-image);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      box-shadow: 0 5px 14px rgba(20, 18, 70, 0.10);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .course-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(20, 18, 70, 0.20);
+    }
+
+    .card-content,
+    .btn-ver-curso {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-content {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .card-tag {
+      display: inline-block;
+      max-width: 100%;
+      color: #ff3b25;
+      font-size: 0.63rem;
+      font-weight: 800;
+      line-height: 1.15;
+      text-transform: uppercase;
+      letter-spacing: 0.1px;
+      overflow-wrap: anywhere;
+    }
+
+    .card-title {
+      width: 100%;
+      margin: auto 0 0;
+      color: #ffffff;
+      font-size: 0.76rem;
+      font-weight: 700;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .btn-ver-curso {
+      display: inline-block;
+      align-self: flex-start;
+      flex: 0 0 auto;
+      margin-top: 10px;
+      padding: 5px 9px;
+      border-radius: 5px;
+      background: var(--color-orange);
+      color: #ffffff;
+      font-size: 0.58rem;
+      font-weight: 800;
+      line-height: 1.15;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-ver-curso:hover {
+      background: #e06500;
+      transform: translateY(-1px);
+    }
+
+    .bottom-divider {
+      width: 60%;
+      height: 1px;
+      margin: 32px auto 0;
+      border: 0;
+      background: #e0e0e0;
+    }
+
+    /* Tablets */
+    @media (max-width: 1024px) {
+      .courses-grid {
+        max-width: 800px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .card-title {
+        font-size: clamp(0.78rem, 2vw, 0.95rem);
+      }
+
+      .card-tag {
+        font-size: 0.72rem;
+      }
+
+      .btn-ver-curso {
+        font-size: 0.68rem;
+      }
+    }
+
+    /* Celulares */
+    @media (max-width: 600px) {
+      .especializacion-section {
+        padding: 18px 16px 24px;
+      }
+
+      .section-header {
+        margin-bottom: 28px;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+      }
+
+      .courses-grid {
+        max-width: 500px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .course-card {
+        padding: 12px;
+        border-radius: 10px;
+      }
+
+      .card-title {
+        font-size: clamp(0.62rem, 2.5vw, 0.78rem);
+      }
+
+      .card-tag {
+        font-size: clamp(0.52rem, 2vw, 0.65rem);
+      }
+
+      .btn-ver-curso {
+        margin-top: 7px;
+        padding: 4px 7px;
+        font-size: 0.52rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .courses-grid {
+        grid-template-columns: 1fr;
+        max-width: 240px;
+      }
+
+      .card-title {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="especializacion-section">
+    <div class="container">
+      <header class="section-header">
+        <h2 class="section-title">Encuentra tu próxima<br>especialización</h2>
+        <p class="section-description">
+        </p>
+      </header>
+
+      <div class="courses-grid">
+      <!-- Tarjeta 01: reemplaza URL_IMAGEN_01 por el enlace de tu imagen -->
+      <article class="course-card" style="--card-image: url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Cloud/Structure/COURSE/AZ-900%20Microsoft%20Azure%20Fundamentals.png?ver=9f57sa5I87J59btk_Ym0SA%3d%3d');">
+        <div class="card-content">
+     
+          <h3 class="card-title">AZ-900 MICROSOFT AZURE FUNDAMENTALS</h3>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </article>
+      <!-- Tarjeta 02: reemplaza URL_IMAGEN_02 por el enlace de tu imagen -->
+      <article class="course-card" style="--card-image: url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Cloud/Structure/COURSE/AZ-104%20Azure%20Administrator.png?ver=A-XBnbf79UncyPSXwUVZHQ%3d%3d');">
+        <div class="card-content">
+          
+          <h3 class="card-title">AZ-104 AZURE ADMINISTRATOR</h3>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </article>
+      <!-- Tarjeta 03: reemplaza URL_IMAGEN_03 por el enlace de tu imagen -->
+      <article class="course-card" style="--card-image: url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Cloud/Structure/COURSE/AZ-305.png?ver=lqFC_ykXSobHsgiynIvYDA%3d%3d');">
+        <div class="card-content">
+          
+          <h3 class="card-title">AZ-305 DESIGNING INFRAESTRUCTURE SOLUTIONS</h3>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </article>
+      <!-- Tarjeta 04: reemplaza URL_IMAGEN_04 por el enlace de tu imagen -->
+      <article class="course-card" style="--card-image: url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Cloud/Structure/COURSE/AZ-802.png?ver=rqSDC-ROtG56CqZ2l_gmlw%3d%3d');">
+        <div class="card-content">
+          
+          <h3 class="card-title">AZ-802T00-A: ADMINISTRAR WINDOWS SERVER</h3>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </article>
+      <!-- Tarjeta 05: reemplaza URL_IMAGEN_05 por el enlace de tu imagen -->
+      <article class="course-card" style="--card-image: url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Cloud/Structure/COURSE/Taller%20CCNA%20v7.png?ver=kdoxDBOhx4cnLk9fB-Z60w%3d%3d');">
+        <div class="card-content">
+          
+          <h3 class="card-title">TALLER CCNA V7: SWITCHING, ROUTING & WIRELESS</h3>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </article>
+      <!-- Tarjeta 06: reemplaza URL_IMAGEN_06 por el enlace de tu imagen -->
+      <article class="course-card" style="--card-image: url('https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/CATEGORIAS/Section-Cloud/Structure/COURSE/VMware%20vSphere.png?ver=IQc7TqavX43BJrIYKbvhuQ%3d%3d');">
+        <div class="card-content">
+          
+          <h3 class="card-title">VMWARE VSPHERE: INSTALAR, CONFIGURAR Y ADMINISTRAR</h3>
+        </div>
+        <a href="#" class="btn-ver-curso">VER CURSO</a>
+      </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="bottom-divider">
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :where(.nhpp-section) *,
+  :where(.nhpp-section) *::before,
+  :where(.nhpp-section) *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nhpp-section {
+    background-color: #ffffff;
+    padding: 20px 20px;
+    width: 100%;
+  }
+
+  .nhpp-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .nhpp-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(43, 42, 110, 0.08);
+    padding: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+  }
+
+  .nhpp-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .nhpp-icon-img {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+  }
+
+  .nhpp-date-title {
+    color: #2b2a6e;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .nhpp-content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nhpp-text {
+    color: #323063;
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+
+  .nhpp-link {
+    color: #2b2a6e;
+    text-decoration: underline;
+    font-weight: 500;
+    word-break: break-all;
+  }
+
+  .nhpp-link:hover {
+    color: #FF6B00;
+  }
+
+  @media (max-width: 1024px) {
+    .nhpp-section {
+      padding: 40px 20px;
+    }
+
+    .nhpp-card {
+      padding: 30px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .nhpp-section {
+      padding: 24px 12px;
+    }
+
+    .nhpp-card {
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .nhpp-header {
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .nhpp-date-title {
+      font-size: 17px;
+    }
+
+    .nhpp-icon-img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .nhpp-text {
+      font-size: 13.5px;
+    }
+  }
+</style>
+
+<section class="nhpp-section" id="nhpp-privacy-policy-section">
+  <div class="nhpp-container">
+    <div class="nhpp-card">
+      <div class="nhpp-header">
+        <h3 class="nhpp-date-title">Protección de menores de edad</h3>
+      </div>
+      <div class="nhpp-content">
+        <p class="nhpp-text">
+          New Horizons no comercializa directamente productos ni servicios a menores de edad.
+          <br>Los productos y servicios destinados a menores son ofrecidos a sus padres o tutores legales.
+          <br>Si eres menor de 18 años, únicamente podrás adquirir nuestros productos o servicios con la autorización de
+          uno de tus padres o de tu tutor legal.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
