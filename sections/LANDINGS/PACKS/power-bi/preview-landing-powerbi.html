@@ -16,7 +16,10 @@
     <div id="sec-05"></div>
     <div id="sec-06"></div>
     <div id="sec-07"></div>
-    <div id="sec-10"></div> <!-- Footer reutilizado -->
+    <div id="sec-10"></div>
+    <div id="sec-08"></div>
+    <div id="sec-09"></div>
+    <div id="sec-11"></div> <!-- Footer reutilizado -->
 
     <script>
         async function loadSection(id, file) {
@@ -39,11 +42,14 @@
             await loadSection('sec-03', '03-section-text.html');
             await loadSection('sec-04', '04-section-porcentaje.html'); 
             await loadSection('sec-05', '05-section-niveles.html'); 
-            await loadSection('sec-06', '06-preguntas-examenes.html');
-            await loadSection('sec-07', '07-horario-examenes.html');
+            await loadSection('sec-06', '06-section-funcion.html');
+            await loadSection('sec-07', '07-section-certificado.html');
+            await loadSection('sec-10', '10-section-aplication.html');
+            await loadSection('sec-08', '08-section-empresas.html');
+            await loadSection('sec-09', '09-section-relacionados.html');
 
             // Salimos de 'centro de examenes' y entramos a 'home' para el footer
-            await loadSection('sec-10', '../../../home/10-footer.html');
+            await loadSection('sec-11', '../../../home/10-footer.html');
 
             initHeaderMenu();
         }

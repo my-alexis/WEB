@@ -11,6 +11,11 @@
   }
 
   .nhv-section {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
     --nhv-primary: #2b2a6e;
     --nhv-overlay-top: rgba(43, 42, 110, 0.08);
     --nhv-overlay-bottom: rgba(43, 42, 110, 0.94);
@@ -21,13 +26,14 @@
     --nhv-divider: #d9dde8;
     --nhv-shadow: 0 10px 26px rgba(43, 42, 110, 0.14);
 
-    width: 100%;
     background-color: var(--nhv-bg);
     padding: 64px 24px 0;
     color: var(--nhv-primary);
   }
 
   .nhv-section .nhv-inner {
+    width: 100%;
+    min-width: 0;
     max-width: 960px;
     margin: 0 auto;
     display: flex;
@@ -46,8 +52,9 @@
 
   .nhv-section .nhv-grid {
     width: 100%;
+    min-width: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-rows: 224px 224px;
     gap: 24px;
     margin-bottom: 68px;

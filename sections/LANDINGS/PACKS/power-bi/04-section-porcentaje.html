@@ -11,20 +11,26 @@
   }
 
   .nhm-section {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+
     --nhm-primary: #2b2a6e;
     --nhm-orange: #FF6B00;
     --nhm-white: #ffffff;
     --nhm-bg-gradient: linear-gradient(90deg, #26216F 0%, #156DA8 51%, #04B8E1 100%);
     --nhm-card-shadow: 0 12px 32px rgba(11, 17, 44, 0.25);
 
-    width: 100%;
     background: var(--nhm-bg-gradient);
     padding: 64px 24px 72px;
     color: var(--nhm-white);
   }
 
   .nhm-section .nhm-inner {
+    width: 100%;
     max-width: 820px;
+    min-width: 0;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -43,6 +49,8 @@
 
   .nhm-section .nhm-stat-card {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     background-color: var(--nhm-white);
     border-radius: 18px;
     box-shadow: var(--nhm-card-shadow);
@@ -62,6 +70,8 @@
   }
 
   .nhm-section .nhm-stat-body {
+    min-width: 0;
+    overflow-wrap: anywhere;
     display: flex;
     flex-direction: column;
     gap: 8px;
