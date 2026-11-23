@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrusel de preparación PL-300</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+.nhp-pl300-carousel,
+.nhp-pl300-carousel * { box-sizing: border-box; }
+.nhp-pl300-carousel {
+  --nhp-pl300-primary: #2b2a6e;
+  width: 100%;
+  padding: 34px 20px 28px;
+  color: var(--nhp-pl300-primary);
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+}
+.nhp-pl300-carousel * { font-family: 'Poppins', sans-serif; }
+.nhp-pl300-carousel__inner {
+  width: 70%;
+  max-width: 980px;
+  min-width: 0;
+  margin: 0 auto;
+  position: relative;
+}
+.nhp-pl300-carousel__heading {
+  margin: 0 0 4px;
+  color: var(--nhp-pl300-primary);
+  text-align: center;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.25;
+  font-weight: 800;
+}
+.nhp-pl300-carousel__subtitle {
+  margin: 0 0 20px;
+  color: var(--nhp-pl300-primary);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.nhp-pl300-carousel__subtitle strong { font-weight: 700; }
+.nhp-pl300-carousel__layout {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.nhp-pl300-carousel__viewport {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+  touch-action: pan-y;
+}
+.nhp-pl300-carousel__track {
+  display: flex;
+  width: 100%;
+  transition: transform .48s cubic-bezier(.22,.7,.25,1);
+  will-change: transform;
+}
+.nhp-pl300-carousel__slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 100%;
+  aspect-ratio: 2.58 / 1;
+  overflow: hidden;
+  border-radius: 24px;
+  background: linear-gradient(110deg, #0877ad 0%, #2b2a6e 78%);
+}
+.nhp-pl300-carousel__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.nhp-pl300-carousel__shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10,91,139,.08) 0%, rgba(43,42,110,.20) 42%, rgba(43,42,110,.98) 72%);
+}
+.nhp-pl300-carousel__copy {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 7%;
+  width: 42%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+.nhp-pl300-carousel__title {
+  margin: 0 0 4px;
+  color: #fff;
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.nhp-pl300-carousel__description {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(12px, 1.15vw, 16px);
+  font-weight: 400;
+  line-height: 1.45;
+}
+.nhp-pl300-carousel__arrow {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--nhp-pl300-primary);
+  color: #fff;
+  font-size: 21px;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background .2s ease, transform .2s ease;
+}
+.nhp-pl300-carousel__arrow:hover {
+  background: #1e1d52;
+  transform: translateY(-50%) scale(1.07);
+}
+.nhp-pl300-carousel__arrow--prev { left: -48px; }
+.nhp-pl300-carousel__arrow--next { right: -48px; }
+.nhp-pl300-carousel__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 17px;
+}
+.nhp-pl300-carousel__dot {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #a9add0;
+  cursor: pointer;
+  transition: width .2s ease, background .2s ease;
+}
+.nhp-pl300-carousel__dot[aria-current="true"] {
+  width: 30px;
+  border-radius: 5px;
+  background: var(--nhp-pl300-primary);
+}
+@media (max-width: 900px) {
+  .nhp-pl300-carousel__inner { width: 86%; }
+  .nhp-pl300-carousel__arrow--prev { left: -40px; }
+  .nhp-pl300-carousel__arrow--next { right: -40px; }
+}
+@media (max-width: 600px) {
+  .nhp-pl300-carousel { padding: 30px 16px 24px; }
+  .nhp-pl300-carousel__inner { width: 100%; }
+  .nhp-pl300-carousel__heading { font-size: 21px; }
+  .nhp-pl300-carousel__subtitle { font-size: 12px; margin-bottom: 16px; }
+  .nhp-pl300-carousel__layout { gap: 0; }
+  .nhp-pl300-carousel__viewport,
+  .nhp-pl300-carousel__slide { border-radius: 16px; }
+  .nhp-pl300-carousel__slide { aspect-ratio: 1.45 / 1; }
+  .nhp-pl300-carousel__shade {
+    background: linear-gradient(90deg, rgba(10,91,139,.10), rgba(43,42,110,.88) 62%, rgba(43,42,110,.98));
+  }
+  .nhp-pl300-carousel__copy { right: 6%; width: 48%; }
+  .nhp-pl300-carousel__title { font-size: 17px; }
+  .nhp-pl300-carousel__description { font-size: 11px; }
+  .nhp-pl300-carousel__arrow { width: 29px; height: 29px; font-size: 18px; }
+  .nhp-pl300-carousel__arrow--prev { left: 7px; }
+  .nhp-pl300-carousel__arrow--next { right: 7px; }
+  .nhp-pl300-carousel__dots { margin-top: 14px; }
+}
+</style>
+</head>
+<body>
+<section class="nhp-pl300-carousel" id="nhp-pl300-carousel">
+  <div class="nhp-pl300-carousel__inner">
+    <h2 class="nhp-pl300-carousel__heading">Prepárate para la certificación PL-300</h2>
+    <p class="nhp-pl300-carousel__subtitle"><strong>Curso orientado</strong> al examen PL-300</p>
+
+    <div class="nhp-pl300-carousel__layout">
+      <button class="nhp-pl300-carousel__arrow nhp-pl300-carousel__arrow--prev" type="button" aria-label="Imagen anterior">&#8249;</button>
+      <div class="nhp-pl300-carousel__viewport">
+        <div class="nhp-pl300-carousel__track">
+          <article class="nhp-pl300-carousel__slide">
+            <img class="nhp-pl300-carousel__image" src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/LANDING/PL%20300/Preparar%20datos.png?ver=GkbJIMtSgu6UdOm_zRH5zQ%3d%3d" alt="Preparar datos con Power Query">
+            <div class="nhp-pl300-carousel__shade"></div>
+            <div class="nhp-pl300-carousel__copy">
+              <h3 class="nhp-pl300-carousel__title">Preparar datos</h3>
+              <p class="nhp-pl300-carousel__description">Power Query · conexión · transformación</p>
+            </div>
+          </article>
+          <article class="nhp-pl300-carousel__slide">
+            <img class="nhp-pl300-carousel__image" src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/LANDING/PL%20300/Modelar%20datos.png?ver=lPbWc58g_UArkwibl6C4ew%3d%3d" alt="Modelar datos">
+            <div class="nhp-pl300-carousel__shade"></div>
+            <div class="nhp-pl300-carousel__copy">
+              <h3 class="nhp-pl300-carousel__title">Modelar datos</h3>
+              <p class="nhp-pl300-carousel__description">Relaciones · DAX · optimización</p>
+            </div>
+          </article>
+          <article class="nhp-pl300-carousel__slide">
+            <img class="nhp-pl300-carousel__image" src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/LANDING/PL%20300/Visualizar%20y%20analizar.png?ver=yOqyMzX0mopXFjoR3-hhKg%3d%3d" alt="Visualizar y analizar datos">
+            <div class="nhp-pl300-carousel__shade"></div>
+            <div class="nhp-pl300-carousel__copy">
+              <h3 class="nhp-pl300-carousel__title">Visualizar y analizar</h3>
+              <p class="nhp-pl300-carousel__description">Reportes · KPIs · análisis</p>
+            </div>
+          </article>
+          <article class="nhp-pl300-carousel__slide">
+            <img class="nhp-pl300-carousel__image" src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/LANDING/PL%20300/Gestionar%20y%20proteger.png?ver=c2jtXOCaaKjTNj-MMuL3rw%3d%3d" alt="Administrar y proteger Power BI">
+            <div class="nhp-pl300-carousel__shade"></div>
+            <div class="nhp-pl300-carousel__copy">
+              <h3 class="nhp-pl300-carousel__title">Gestionar y proteger</h3>
+              <p class="nhp-pl300-carousel__description">Workspaces · publicación · seguridad</p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <button class="nhp-pl300-carousel__arrow nhp-pl300-carousel__arrow--next" type="button" aria-label="Imagen siguiente">&#8250;</button>
+    </div>
+    <div class="nhp-pl300-carousel__dots" aria-label="Seleccionar imagen">
+      <button class="nhp-pl300-carousel__dot" type="button" aria-label="Ir a imagen 1" aria-current="true"></button>
+      <button class="nhp-pl300-carousel__dot" type="button" aria-label="Ir a imagen 2" aria-current="false"></button>
+      <button class="nhp-pl300-carousel__dot" type="button" aria-label="Ir a imagen 3" aria-current="false"></button>
+      <button class="nhp-pl300-carousel__dot" type="button" aria-label="Ir a imagen 4" aria-current="false"></button>
+    </div>
+  </div>
+</section>
+<script>
+(function () {
+  function initNhpPl300Carousel(root) {
+    if (!root || root.dataset.pl300Ready === 'true') return;
+    const track = root.querySelector('.nhp-pl300-carousel__track');
+    const slides = Array.from(root.querySelectorAll('.nhp-pl300-carousel__slide'));
+    const dots = Array.from(root.querySelectorAll('.nhp-pl300-carousel__dot'));
+    const prev = root.querySelector('.nhp-pl300-carousel__arrow--prev');
+    const next = root.querySelector('.nhp-pl300-carousel__arrow--next');
+    const viewport = root.querySelector('.nhp-pl300-carousel__viewport');
+    if (!track || slides.length !== 4 || !prev || !next || !viewport) return;
+
+    root.dataset.pl300Ready = 'true';
+    let active = 0;
+    const show = (index) => {
+      active = (index + slides.length) % slides.length;
+      track.style.transform = `translateX(-${active * 100}%)`;
+      dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === active)));
+    };
+    prev.addEventListener('click', () => show(active - 1));
+    next.addEventListener('click', () => show(active + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+
+    let startX = 0;
+    viewport.addEventListener('touchstart', e => { startX = e.changedTouches[0].screenX; }, { passive: true });
+    viewport.addEventListener('touchend', e => {
+      const delta = e.changedTouches[0].screenX - startX;
+      if (Math.abs(delta) > 45) show(active + (delta < 0 ? 1 : -1));
+    }, { passive: true });
+    show(0);
+  }
+
+  // Funciona de forma independiente y también cuando se carga desde el preview.
+  window.initNhpPl300Carousel = initNhpPl300Carousel;
+  initNhpPl300Carousel(document.querySelector('#nhp-pl300-carousel'));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!-- SECCIÓN: CERTIFICACIÓN -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  .nh-cert-section,
+  .nh-cert-section *,
+  .nh-cert-section *::before,
+  .nh-cert-section *::after {
+    box-sizing: border-box;
+  }
+
+  .nh-cert-section {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    padding: 64px 24px 0;
+    color: #2b2a6e;
+    font-family: 'Poppins', sans-serif;
+    /* Degradado suave al inicio, como en el modelo */
+    background: linear-gradient(
+      180deg,
+      #eef0f5 0%,
+      #f7f8fa 32%,
+      #ffffff 78%,
+      #ffffff 100%
+    );
+  }
+
+  .nh-cert-section .nh-cert-inner {
+    width: 100%;
+    max-width: 1120px;
+    min-width: 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.9fr);
+    align-items: start;
+    gap: clamp(32px, 5vw, 72px);
+    padding: 0 24px 68px;
+  }
+
+  .nh-cert-section .nh-cert-copy {
+    min-width: 0;
+    padding-top: 6px;
+  }
+
+  .nh-cert-section .nh-cert-title {
+    margin: 0 0 12px;
+    color: #2b2a6e;
+    font-size: clamp(30px, 3.2vw, 38px);
+    font-weight: 800;
+    line-height: 1.15;
+  }
+
+  .nh-cert-section .nh-cert-subtitle {
+    margin: 0 0 8px;
+    color: #2b2a6e;
+    font-size: clamp(17px, 1.8vw, 20px);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .nh-cert-section .nh-cert-description {
+    margin: 0;
+    color: #2b2a6e;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  .nh-cert-section .nh-cert-note {
+    margin: 60px 0 0;
+    color: #2b2a6e;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  .nh-cert-section .nh-cert-image-wrap {
+    width: 100%;
+    max-width: 390px;
+    justify-self: center;
+    padding: 5px;
+    
+  }
+
+  .nh-cert-section .nh-cert-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .nh-cert-section .nh-cert-divider {
+    width: 100%;
+    max-width: 1120px;
+    height: 1px;
+    margin: 0 auto;
+    background: #dce0e9;
+  }
+
+  @media (max-width: 760px) {
+    .nh-cert-section {
+      padding: 48px 18px 0;
+    }
+
+    .nh-cert-section .nh-cert-inner {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 30px;
+      padding: 0 4px 44px;
+    }
+
+    .nh-cert-section .nh-cert-copy {
+      text-align: center;
+    }
+
+    .nh-cert-section .nh-cert-note {
+      margin-top: 28px;
+    }
+
+    .nh-cert-section .nh-cert-image-wrap {
+      width: min(100%, 420px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nh-cert-section .nh-cert-title {
+      font-size: 29px;
+    }
+
+    .nh-cert-section .nh-cert-subtitle {
+      font-size: 17px;
+    }
+
+    .nh-cert-section .nh-cert-description {
+      font-size: 13px;
+    }
+  }
+</style>
+
+<section id="nh-certificacion" class="nh-cert-section">
+  <div class="nh-cert-inner">
+    <div class="nh-cert-copy">
+      <h2 class="nh-cert-title">Certificación</h2>
+
+      <h3 class="nh-cert-subtitle">
+        Certifica tus habilidades en Excel con IA
+      </h3>
+
+      <p class="nh-cert-description">
+        Fortalece tu perfil profesional y acredita tus conocimientos en<br>
+        Excel, análisis de datos y herramientas de inteligencia artificial.
+      </p>
+
+      <p class="nh-cert-note">
+        *Certificado de New Horizons Perú, sujeto a los requisitos
+        de aprobación del curso.
+      </p>
+    </div>
+
+    <div class="nh-cert-image-wrap">
+      <!-- Reemplaza la URL de ejemplo por el enlace público de tu certificado -->
+      <img
+        class="nh-cert-image"
+        src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/LANDING/Excel/PLAN%20Ms%20Excel%20365%20con%20Copilot%20-%20B%C3%A1sico%201.png?ver=9NN0kqEyzH-mnDFO_nutuQ%3d%3d"
+        alt="Modelo de certificado de New Horizons y Microsoft"
+        loading="lazy"
+      >
+    </div>
+  </div>
+
+</section>

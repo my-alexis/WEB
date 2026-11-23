@@ -1,0 +1,188 @@
+<!-- SECCIÓN: EMPRESAS QUE CONFÍAN EN NEW HORIZONS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  .nh-empresas-section,
+  .nh-empresas-section *,
+  .nh-empresas-section *::before,
+  .nh-empresas-section *::after {
+    box-sizing: border-box;
+  }
+
+  .nh-empresas-section {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    padding: 24px 24px 0;
+    background: #ffffff;
+    color: #2b2a6e;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nh-empresas-section .nh-empresas-inner {
+    width: 100%;
+    max-width: 1120px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 0 4px 58px;
+  }
+
+  .nh-empresas-section .nh-empresas-title {
+    margin: 0 0 58px;
+    color: #2b2a6e;
+    font-size: clamp(27px, 3.2vw, 36px);
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .nh-empresas-section .nh-empresas-logos {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .nh-empresas-section .nh-empresa-logo-item {
+    min-width: 0;
+    min-height: 54px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #dedee3;
+  }
+
+  .nh-empresas-section .nh-empresa-logo-item:nth-child(6n) {
+    border-right: 0;
+  }
+
+  .nh-empresas-section .nh-empresa-logo {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    max-height: 58px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .nh-empresas-section .nh-empresas-divider {
+    width: 100%;
+    height: 3px;
+    margin: 0 auto;
+    background: #eceef3;
+    border-top: 1px solid #e3e6ed;
+  }
+
+  @media (max-width: 900px) {
+    .nh-empresas-section .nh-empresas-inner {
+      padding-bottom: 46px;
+    }
+
+    .nh-empresas-section .nh-empresas-title {
+      margin-bottom: 42px;
+    }
+
+    .nh-empresas-section .nh-empresas-logos {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      row-gap: 28px;
+    }
+
+    .nh-empresas-section .nh-empresa-logo-item {
+      padding: 0 22px;
+    }
+
+    .nh-empresas-section .nh-empresa-logo-item:nth-child(6n) {
+      border-right: 1px solid #dedee3;
+    }
+
+    .nh-empresas-section .nh-empresa-logo-item:nth-child(3n) {
+      border-right: 0;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .nh-empresas-section {
+      padding: 38px 16px 0;
+    }
+
+    .nh-empresas-section .nh-empresas-inner {
+      padding: 0 0 38px;
+    }
+
+    .nh-empresas-section .nh-empresas-title {
+      font-size: 24px;
+      margin-bottom: 34px;
+    }
+
+    .nh-empresas-section .nh-empresas-logos {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: 24px;
+    }
+
+    .nh-empresas-section .nh-empresa-logo-item {
+      min-height: 50px;
+      padding: 0 16px;
+    }
+
+    .nh-empresas-section .nh-empresa-logo-item:nth-child(3n) {
+      border-right: 1px solid #dedee3;
+    }
+
+    .nh-empresas-section .nh-empresa-logo-item:nth-child(2n) {
+      border-right: 0;
+    }
+
+    .nh-empresas-section .nh-empresa-logo {
+      max-width: 135px;
+      max-height: 48px;
+    }
+  }
+</style>
+
+<section id="nh-empresas-confian" class="nh-empresas-section">
+  <div class="nh-empresas-inner">
+    <h2 class="nh-empresas-title">Tecnologías que dominarás</h2>
+
+    <div class="nh-empresas-logos">
+      <div class="nh-empresa-logo-item">
+        <img class="nh-empresa-logo"
+             src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/LANDING/PL%20300/Power%20BI%20desk.png?ver=R_3nAdgZCIq76wzsBkgD_A%3d%3d"
+             alt="Power Desktop"
+             loading="lazy">
+      </div>
+
+      <div class="nh-empresa-logo-item">
+        <img class="nh-empresa-logo"
+             src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/LANDING/PL%20300/Power%20BI%20service.png?ver=0Ph-2FfvRrBTxSUzj7kdiA%3d%3d"
+             alt="Power Services"
+             loading="lazy">
+      </div>
+
+      <div class="nh-empresa-logo-item">
+        <img class="nh-empresa-logo"
+             src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/LANDING/PL%20300/Power%20Query.png?ver=Qfo1nyBh3W-iC_6wb6yvtg%3d%3d"
+             alt="PowerQuery"
+             loading="lazy">
+      </div>
+
+      <div class="nh-empresa-logo-item">
+        <img class="nh-empresa-logo"
+             src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/LANDING/PL%20300/DAX.png?ver=3Cn44wLDNHjZaOBHgOREkg%3d%3d"
+             alt="DAX"
+             loading="lazy">
+      </div>
+
+      <div class="nh-empresa-logo-item">
+        <img class="nh-empresa-logo"
+             src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/LANDING/PL%20300/DirectQuery.png?ver=dZEt6DT-Hbg21dRbHzX1TA%3d%3d"
+             alt="DirectQuery">
+      </div>
+    </div>
+  </div>
+
+</section>

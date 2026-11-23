@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Previa - Centro de Exámenes</title>
+    <link rel="stylesheet" href="css/global-variables.css">
+</head>
+
+<body>
+    <div id="sec-01"></div>
+    <div id="sec-02"></div>
+    <div id="sec-03"></div>
+    <div id="sec-04"></div>
+    <div id="sec-05"></div>
+    <div id="sec-06"></div>
+    <div id="sec-07"></div>
+    <div id="sec-08"></div>
+    <div id="sec-09"></div>
+    <div id="sec-11"></div> <!-- Footer reutilizado -->
+
+    <script>
+        // Inicializador del carrusel de beneficios.
+        // Se incluye también en el HTML independiente para que funcione por separado.
+        window.initNhpBenefitsCarousel = function(section) {
+            function initNhpBenefitsCarousel(section) {
+    if (!section || section.dataset.carouselReady === 'true') return;
+    section.dataset.carouselReady = 'true';
+
+    const track = section.querySelector('.nhp-benefits__track');
+    const slides = Array.from(section.querySelectorAll('.nhp-benefits__slide'));
+    const dots = Array.from(section.querySelectorAll('.nhp-benefits__dot'));
+    const prev = section.querySelector('.nhp-benefits__arrow--prev');
+    const next = section.querySelector('.nhp-benefits__arrow--next');
+    const viewport = section.querySelector('.nhp-benefits__viewport');
+
+    if (!track || slides.length === 0 || !prev || !next || !viewport) {
+        section.dataset.carouselReady = 'false';
+        return;
+    }
+
+    let current = 0;
+
+    function showSlide(index) {
+        current = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dots.forEach((dot, i) => {
+            dot.setAttribute('aria-current', String(i === current));
+        });
+    }
+
+    prev.addEventListener('click', () => showSlide(current - 1));
+    next.addEventListener('click', () => showSlide(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
+
+    // Navegación táctil en móviles.
+    let touchStartX = 0;
+    viewport.addEventListener('touchstart', event => {
+        touchStartX = event.changedTouches[0].screenX;
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', event => {
+        const delta = event.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(delta) > 45) {
+            showSlide(current + (delta < 0 ? 1 : -1));
+        }
+    }, { passive: true });
+
+    showSlide(0);
+}
+        };
+
+
+        // Inicializador del carrusel PL-300 (también está en seccion-carrusel-pl300.html).
+        window.initNhpPl300Carousel = function(root) {
+            if (!root || root.dataset.pl300Ready === 'true') return;
+            const track = root.querySelector('.nhp-pl300-carousel__track');
+            const slides = Array.from(root.querySelectorAll('.nhp-pl300-carousel__slide'));
+            const dots = Array.from(root.querySelectorAll('.nhp-pl300-carousel__dot'));
+            const prev = root.querySelector('.nhp-pl300-carousel__arrow--prev');
+            const next = root.querySelector('.nhp-pl300-carousel__arrow--next');
+            const viewport = root.querySelector('.nhp-pl300-carousel__viewport');
+            if (!track || slides.length !== 4 || !prev || !next || !viewport) return;
+
+            root.dataset.pl300Ready = 'true';
+            let active = 0;
+            const show = (index) => {
+                active = (index + slides.length) % slides.length;
+                track.style.transform = `translateX(-${active * 100}%)`;
+                dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === active)));
+            };
+            prev.addEventListener('click', () => show(active - 1));
+            next.addEventListener('click', () => show(active + 1));
+            dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+            let startX = 0;
+            viewport.addEventListener('touchstart', e => { startX = e.changedTouches[0].screenX; }, { passive: true });
+            viewport.addEventListener('touchend', e => {
+                const delta = e.changedTouches[0].screenX - startX;
+                if (Math.abs(delta) > 45) show(active + (delta < 0 ? 1 : -1));
+            }, { passive: true });
+            show(0);
+        };
+
+        async function loadSection(id, file) {
+            try {
+                let res = await fetch(file, { cache: 'no-store' });
+                if (res.ok) {
+                    const container = document.getElementById(id);
+                    container.innerHTML = await res.text();
+
+                    // Los scripts insertados con innerHTML no se ejecutan solos.
+                    // Los recreamos para activar el JavaScript de cada sección.
+                    const scripts = Array.from(container.querySelectorAll('script'));
+                    for (const oldScript of scripts) {
+                        const newScript = document.createElement('script');
+                        for (const attr of oldScript.attributes) {
+                            newScript.setAttribute(attr.name, attr.value);
+                        }
+                        if (oldScript.src) {
+                            newScript.src = oldScript.src;
+                            newScript.async = false;
+                            await new Promise((resolve, reject) => {
+                                newScript.onload = resolve;
+                                newScript.onerror = reject;
+                                oldScript.replaceWith(newScript);
+                            });
+                        } else {
+                            newScript.textContent = oldScript.textContent;
+                            oldScript.replaceWith(newScript);
+                        }
+                    }
+                } else {
+                    console.error("No se pudo cargar " + file + ":", res.status);
+                }
+            } catch (e) {
+                console.error("Error cargando " + file, e);
+            }
+        }
+
+        async function initExamPage() {
+            // Salimos de 'centro de examenes' y entramos a 'home'
+            await loadSection('sec-01', '../../../home/01-header.html');
+
+            // Como están en la misma carpeta o subcarpetas hermanas:
+            await loadSection('sec-02', '02-banner-estatico.html');
+            await loadSection('sec-03', '03-section-text.html');
+            await loadSection('sec-04', '04-section-porcentaje.html'); 
+            await loadSection('sec-05', '05-section-funcion.html'); 
+            await loadSection('sec-06', '06-section-carrusel.html');
+            await loadSection('sec-07', '07-section-certificado.html');
+            await loadSection('sec-08', '08-section-tecnologias.html');
+            await loadSection('sec-09', '09-section-relacionados.html');
+
+            // Salimos de 'centro de examenes' y entramos a 'home' para el footer
+            await loadSection('sec-11', '../../../home/10-footer.html');
+
+            initHeaderMenu();
+        }
+
+// --- Header: menú off-canvas + acordeón ---
+        function initHeaderMenu() {
+            var openBtn = document.getElementById('nhOffcanvasOpen');
+            var closeBtn = document.getElementById('nhOffcanvasClose');
+            var overlay = document.getElementById('nhOffcanvasOverlay');
+            var menu = document.getElementById('nhOffcanvasMenu');
+
+            function openMenu() {
+                if (menu) menu.classList.add('active');
+                if (overlay) overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeMenu() {
+                if (menu) menu.classList.remove('active');
+                if (overlay) overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (openBtn && !openBtn.dataset.bound) { openBtn.dataset.bound = "true"; openBtn.addEventListener('click', openMenu); }
+            if (closeBtn && !closeBtn.dataset.bound) { closeBtn.dataset.bound = "true"; closeBtn.addEventListener('click', closeMenu); }
+            if (overlay && !overlay.dataset.bound) { overlay.dataset.bound = "true"; overlay.addEventListener('click', closeMenu); }
+
+            if (!window.nhDropdownBound) {
+                window.nhDropdownBound = true;
+                document.addEventListener('click', function (e) {
+                    var toggle = e.target.closest('.nh-offcanvas-dropdown-toggle');
+                    if (!toggle) return;
+                    e.preventDefault();
+                    var item = toggle.closest('.nh-offcanvas-item');
+                    if (item) item.classList.toggle('open');
+                });
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', initExamPage);
+    </script>
+</body>
+
+</html>
