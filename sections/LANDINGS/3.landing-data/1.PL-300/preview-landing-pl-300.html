@@ -18,7 +18,9 @@
     <div id="sec-07"></div>
     <div id="sec-08"></div>
     <div id="sec-09"></div>
-    <div id="sec-11"></div> <!-- Footer reutilizado -->
+    <div id="sec-11"></div>
+    <div id="sec-12"></div>
+    <div id="sec-13"></div> <!-- Footer reutilizado -->
 
     <script>
         // Inicializador del carrusel de beneficios.
@@ -150,10 +152,11 @@
             await loadSection('sec-06', '06-section-carrusel.html');
             await loadSection('sec-07', '07-section-certificado.html');
             await loadSection('sec-08', '08-section-tecnologias.html');
-            await loadSection('sec-09', '09-section-relacionados.html');
-
+            await loadSection('sec-09', '09-section-aplication.html');
+            await loadSection('sec-11', '11-section-empresas.html');
+            await loadSection('sec-12', '12-section-relacionados.html');
             // Salimos de 'centro de examenes' y entramos a 'home' para el footer
-            await loadSection('sec-11', '../../../home/10-footer.html');
+            await loadSection('sec-13', '../../../home/10-footer.html');
 
             initHeaderMenu();
         }

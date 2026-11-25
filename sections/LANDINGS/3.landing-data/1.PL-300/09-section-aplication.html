@@ -1,0 +1,206 @@
+<!-- SECCIÓN: APLICA POWER BI + IA EN DIFERENTES ÁREAS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  .nh-areas-section,
+  .nh-areas-section *,
+  .nh-areas-section *::before,
+  .nh-areas-section *::after {
+    box-sizing: border-box;
+  }
+
+  .nh-areas-section {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    padding: 48px 24px 62px;
+    background: #ffffff;
+    color: #2b2a6e;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nh-areas-section .nh-areas-inner {
+    width: 100%;
+    max-width: 1120px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  .nh-areas-section .nh-areas-title {
+    margin: 0 0 60px;
+    color: #2b2a6e;
+    font-size: clamp(27px, 3.2vw, 36px);
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .nh-areas-section .nh-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 765px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  .nh-areas-section .nh-area-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 0;
+    min-height: 268px;
+    padding: 30px 14px 24px;
+    border: 1px solid #e4e4e8;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.28);
+    text-align: center;
+  }
+
+  .nh-areas-section .nh-area-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 105px;
+    margin-bottom: 14px;
+  }
+
+  .nh-areas-section .nh-area-icon {
+    display: block;
+    width: 100%;
+    max-width: 104px;
+    height: 100%;
+    max-height: 100px;
+    object-fit: contain;
+  }
+
+  .nh-areas-section .nh-area-name {
+    margin: 0 0 3px;
+    color: #2b2a6e;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .nh-areas-section .nh-area-description {
+    margin: 0;
+    color: #2b2a6e;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 900px) {
+    .nh-areas-section {
+      padding: 44px 20px 54px;
+    }
+
+    .nh-areas-section .nh-areas-title {
+      margin-bottom: 44px;
+    }
+
+    .nh-areas-section .nh-areas-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 520px;
+      gap: 22px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .nh-areas-section {
+      padding: 38px 16px 46px;
+    }
+
+    .nh-areas-section .nh-areas-title {
+      margin-bottom: 32px;
+      font-size: 25px;
+    }
+
+    .nh-areas-section .nh-areas-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .nh-areas-section .nh-area-card {
+      min-height: 230px;
+      padding: 22px 9px 18px;
+    }
+
+    .nh-areas-section .nh-area-icon-wrap {
+      height: 88px;
+      margin-bottom: 12px;
+    }
+
+    .nh-areas-section .nh-area-icon {
+      max-width: 82px;
+      max-height: 84px;
+    }
+
+    .nh-areas-section .nh-area-name {
+      font-size: 17px;
+    }
+
+    .nh-areas-section .nh-area-description {
+      font-size: 12px;
+    }
+  }
+</style>
+
+<section id="nh-aplicaciones-areas" class="nh-areas-section">
+  <div class="nh-areas-inner">
+    <h2 class="nh-areas-title">Aplica Power BI en diferentes<br>áreas de negocio</h2>
+
+    <div class="nh-areas-grid">
+      <article class="nh-area-card">
+        <div class="nh-area-icon-wrap">
+          <img class="nh-area-icon"
+               src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/LANDING/Power-BI/Marketing.png?ver=tcF9_hdNXG8VOFPfspY5WQ%3d%3d"
+               alt="Icono de marketing"
+               loading="lazy">
+        </div>
+        <h3 class="nh-area-name">Marketing</h3>
+        <p class="nh-area-description">Analiza campañas y resultados</p>
+      </article>
+
+      <article class="nh-area-card">
+        <div class="nh-area-icon-wrap">
+          <img class="nh-area-icon"
+               src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/LANDING/Power-BI/Finanzas.png?ver=X5O2MWa_n4FyRdlbMNLy3w%3d%3d"
+               alt="Icono de finanzas"
+               loading="lazy">
+        </div>
+        <h3 class="nh-area-name">Finanzas</h3>
+        <p class="nh-area-description">Monitorea KPIs y rentabilidad</p>
+      </article>
+
+      <article class="nh-area-card">
+        <div class="nh-area-icon-wrap">
+          <img class="nh-area-icon"
+               src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/LANDING/Power-BI/Ventas.png?ver=0_acRrqbcSTzrYOmWaKiIA%3d%3d"
+               alt="Icono de ventas"
+               loading="lazy">
+        </div>
+        <h3 class="nh-area-name">Ventas</h3>
+        <p class="nh-area-description">Evalúa desempeño<br>comercial</p>
+      </article>
+
+      <article class="nh-area-card">
+        <div class="nh-area-icon-wrap">
+          <img class="nh-area-icon"
+               src="https://www.newhorizons.edu.pe/Portals/6/PORTAL%202027/LANDING/Power-BI/Operaciones.png?ver=bLY4ud9XlPPgDaWf3f0ZmQ%3d%3d"
+               alt="Icono de operaciones"
+               loading="lazy">
+        </div>
+        <h3 class="nh-area-name">Operaciones</h3>
+        <p class="nh-area-description">Controla productividad<br>y procesoss</p>
+      </article>
+    </div>
+  </div>
+</section>
